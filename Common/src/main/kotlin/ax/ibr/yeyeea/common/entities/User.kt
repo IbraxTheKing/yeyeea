@@ -4,6 +4,8 @@ import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
+import jakarta.persistence.JoinColumn
+import jakarta.persistence.ManyToOne
 
 @Entity
 open class User {
@@ -18,6 +20,7 @@ open class User {
     var image: String? = "assets/defaults/profile.png"
 
     var email: String? = null
+
     private var type: UserType? = UserType.CUSTOMER
 
     constructor()
