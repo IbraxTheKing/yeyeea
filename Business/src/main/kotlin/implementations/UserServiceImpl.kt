@@ -1,11 +1,12 @@
 package implementations
 
+import dataservice.PersistenceFactory
 import entities.User
 import services.UserService
 
 class UserServiceImpl : UserService {
 
-    var userService: UserService = PersistenceFactory.getUserDataService()
+    var userService: UserService = PersistenceFactory().getUserDataService()
 
     override fun getByUsername(username: String): List<User> {
         return userService.getByUsername(username)
@@ -31,7 +32,7 @@ class UserServiceImpl : UserService {
         return userService.getAll()
     }
 
-    override fun getById(id: String): User? {
+    override fun getById(id: Long): User? {
         return userService.getById(id)
     }
 

@@ -12,21 +12,21 @@ class BusinessFactory {
 
     fun getUserService() : UserService {
         if (!::userService.isInitialized) {
-            PersistenceFactory().getUserDataService()
+            userService = UserServiceImpl()
         }
         return userService
     }
 
     fun getCategoryService() : CategoryService {
         if (!::categoryService.isInitialized) {
-            PersistenceFactory().getCategoryDataService()
+            categoryService = CategoryServiceImpl()
         }
         return categoryService
     }
 
     fun getProductService() : ProductService {
         if (!::productService.isInitialized) {
-            PersistenceFactory().getProductDataService()
+            productService = ProductServiceImpl()
         }
         return productService
     }
