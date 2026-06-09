@@ -12,5 +12,6 @@
     <module>Business</module>
     <module>Persistence</module>
     <module>RestServer</module>
+      <module>WebClient</module>
   </modules>
 </project>
