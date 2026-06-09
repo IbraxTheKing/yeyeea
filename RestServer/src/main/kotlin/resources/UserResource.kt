@@ -1,6 +1,5 @@
 package resources
 
-import dataservice.UserDataService
 import jakarta.ws.rs.*
 import jakarta.ws.rs.core.MediaType
 import entities.User

@@ -6,7 +6,7 @@ import services.UserService
 
 class UserServiceImpl : UserService {
 
-    var userService: UserService = PersistenceFactory().getUserDataService()
+    private val userService: UserService = PersistenceFactory().getUserDataService()
 
     override fun getByUsername(username: String): List<User> {
         return userService.getByUsername(username)

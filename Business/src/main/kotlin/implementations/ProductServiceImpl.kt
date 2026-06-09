@@ -7,7 +7,7 @@ import services.ProductService
 
 class ProductServiceImpl : ProductService {
 
-    var productService: ProductService = PersistenceFactory().getProductDataService()
+    private val productService: ProductService = PersistenceFactory().getProductDataService()
 
     override fun getByName(name: String): List<Product> {
         return productService.getByName(name)

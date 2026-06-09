@@ -6,19 +6,19 @@ import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 
 @Entity
-abstract class Product {
+class Product {
+
     var price: Float? = null
     var description: String? = null
     var name: String? = null
 
     var company: String? = null
-    var category: Category = Category()
+    var category: Category? = null
 
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     var id: Long? = null
-
 
 
 }

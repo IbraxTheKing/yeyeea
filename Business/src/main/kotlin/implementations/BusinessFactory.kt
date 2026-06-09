@@ -6,9 +6,9 @@ import services.ProductService
 import services.UserService
 
 class BusinessFactory {
-    lateinit var userService: UserService
-    lateinit var categoryService: CategoryService
-    lateinit var productService: ProductService
+    private lateinit var userService: UserService
+    private lateinit var categoryService: CategoryService
+    private lateinit var productService: ProductService
 
     fun getUserService() : UserService {
         if (!::userService.isInitialized) {

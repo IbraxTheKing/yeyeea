@@ -6,7 +6,7 @@ import services.CategoryService
 
 class CategoryServiceImpl : CategoryService {
 
-    var categoryService: CategoryService = PersistenceFactory().getCategoryDataService()
+    private val categoryService: CategoryService = PersistenceFactory().getCategoryDataService()
 
     override fun getSubCategories(category: Category): List<Category>? {
         return categoryService.getSubCategories(category)

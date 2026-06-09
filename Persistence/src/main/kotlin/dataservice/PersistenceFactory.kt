@@ -1,5 +1,8 @@
 package dataservice
 
+import jdbc.CategoryDataServiceJDBCImpl
+import jdbc.ProductDataServiceJDBCImpl
+import jdbc.UserDataServiceJDBCImpl
 import jpa.CategoryDataServiceJPAImpl
 import jpa.ProductDataServiceJPAImpl
 import jpa.UserDataServiceJPAImpl
@@ -8,17 +11,19 @@ import services.ProductService
 import services.UserService
 
 class PersistenceFactory {
-    lateinit var userService: UserService
-    lateinit var categoryService: CategoryService
-    lateinit var productService: ProductService
+    private lateinit var userService: UserService
+    private lateinit var categoryService: CategoryService
+    private lateinit var productService: ProductService
 
-    var JDBC: Boolean = false
-    val PU: String = ""
+    private var JDBC: Boolean = false
+    private val PU: String = ""
 
     fun getUserDataService() : UserService {
         if (!::userService.isInitialized) {
             if (this.JDBC) {
-
+                userService = UserDataServiceJDBCImpl(
+                    connection = TODO()
+                )
             }
             else {
                 userService = UserDataServiceJPAImpl(
@@ -33,7 +38,11 @@ class PersistenceFactory {
 
     fun getCategoryDataService() : CategoryService {
         if (!::categoryService.isInitialized) {
-            if (this.JDBC) {}
+            if (this.JDBC) {
+                categoryService = CategoryDataServiceJDBCImpl(
+                    connection = TODO()
+                )
+            }
             else {
                 categoryService = CategoryDataServiceJPAImpl(
                     em = TODO(),
@@ -46,7 +55,12 @@ class PersistenceFactory {
 
     fun getProductDataService() : ProductService {
         if (!::productService.isInitialized) {
-            if (this.JDBC) {}
+            if (this.JDBC) {
+                productService = ProductDataServiceJDBCImpl(
+                    connection = TODO(),
+                    categoryService = TODO()
+                )
+            }
             else {
                 productService = ProductDataServiceJPAImpl(
                     em = TODO(),

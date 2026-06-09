@@ -3,7 +3,7 @@ package entities
 import jakarta.persistence.*
 
 @Entity
-open class Category {
+open class Category() {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
