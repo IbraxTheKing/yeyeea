@@ -2,6 +2,10 @@ package ax.ibr.yeyeea.common.services
 
 import ax.ibr.yeyeea.common.entities.Category
 
+/**
+ * @author ib <pro.ibr.ben@gmail.com>
+ */
+
 interface CategoryService : CrudService<Category> {
     fun getSubCategories(category: Category): List<Category>?
 

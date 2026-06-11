@@ -4,8 +4,8 @@ import ax.ibr.yeyeea.persistence.dataservice.CategoryDataService
 import ax.ibr.yeyeea.common.entities.Category
 import jakarta.persistence.EntityManager
 
-class CategoryDataServiceCrudJPAImpl(em: EntityManager,
-                                     entityClass: Class<Category>
+class CategoryDataServiceJPAImpl(em: EntityManager,
+                                 entityClass: Class<Category>
 ) : CategoryDataService, CrudJpaService<Category>(em, entityClass) {
 
     override fun getSubCategories(category: Category): List<Category> {

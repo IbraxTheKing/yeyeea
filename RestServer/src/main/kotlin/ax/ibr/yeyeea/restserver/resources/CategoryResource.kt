@@ -47,13 +47,13 @@ class CategoryResource : CategoryService {
 
     @GET
     @Path("/subcategory/{subcategory}")
-    override fun getSubCategories(category: Category): List<Category>? {
+    override fun getSubCategories(@PathParam("category") category: Category): List<Category>? {
         return service.getSubCategories(category)
     }
 
     @GET
     @Path("/parentCategory/{parentCategory}")
-    override fun getParentCategories(category: Category): List<Category>? {
+    override fun getParentCategories(@PathParam("category") category: Category): List<Category>? {
         return service.getParentCategories(category)
     }
 }

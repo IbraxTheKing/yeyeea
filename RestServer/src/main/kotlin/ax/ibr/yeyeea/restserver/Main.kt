@@ -1,4 +1,4 @@
-package main
+package ax.ibr.yeyeea.restserver
 
 import org.glassfish.jersey.jetty.JettyHttpContainerFactory
 import org.glassfish.jersey.server.ResourceConfig

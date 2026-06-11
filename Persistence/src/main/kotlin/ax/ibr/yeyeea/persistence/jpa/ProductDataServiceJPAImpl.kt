@@ -5,8 +5,8 @@ import ax.ibr.yeyeea.common.entities.Category
 import ax.ibr.yeyeea.common.entities.Product
 import jakarta.persistence.EntityManager
 
-class ProductDataServiceCrudJPAImpl(em: EntityManager,
-                                    entityClass: Class<Product>
+class ProductDataServiceJPAImpl(em: EntityManager,
+                                entityClass: Class<Product>
 ) : ProductDataService, CrudJpaService<Product>(em, entityClass) {
 
     override fun getByName(name: String): List<Product> {

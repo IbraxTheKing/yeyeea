@@ -47,22 +47,22 @@ class ProductResource : ProductService {
     }
 
     @GET
-    override fun getByName(name: String): List<Product> {
+    override fun getByName(@PathParam("name") name: String): List<Product> {
         return service.getByName(name)
     }
 
     @GET
-    override fun getByCategory(category: Category): List<Product> {
+    override fun getByCategory(@PathParam("category") category: Category): List<Product> {
         return service.getByCategory(category)
     }
 
     @GET
-    override fun getByPrice(price: Float): List<Product> {
+    override fun getByPrice(@PathParam("price") price: Float): List<Product> {
         return service.getByPrice(price)
     }
 
     @GET
-    override fun getByPriceRange(range: ClosedRange<Float>): List<Product> {
+    override fun getByPriceRange(@PathParam("range") range: ClosedRange<Float>): List<Product> {
         return service.getByPriceRange(range)
     }
 

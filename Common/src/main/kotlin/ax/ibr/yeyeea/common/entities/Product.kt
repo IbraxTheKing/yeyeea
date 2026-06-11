@@ -7,6 +7,10 @@ import jakarta.persistence.Id
 import jakarta.persistence.JoinColumn
 import jakarta.persistence.ManyToOne
 
+/**
+ * @author ib <pro.ibr.ben@gmail.com>
+ */
+
 @Entity
 open class Product {
 

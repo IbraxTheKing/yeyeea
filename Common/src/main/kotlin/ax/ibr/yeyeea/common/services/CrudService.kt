@@ -1,5 +1,9 @@
 package ax.ibr.yeyeea.common.services
 
+/**
+ * @author ib <pro.ibr.ben@gmail.com>
+ */
+
 interface CrudService<T>{
     fun add(t: T)
     fun update(t: T)

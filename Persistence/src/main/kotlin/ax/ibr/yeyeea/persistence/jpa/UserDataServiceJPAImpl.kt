@@ -4,8 +4,8 @@ import ax.ibr.yeyeea.persistence.dataservice.UserDataService
 import ax.ibr.yeyeea.common.entities.User
 import jakarta.persistence.EntityManager
 
-class UserDataServiceCrudJPAImpl(pu: String, em: EntityManager,
-                                 entityClass: Class<User>
+class UserDataServiceJPAImpl(pu: String, em: EntityManager,
+                             entityClass: Class<User>
 ) : UserDataService, CrudJpaService<User>(em, entityClass) {
 
 
