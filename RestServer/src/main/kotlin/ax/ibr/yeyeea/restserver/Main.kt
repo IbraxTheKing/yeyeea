@@ -6,7 +6,7 @@ import java.net.URI
 
 fun main() {
 
-    val config = ResourceConfig().packages("rest")
+    val config = ResourceConfig().packages("ax.ibr.yeyeea.restserver.resources")
 
     val server = JettyHttpContainerFactory.createServer(
         URI.create("http://localhost:8080/"),
@@ -14,4 +14,5 @@ fun main() {
     )
 
     println("REST server started on http://localhost:8080/")
+
 }

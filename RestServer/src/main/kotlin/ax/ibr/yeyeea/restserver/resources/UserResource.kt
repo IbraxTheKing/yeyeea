@@ -9,45 +9,70 @@ import ax.ibr.yeyeea.common.services.UserService
 @Path("/users")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-class UserResource : UserService {
+class UserResource {
 
     private val service = BusinessFactory().getUserService()
 
+
     @GET
-    override fun getAll(): List<User> {
+    fun getAll(): List<User> {
         return service.getAll()
     }
 
+
     @GET
-    @Path("/id/{id}")
-    override fun getById(@PathParam("id") id: Long): User? {
+    @Path("/{id}")
+    fun getById(
+        @PathParam("id") id: Long
+    ): User? {
         return service.getById(id)
     }
 
+
     @POST
-    override fun add(t: User) {
-        service.add(t)
-    }
-    @PUT
-    override fun update(t: User) {
-        service.update(t)
+    fun add(user: User) {
+        service.add(user)
     }
 
-    @DELETE
-    override fun remove(t: User) {
-        service.remove(t)
+
+    @PUT
+    @Path("/{id}")
+    fun updateById(
+        @PathParam("id") id: Long,
+        user: User
+    ) {
+        user.id = id
+        service.update(user)
     }
+
+
+    @DELETE
+    @Path("/{id}")
+    fun removeById(
+        @PathParam("id") id: Long
+    ) {
+        val user = service.getById(id)
+
+        if (user != null) {
+            service.remove(user)
+        }
+    }
+
 
     @GET
     @Path("/username/{username}")
-    override fun getByUsername(@PathParam("username") username: String): List<User> {
+    fun getByUsername(
+        @PathParam("username") username: String
+    ): List<User> {
         return service.getByUsername(username)
     }
 
+
     @GET
     @Path("/email/{email}")
-    override fun getByEmail(@PathParam("email") email: String): List<User> {
+    fun getByEmail(
+        @PathParam("email") email: String
+    ): List<User> {
         return service.getByEmail(email)
     }
-
 }

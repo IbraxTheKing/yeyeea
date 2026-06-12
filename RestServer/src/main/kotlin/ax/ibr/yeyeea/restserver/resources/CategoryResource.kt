@@ -2,58 +2,82 @@ package ax.ibr.yeyeea.restserver.resources
 
 import ax.ibr.yeyeea.common.entities.Category
 import ax.ibr.yeyeea.business.implementations.BusinessFactory
-import jakarta.ws.rs.Consumes
-import jakarta.ws.rs.DELETE
-import jakarta.ws.rs.GET
-import jakarta.ws.rs.POST
-import jakarta.ws.rs.PUT
-import jakarta.ws.rs.Path
-import jakarta.ws.rs.PathParam
-import jakarta.ws.rs.Produces
-import jakarta.ws.rs.core.MediaType
 import ax.ibr.yeyeea.common.services.CategoryService
+import jakarta.ws.rs.*
+import jakarta.ws.rs.core.MediaType
 
 @Path("/categories")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-class CategoryResource : CategoryService {
+class CategoryResource {
 
     private val service = BusinessFactory().getCategoryService()
 
     @GET
-    override fun getAll(): List<Category> {
+    fun getAll(): List<Category> {
         return service.getAll()
     }
 
     @GET
-    @Path("/id/{id}")
-    override fun getById(@PathParam("id") id: Long): Category? {
+    @Path("/{id}")
+    fun getById(
+        @PathParam("id") id: Long
+    ): Category? {
         return service.getById(id)
     }
 
     @POST
-    override fun add(t: Category) {
-        service.add(t)
+    fun add(category: Category) {
+        service.add(category)
     }
+
+
     @PUT
-    override fun update(t: Category) {
-        service.update(t)
+    @Path("/{id}")
+    fun updateById(
+        @PathParam("id") id: Long,
+        category: Category
+    ) {
+        category.id = id
+        service.update(category)
     }
+
 
     @DELETE
-    override fun remove(t: Category) {
-        service.remove(t)
+    @Path("/{id}")
+    fun removeById(
+        @PathParam("id") id: Long
+    ) {
+        val category = service.getById(id)
+
+        if (category != null) {
+            service.remove(category)
+        }
     }
 
+
     @GET
-    @Path("/subcategory/{subcategory}")
-    override fun getSubCategories(@PathParam("category") category: Category): List<Category>? {
+    @Path("/{id}/subcategories")
+    fun getSubCategories(
+        @PathParam("id") id: Long
+    ): List<Category>? {
+
+        val category = service.getById(id)
+            ?: return emptyList()
+
         return service.getSubCategories(category)
     }
 
+
     @GET
-    @Path("/parentCategory/{parentCategory}")
-    override fun getParentCategories(@PathParam("category") category: Category): List<Category>? {
+    @Path("/{id}/parent")
+    fun getParentCategories(
+        @PathParam("id") id: Long
+    ): List<Category>? {
+
+        val category = service.getById(id)
+            ?: return emptyList()
+
         return service.getParentCategories(category)
     }
 }

@@ -1,70 +1,107 @@
 package ax.ibr.yeyeea.restserver.resources
 
-import ax.ibr.yeyeea.common.entities.Category
 import ax.ibr.yeyeea.common.entities.Product
+import ax.ibr.yeyeea.common.entities.Category
 import ax.ibr.yeyeea.business.implementations.BusinessFactory
-import jakarta.ws.rs.Consumes
-import jakarta.ws.rs.DELETE
-import jakarta.ws.rs.GET
-import jakarta.ws.rs.POST
-import jakarta.ws.rs.PUT
-import jakarta.ws.rs.Path
-import jakarta.ws.rs.PathParam
-import jakarta.ws.rs.Produces
-import jakarta.ws.rs.core.MediaType
 import ax.ibr.yeyeea.common.services.ProductService
+import jakarta.ws.rs.*
+import jakarta.ws.rs.core.MediaType
+
 
 @Path("/products")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-class ProductResource : ProductService {
+class ProductResource {
 
     private val service = BusinessFactory().getProductService()
 
+
     @GET
-    override fun getAll(): List<Product> {
+    fun getAll(): List<Product> {
         return service.getAll()
     }
 
+
     @GET
-    @Path("/id/{id}")
-    override fun getById(@PathParam("id") id: Long): Product? {
+    @Path("/{id}")
+    fun getById(
+        @PathParam("id") id: Long
+    ): Product? {
         return service.getById(id)
     }
 
+
     @POST
-    override fun add(t: Product) {
-        service.add(t)
+    fun add(product: Product) {
+        service.add(product)
     }
+
+
     @PUT
-    override fun update(t: Product) {
-        service.update(t)
+    @Path("/{id}")
+    fun updateById(
+        @PathParam("id") id: Long,
+        product: Product
+    ) {
+        product.id = id
+        service.update(product)
     }
+
 
     @DELETE
-    override fun remove(t: Product) {
-        service.remove(t)
+    @Path("/{id}")
+    fun removeById(
+        @PathParam("id") id: Long
+    ) {
+        val product = service.getById(id)
+
+        if (product != null) {
+            service.remove(product)
+        }
     }
 
+
     @GET
-    override fun getByName(@PathParam("name") name: String): List<Product> {
+    @Path("/name/{name}")
+    fun getByName(
+        @PathParam("name") name: String
+    ): List<Product> {
         return service.getByName(name)
     }
 
+
     @GET
-    override fun getByCategory(@PathParam("category") category: Category): List<Product> {
+    @Path("/category/{id}")
+    fun getByCategoryId(
+        @PathParam("id") id: Long
+    ): List<Product> {
+
+        val category = Category().apply {
+            this.id = id
+        }
+
         return service.getByCategory(category)
     }
 
+
     @GET
-    override fun getByPrice(@PathParam("price") price: Float): List<Product> {
+    @Path("/price/{price}")
+    fun getByPrice(
+        @PathParam("price") price: Float
+    ): List<Product> {
         return service.getByPrice(price)
     }
 
+
     @GET
-    override fun getByPriceRange(@PathParam("range") range: ClosedRange<Float>): List<Product> {
+    @Path("/price-range/{min}/{max}")
+    fun getByPriceRange(
+        @PathParam("min") min: Float,
+        @PathParam("max") max: Float
+    ): List<Product> {
+
+        val range = min..max
+
         return service.getByPriceRange(range)
     }
-
-
 }

@@ -24,15 +24,17 @@ class PersistenceFactory {
     private lateinit var productService: ProductService
 
     private val JDBC: Boolean = false
-    private val PU: String = "my-persistence-unit"
+    private val PU: String = "yeyaPU"
 
     private val connection: Connection by lazy {
         DriverManager.getConnection(
-            "jdbc:mysql://localhost:3306/mydb",
-            "user",
-            "password"
+            "jdbc:mysql://localhost:3306/yeya",
+            "yeya",
+            "1010"
         )
     }
+
+    /* TODO: READ USER AND USER OF DB BY .ENV FILE */
 
     private val entityManager: EntityManager by lazy {
         Persistence.createEntityManagerFactory(PU).createEntityManager()
