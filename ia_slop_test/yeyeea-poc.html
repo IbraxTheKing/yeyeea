@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yeyeea — Client PoC</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg:       #07101f;
+    --surface:  #0d1e38;
+    --surface2: #132440;
+    --border:   rgba(0,200,255,.13);
+    --cyan:     #00d4f5;
+    --cyan-lo:  rgba(0,212,245,.08);
+    --green:    #00e5a0;
+    --red:      #ff4d6a;
+    --amber:    #ffb830;
+    --text:     #ddeeff;
+    --muted:    #6b85a8;
+    --mono:     'JetBrains Mono', monospace;
+    --r:        10px;
+  }
+
+  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; }
+
+  /* ── Top bar ── */
+  .topbar { display:flex; align-items:center; gap:16px; padding:14px 24px; background:var(--surface); border-bottom:1px solid var(--border); }
+  .topbar .logo { font-size:1.25rem; font-weight:700; letter-spacing:-.02em; }
+  .topbar .logo span { color:var(--cyan); }
+  .topbar .api-url { font-family:var(--mono); font-size:.75rem; color:var(--muted); margin-left:auto; }
+  .topbar .api-url input { background:var(--surface2); border:1px solid var(--border); border-radius:6px; color:var(--text); font-family:var(--mono); font-size:.75rem; padding:4px 10px; outline:none; width:240px; }
+  .topbar .api-url input:focus { border-color:var(--cyan); }
+  .dot { width:7px; height:7px; border-radius:50%; background:var(--green); box-shadow:0 0 6px var(--green); flex-shrink:0; animation:pulse 2s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+  /* ── Layout ── */
+  .shell { display:flex; flex:1; }
+  .sidebar { width:200px; min-height:calc(100vh - 53px); background:var(--surface); border-right:1px solid var(--border); padding:16px 10px; flex-shrink:0; }
+  .sidebar nav { display:flex; flex-direction:column; gap:3px; }
+  .sidebar .section { font-size:.62rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); padding:10px 10px 4px; margin-top:4px; }
+  .nav-btn { display:flex; align-items:center; gap:8px; width:100%; padding:9px 10px; border:none; border-radius:7px; background:transparent; color:var(--muted); font-family:'Inter',sans-serif; font-size:.85rem; font-weight:500; cursor:pointer; text-align:left; transition:all .15s; }
+  .nav-btn:hover { background:var(--cyan-lo); color:var(--text); }
+  .nav-btn.active { background:var(--cyan-lo); color:var(--cyan); border:1px solid rgba(0,212,245,.2); }
+  .nav-icon { font-size:.95rem; width:18px; text-align:center; }
+
+  /* ── Main ── */
+  .main { flex:1; padding:28px; overflow-x:hidden; }
+  .page { display:none; }
+  .page.active { display:block; }
+
+  /* ── Section header ── */
+  .sec-header { display:flex; align-items:center; gap:12px; margin-bottom:20px; }
+  .sec-title { font-size:1rem; font-weight:600; }
+  .sec-sub { font-size:.78rem; color:var(--muted); margin-top:2px; }
+  .spacer { flex:1; }
+
+  /* ── Cards / panels ── */
+  .panel { background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; margin-bottom:20px; }
+  .panel-head { padding:14px 20px; border-bottom:1px solid var(--border); display:flex; align-items:center; gap:10px; font-size:.82rem; font-weight:600; }
+  .panel-body { padding:20px; }
+
+  /* ── Form ── */
+  .form-row { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:10px; }
+  .form-group { display:flex; flex-direction:column; gap:5px; flex:1; min-width:120px; }
+  label { font-size:.68rem; font-weight:600; text-transform:uppercase; letter-spacing:.07em; color:var(--muted); }
+  input, select { background:var(--surface2); border:1px solid var(--border); border-radius:7px; color:var(--text); font-family:'Inter',sans-serif; font-size:.84rem; padding:8px 12px; outline:none; transition:border-color .15s; width:100%; }
+  input:focus, select:focus { border-color:var(--cyan); box-shadow:0 0 0 3px rgba(0,212,245,.12); }
+  input::placeholder { color:var(--muted); }
+  select option { background:var(--surface2); }
+  .checkbox-row { display:flex; align-items:center; gap:8px; font-size:.84rem; color:var(--muted); cursor:pointer; margin-top:4px; }
+  .checkbox-row input[type=checkbox] { width:15px; height:15px; accent-color:var(--cyan); cursor:pointer; }
+
+  /* ── Buttons ── */
+  .btn { display:inline-flex; align-items:center; gap:6px; padding:8px 16px; border-radius:var(--r); border:none; font-family:'Inter',sans-serif; font-size:.82rem; font-weight:600; cursor:pointer; transition:all .15s; }
+  .btn-primary { background:var(--cyan); color:#05101e; }
+  .btn-primary:hover { background:#00b8d9; transform:translateY(-1px); box-shadow:0 4px 14px rgba(0,212,245,.3); }
+  .btn-ghost { background:transparent; color:var(--muted); border:1px solid var(--border); }
+  .btn-ghost:hover { color:var(--text); background:var(--cyan-lo); border-color:rgba(0,212,245,.3); }
+  .btn-danger { background:transparent; color:var(--red); border:1px solid rgba(255,77,106,.25); }
+  .btn-danger:hover { background:rgba(255,77,106,.1); }
+  .btn-sm { padding:5px 11px; font-size:.75rem; }
+  .btn:disabled { opacity:.45; cursor:not-allowed; transform:none !important; }
+
+  /* ── Table ── */
+  table { width:100%; border-collapse:collapse; }
+  th { padding:10px 16px; text-align:left; font-size:.68rem; font-weight:600; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); border-bottom:1px solid var(--border); background:rgba(13,30,56,.5); }
+  td { padding:12px 16px; font-size:.83rem; border-bottom:1px solid rgba(0,212,245,.04); vertical-align:middle; }
+  tr:last-child td { border-bottom:none; }
+  tr:hover td { background:var(--cyan-lo); }
+  .actions { display:flex; gap:5px; }
+
+  /* ── Badges ── */
+  .badge { display:inline-flex; align-items:center; padding:2px 8px; border-radius:20px; font-size:.68rem; font-weight:600; }
+  .badge-id { font-family:var(--mono); font-size:.7rem; color:var(--cyan); background:rgba(0,212,245,.1); border:1px solid rgba(0,212,245,.18); padding:2px 7px; border-radius:4px; }
+  .badge-customer { color:var(--cyan); background:rgba(0,212,245,.1); border:1px solid rgba(0,212,245,.2); }
+  .badge-admin { color:var(--amber); background:rgba(255,184,48,.1); border:1px solid rgba(255,184,48,.2); }
+  .badge-main { color:var(--green); background:rgba(0,229,160,.1); border:1px solid rgba(0,229,160,.2); }
+  .badge-sub { color:var(--muted); background:rgba(107,133,168,.1); border:1px solid rgba(107,133,168,.2); }
+  .price { font-family:var(--mono); font-weight:500; color:var(--green); }
+
+  /* ── Avatar ── */
+  .avatar { width:30px; height:30px; border-radius:6px; background:var(--surface2); border:1px solid var(--border); display:flex; align-items:center; justify-content:center; font-weight:600; font-size:.82rem; color:var(--cyan); flex-shrink:0; }
+  .user-cell { display:flex; align-items:center; gap:9px; }
+  .user-info-name { font-weight:500; }
+  .user-info-sub { font-size:.72rem; color:var(--muted); margin-top:1px; }
+
+  /* ── Inline edit mode ── */
+  .edit-row td { background:rgba(0,212,245,.04); }
+  .edit-row input, .edit-row select { padding:5px 9px; font-size:.8rem; }
+
+  /* ── Tree (categories) ── */
+  .tree-item { display:flex; align-items:center; gap:10px; padding:11px 20px; border-bottom:1px solid rgba(0,212,245,.04); transition:background .15s; }
+  .tree-item:hover { background:var(--cyan-lo); }
+  .tree-item:last-child { border-bottom:none; }
+  .tree-item.child { padding-left:44px; border-left:2px solid var(--border); margin-left:20px; }
+  .tree-item-info { flex:1; }
+  .tree-item-name { font-size:.85rem; font-weight:500; }
+  .tree-item-desc { font-size:.73rem; color:var(--muted); margin-top:2px; }
+  .chevron { color:var(--muted); font-size:.8rem; }
+
+  /* ── Response display ── */
+  .response-box { background:var(--surface2); border:1px solid var(--border); border-radius:8px; padding:14px; font-family:var(--mono); font-size:.75rem; color:var(--green); white-space:pre-wrap; word-break:break-all; max-height:220px; overflow-y:auto; margin-top:12px; }
+  .response-box.error { color:var(--red); }
+  .response-box.empty { color:var(--muted); font-style:italic; }
+
+  /* ── Toast ── */
+  #toasts { position:fixed; bottom:20px; right:20px; z-index:999; display:flex; flex-direction:column; gap:7px; }
+  .toast { display:flex; align-items:center; gap:9px; padding:10px 16px; border-radius:9px; font-size:.81rem; font-weight:500; min-width:240px; animation:toastIn .2s ease; cursor:pointer; box-shadow:0 6px 20px rgba(0,0,0,.35); }
+  .toast.ok  { background:rgba(0,229,160,.15); border:1px solid rgba(0,229,160,.3); color:var(--green); }
+  .toast.err { background:rgba(255,77,106,.12); border:1px solid rgba(255,77,106,.3); color:var(--red); }
+  @keyframes toastIn { from{transform:translateX(110%);opacity:0} to{transform:translateX(0);opacity:1} }
+
+  /* ── Empty state ── */
+  .empty { text-align:center; padding:40px 20px; color:var(--muted); }
+  .empty .ico { font-size:2rem; opacity:.3; margin-bottom:10px; }
+
+  /* ── Spinner ── */
+  .spin { display:inline-block; width:15px; height:15px; border:2px solid var(--border); border-top-color:var(--cyan); border-radius:50%; animation:spin .6s linear infinite; }
+  @keyframes spin { to{transform:rotate(360deg)} }
+
+  /* ── Filter bar ── */
+  .filter-bar { display:flex; gap:8px; align-items:center; flex-wrap:wrap; padding:14px 20px; border-bottom:1px solid var(--border); background:rgba(13,30,56,.4); }
+  .filter-bar input, .filter-bar select { max-width:180px; }
+
+  /* ── Product grid ── */
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:14px; padding:20px; }
+  .product-card { background:var(--surface2); border:1px solid var(--border); border-radius:10px; padding:16px; cursor:pointer; transition:all .18s; }
+  .product-card:hover { border-color:rgba(0,212,245,.3); transform:translateY(-2px); box-shadow:0 6px 24px rgba(0,0,0,.3); }
+  .pc-name { font-weight:600; font-size:.88rem; margin-bottom:3px; }
+  .pc-company { font-size:.73rem; color:var(--muted); margin-bottom:9px; }
+  .pc-desc { font-size:.76rem; color:var(--muted); line-height:1.5; min-height:40px; margin-bottom:10px; }
+  .pc-footer { display:flex; align-items:center; justify-content:space-between; }
+  .pc-cat { font-size:.67rem; color:var(--muted); background:var(--surface); padding:2px 7px; border-radius:3px; }
+
+  /* ── Tabs (for products sub-views) ── */
+  .tabs { display:flex; gap:4px; padding:4px; background:var(--surface2); border-radius:9px; }
+  .tab { padding:6px 14px; border-radius:6px; border:none; font-family:'Inter',sans-serif; font-size:.78rem; font-weight:500; cursor:pointer; background:transparent; color:var(--muted); transition:all .14s; }
+  .tab.active { background:var(--surface); color:var(--cyan); box-shadow:0 1px 4px rgba(0,0,0,.2); }
+
+  .divider { height:1px; background:var(--border); margin:20px 0; }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="logo">yey<span>eea</span></div>
+  <span style="font-size:.75rem;color:var(--muted)">Proof of Concept</span>
+  <div class="api-url">
+    <div class="dot" id="api-dot"></div>
+    <input id="api-base" value="http://localhost:8080" placeholder="http://localhost:8080">
+  </div>
+</div>
+
+<div class="shell">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <nav>
+      <div class="section">Vue d'ensemble</div>
+      <button class="nav-btn active" onclick="go('dashboard', this)">
+        <span class="nav-icon">⬡</span> Dashboard
+      </button>
+
+      <div class="section">Catalogue</div>
+      <button class="nav-btn" onclick="go('products', this)">
+        <span class="nav-icon">◈</span> Produits
+      </button>
+      <button class="nav-btn" onclick="go('categories', this)">
+        <span class="nav-icon">◫</span> Catégories
+      </button>
+
+      <div class="section">Comptes</div>
+      <button class="nav-btn" onclick="go('users', this)">
+        <span class="nav-icon">◎</span> Utilisateurs
+      </button>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- ══════════════════ DASHBOARD ══════════════════ -->
+    <div class="page active" id="page-dashboard">
+      <div class="sec-header">
+        <div><div class="sec-title">Dashboard</div><div class="sec-sub">Aperçu général</div></div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:20px">
+        <div class="panel" style="border-top:2px solid var(--cyan)">
+          <div class="panel-body" style="text-align:center;padding:22px">
+            <div style="font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em">Utilisateurs</div>
+            <div style="font-size:2rem;font-family:var(--mono);font-weight:700;margin:6px 0" id="d-users">—</div>
+          </div>
+        </div>
+        <div class="panel" style="border-top:2px solid var(--cyan)">
+          <div class="panel-body" style="text-align:center;padding:22px">
+            <div style="font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em">Produits</div>
+            <div style="font-size:2rem;font-family:var(--mono);font-weight:700;margin:6px 0" id="d-products">—</div>
+          </div>
+        </div>
+        <div class="panel" style="border-top:2px solid var(--cyan)">
+          <div class="panel-body" style="text-align:center;padding:22px">
+            <div style="font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em">Catégories</div>
+            <div style="font-size:2rem;font-family:var(--mono);font-weight:700;margin:6px 0" id="d-cats">—</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+        <div class="panel">
+          <div class="panel-head">Derniers utilisateurs</div>
+          <div id="d-users-list"><div class="empty"><div class="ico">◎</div><p>Chargement...</p></div></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head">Derniers produits</div>
+          <div id="d-products-list"><div class="empty"><div class="ico">◈</div><p>Chargement...</p></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════ USERS ══════════════════ -->
+    <div class="page" id="page-users">
+      <div class="sec-header">
+        <div><div class="sec-title">Utilisateurs</div><div class="sec-sub" id="users-sub">—</div></div>
+        <div class="spacer"></div>
+        <button class="btn btn-primary" onclick="openUserForm()">+ Ajouter</button>
+      </div>
+
+      <!-- Add / Edit form -->
+      <div class="panel" id="user-form-panel" style="display:none">
+        <div class="panel-head" id="user-form-title">Ajouter un utilisateur</div>
+        <div class="panel-body">
+          <input type="hidden" id="uf-id">
+          <div class="form-row">
+            <div class="form-group"><label>Nom d'utilisateur</label><input id="uf-username" placeholder="john_doe"></div>
+            <div class="form-group"><label>Email</label><input id="uf-email" type="email" placeholder="john@example.com"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Mot de passe</label><input id="uf-password" type="password" placeholder="••••••••"></div>
+            <div class="form-group"><label>Type</label>
+              <select id="uf-type">
+                <option value="CUSTOMER">CUSTOMER</option>
+                <option value="ADMIN">ADMIN</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row" style="justify-content:flex-end;gap:8px">
+            <button class="btn btn-ghost" onclick="closeUserForm()">Annuler</button>
+            <button class="btn btn-primary" onclick="saveUser()">Enregistrer</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Filter -->
+      <div class="panel">
+        <div class="filter-bar">
+          <input id="u-search" placeholder="Rechercher par username..." oninput="filterUsers()" style="flex:1;max-width:280px">
+          <div class="form-group" style="flex:0 0 auto;gap:5px">
+            <div style="display:flex;gap:6px;align-items:center">
+              <span style="font-size:.75rem;color:var(--muted)">Par email :</span>
+              <input id="u-email-search" placeholder="email exact" style="width:200px">
+              <button class="btn btn-ghost btn-sm" onclick="searchUserByEmail()">Chercher</button>
+            </div>
+          </div>
+        </div>
+        <table>
+          <thead><tr><th>ID</th><th>Utilisateur</th><th>Email</th><th>Type</th><th>Actions</th></tr></thead>
+          <tbody id="users-tbody"></tbody>
+        </table>
+        <div id="users-empty" class="empty" style="display:none"><div class="ico">◎</div><p>Aucun utilisateur</p></div>
+      </div>
+    </div>
+
+    <!-- ══════════════════ PRODUCTS ══════════════════ -->
+    <div class="page" id="page-products">
+      <div class="sec-header">
+        <div><div class="sec-title">Produits</div><div class="sec-sub" id="products-sub">—</div></div>
+        <div class="spacer"></div>
+        <div class="tabs">
+          <button class="tab active" onclick="setProdTab('list',this)">Liste</button>
+          <button class="tab" onclick="setProdTab('grid',this)">Grille</button>
+          <button class="tab" onclick="setProdTab('search',this)">Recherche</button>
+        </div>
+        <button class="btn btn-primary" onclick="openProductForm()">+ Ajouter</button>
+      </div>
+
+      <!-- Add / Edit form -->
+      <div class="panel" id="product-form-panel" style="display:none">
+        <div class="panel-head" id="pf-title">Ajouter un produit</div>
+        <div class="panel-body">
+          <input type="hidden" id="pf-id">
+          <div class="form-row">
+            <div class="form-group"><label>Nom</label><input id="pf-name" placeholder="Nom du produit"></div>
+            <div class="form-group"><label>Marque</label><input id="pf-company" placeholder="Apple..."></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Description</label><input id="pf-desc" placeholder="Description courte"></div>
+            <div class="form-group"><label>Prix (€)</label><input id="pf-price" type="number" step="0.01" placeholder="0.00"></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Catégorie</label>
+              <select id="pf-cat"><option value="">— Aucune —</option></select>
+            </div>
+          </div>
+          <div class="form-row" style="justify-content:flex-end;gap:8px">
+            <button class="btn btn-ghost" onclick="closeProductForm()">Annuler</button>
+            <button class="btn btn-primary" onclick="saveProduct()">Enregistrer</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- LIST TAB -->
+      <div id="prod-tab-list" class="panel">
+        <div class="filter-bar">
+          <input id="p-search" placeholder="Filtrer par nom..." oninput="filterProducts()" style="flex:1;max-width:260px">
+          <select id="p-cat-filter" onchange="filterProducts()" style="max-width:180px">
+            <option value="">Toutes les catégories</option>
+          </select>
+        </div>
+        <table>
+          <thead><tr><th>ID</th><th>Nom</th><th>Marque</th><th>Catégorie</th><th>Prix</th><th>Actions</th></tr></thead>
+          <tbody id="products-tbody"></tbody>
+        </table>
+        <div id="products-empty" class="empty" style="display:none"><div class="ico">◈</div><p>Aucun produit</p></div>
+      </div>
+
+      <!-- GRID TAB -->
+      <div id="prod-tab-grid" style="display:none">
+        <div class="grid" id="products-grid"></div>
+        <div id="products-grid-empty" class="empty" style="display:none"><div class="ico">◈</div><p>Aucun produit</p></div>
+      </div>
+
+      <!-- SEARCH TAB -->
+      <div id="prod-tab-search" style="display:none">
+        <div class="panel">
+          <div class="panel-head">Recherche avancée</div>
+          <div class="panel-body" style="display:flex;flex-direction:column;gap:16px">
+
+            <div>
+              <div style="font-size:.76rem;color:var(--muted);margin-bottom:8px;font-weight:600">Par nom</div>
+              <div class="form-row">
+                <div class="form-group"><input id="s-name" placeholder="nom exact..."></div>
+                <button class="btn btn-ghost" onclick="searchByName()">Rechercher</button>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div>
+              <div style="font-size:.76rem;color:var(--muted);margin-bottom:8px;font-weight:600">Par catégorie</div>
+              <div class="form-row">
+                <div class="form-group">
+                  <select id="s-cat-id"><option value="">Choisir une catégorie...</option></select>
+                </div>
+                <button class="btn btn-ghost" onclick="searchByCategory()">Rechercher</button>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div>
+              <div style="font-size:.76rem;color:var(--muted);margin-bottom:8px;font-weight:600">Par prix exact</div>
+              <div class="form-row">
+                <div class="form-group"><input id="s-price" type="number" step="0.01" placeholder="Ex: 299.99"></div>
+                <button class="btn btn-ghost" onclick="searchByPrice()">Rechercher</button>
+              </div>
+            </div>
+
+            <div class="divider"></div>
+
+            <div>
+              <div style="font-size:.76rem;color:var(--muted);margin-bottom:8px;font-weight:600">Par fourchette de prix</div>
+              <div class="form-row">
+                <div class="form-group"><label>Prix min</label><input id="s-min" type="number" step="0.01" placeholder="0"></div>
+                <div class="form-group"><label>Prix max</label><input id="s-max" type="number" step="0.01" placeholder="9999"></div>
+                <button class="btn btn-ghost" onclick="searchByRange()" style="align-self:flex-end">Rechercher</button>
+              </div>
+            </div>
+
+            <div id="search-result" class="response-box empty" style="display:none"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ══════════════════ CATEGORIES ══════════════════ -->
+    <div class="page" id="page-categories">
+      <div class="sec-header">
+        <div><div class="sec-title">Catégories</div><div class="sec-sub" id="cats-sub">—</div></div>
+        <div class="spacer"></div>
+        <button class="btn btn-primary" onclick="openCatForm()">+ Ajouter</button>
+      </div>
+
+      <!-- Add / Edit form -->
+      <div class="panel" id="cat-form-panel" style="display:none">
+        <div class="panel-head" id="cf-title">Ajouter une catégorie</div>
+        <div class="panel-body">
+          <input type="hidden" id="cf-id">
+          <div class="form-row">
+            <div class="form-group"><label>Nom</label><input id="cf-name" placeholder="Électronique..."></div>
+            <div class="form-group"><label>Description</label><input id="cf-desc" placeholder="Description..."></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label>Catégorie parente</label>
+              <select id="cf-parent"><option value="">— Catégorie principale —</option></select>
+            </div>
+            <div class="form-group" style="justify-content:flex-end;padding-top:20px">
+              <label class="checkbox-row">
+                <input type="checkbox" id="cf-main"> Catégorie principale
+              </label>
+            </div>
+          </div>
+          <div class="form-row" style="justify-content:flex-end;gap:8px">
+            <button class="btn btn-ghost" onclick="closeCatForm()">Annuler</button>
+            <button class="btn btn-primary" onclick="saveCat()">Enregistrer</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tree -->
+      <div class="panel" id="cats-panel">
+        <div id="cats-tree"></div>
+        <div id="cats-empty" class="empty" style="display:none"><div class="ico">◫</div><p>Aucune catégorie</p></div>
+      </div>
+
+      <!-- Sub-categories explorer -->
+      <div class="panel" id="subcats-explorer" style="display:none">
+        <div class="panel-head" id="subcats-title">Sous-catégories</div>
+        <div id="subcats-body"></div>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- TOASTS -->
+<div id="toasts"></div>
+
+<script>
+// ─── Config ───────────────────────────────────────────────────
+const getBase = () => document.getElementById('api-base').value.replace(/\/$/, '');
+
+// ─── State ────────────────────────────────────────────────────
+let S = { users: [], products: [], categories: [], prodTab: 'list' };
+
+// ─── HTTP ─────────────────────────────────────────────────────
+async function http(method, path, body = null) {
+  const opts = {
+    method,
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+  };
+  if (body) opts.body = JSON.stringify(body);
+  const res = await fetch(getBase() + path, opts);
+  if (!res.ok) {
+    const err = await res.text();
+    throw new Error(`HTTP ${res.status} — ${err}`);
+  }
+  if (res.status === 204 || res.headers.get('content-length') === '0') return null;
+  const text = await res.text();
+  return text ? JSON.parse(text) : null;
+}
+
+const GET    = path          => http('GET',    path);
+const POST   = (path, body)  => http('POST',   path, body);
+const PUT    = (path, body)  => http('PUT',    path, body);
+const DELETE = path          => http('DELETE', path);
+
+// ─── Toast ────────────────────────────────────────────────────
+function toast(msg, ok = true) {
+  const el = document.createElement('div');
+  el.className = `toast ${ok ? 'ok' : 'err'}`;
+  el.innerHTML = `<span>${ok ? '✓' : '⚠'}</span><span>${msg}</span>`;
+  el.onclick = () => el.remove();
+  document.getElementById('toasts').appendChild(el);
+  setTimeout(() => el.remove(), 3500);
+}
+
+// ─── Navigation ───────────────────────────────────────────────
+function go(page, btn) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+}
+
+// ─── Load all ─────────────────────────────────────────────────
+async function loadAll() {
+  try {
+    const [users, products, categories] = await Promise.all([
+      GET('/users'), GET('/products'), GET('/categories')
+    ]);
+    S.users      = users      || [];
+    S.products   = products   || [];
+    S.categories = categories || [];
+    document.getElementById('api-dot').style.background = '#00e5a0';
+    document.getElementById('api-dot').style.boxShadow  = '0 0 6px #00e5a0';
+  } catch(e) {
+    S.users = []; S.products = []; S.categories = [];
+    document.getElementById('api-dot').style.background = '#ff4d6a';
+    document.getElementById('api-dot').style.boxShadow  = '0 0 6px #ff4d6a';
+    toast('API inaccessible — ' + e.message, false);
+  }
+  renderAll();
+}
+
+function renderAll() {
+  renderDashboard();
+  renderUsers();
+  renderProducts();
+  renderCategories();
+  populateCategorySelects();
+}
+
+// ─── DASHBOARD ────────────────────────────────────────────────
+function renderDashboard() {
+  document.getElementById('d-users').textContent    = S.users.length;
+  document.getElementById('d-products').textContent = S.products.length;
+  document.getElementById('d-cats').textContent     = S.categories.length;
+
+  document.getElementById('d-users-list').innerHTML = S.users.slice(0,4).map(u => `
+    <div class="tree-item">
+      <div class="avatar">${(u.username||'?')[0].toUpperCase()}</div>
+      <div class="tree-item-info">
+        <div class="tree-item-name">${esc(u.username||'—')}</div>
+        <div class="tree-item-desc">${esc(u.email||'—')}</div>
+      </div>
+      <span class="badge ${u.type==='ADMIN'?'badge-admin':'badge-customer'}">${u.type||'CUSTOMER'}</span>
+    </div>`).join('') || emptyHtml('◎','Aucun utilisateur');
+
+  document.getElementById('d-products-list').innerHTML = S.products.slice(0,4).map(p => `
+    <div class="tree-item">
+      <div class="tree-item-info">
+        <div class="tree-item-name">${esc(p.name||'—')}</div>
+        <div class="tree-item-desc">${esc(p.company||'—')}</div>
+      </div>
+      <span class="price">${p.price != null ? fmt(p.price) : '—'}</span>
+    </div>`).join('') || emptyHtml('◈','Aucun produit');
+}
+
+// ─── USERS ────────────────────────────────────────────────────
+function renderUsers(data = S.users) {
+  document.getElementById('users-sub').textContent = `${data.length} compte(s)`;
+  const tb = document.getElementById('users-tbody');
+  const em = document.getElementById('users-empty');
+
+  if (!data.length) { tb.innerHTML=''; em.style.display='block'; return; }
+  em.style.display = 'none';
+
+  tb.innerHTML = data.map(u => `
+    <tr>
+      <td><span class="badge-id">#${u.id}</span></td>
+      <td><div class="user-cell">
+        <div class="avatar">${(u.username||'?')[0].toUpperCase()}</div>
+        <div><div class="user-info-name">${esc(u.username||'—')}</div></div>
+      </div></td>
+      <td style="color:var(--muted)">${esc(u.email||'—')}</td>
+      <td><span class="badge ${u.type==='ADMIN'?'badge-admin':'badge-customer'}">${u.type||'CUSTOMER'}</span></td>
+      <td><div class="actions">
+        <button class="btn btn-ghost btn-sm" onclick='editUser(${JSON.stringify(u)})'>Éditer</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteUser(${u.id})">Suppr.</button>
+      </div></td>
+    </tr>`).join('');
+}
+
+function filterUsers() {
+  const q = document.getElementById('u-search').value.toLowerCase();
+  renderUsers(S.users.filter(u =>
+    (u.username||'').toLowerCase().includes(q) || (u.email||'').toLowerCase().includes(q)
+  ));
+}
+
+async function searchUserByEmail() {
+  const email = document.getElementById('u-email-search').value.trim();
+  if (!email) { renderUsers(); return; }
+  try {
+    const res = await GET(`/users/email/${encodeURIComponent(email)}`);
+    renderUsers(res || []);
+  } catch(e) { toast(e.message, false); }
+}
+
+function openUserForm(u = null) {
+  const panel = document.getElementById('user-form-panel');
+  panel.style.display = 'block';
+  document.getElementById('user-form-title').textContent = u ? 'Modifier l\'utilisateur' : 'Ajouter un utilisateur';
+  document.getElementById('uf-id').value       = u?.id || '';
+  document.getElementById('uf-username').value = u?.username || '';
+  document.getElementById('uf-email').value    = u?.email || '';
+  document.getElementById('uf-password').value = '';
+  document.getElementById('uf-type').value     = u?.type || 'CUSTOMER';
+  panel.scrollIntoView({ behavior:'smooth' });
+}
+
+function editUser(u) { openUserForm(u); }
+
+function closeUserForm() {
+  document.getElementById('user-form-panel').style.display = 'none';
+}
+
+async function saveUser() {
+  const id  = document.getElementById('uf-id').value;
+  const body = {
+    username: document.getElementById('uf-username').value,
+    email:    document.getElementById('uf-email').value,
+    password: document.getElementById('uf-password').value || undefined,
+    type:     document.getElementById('uf-type').value,
+  };
+  if (!body.username || !body.email) { toast('Username et email requis', false); return; }
+  try {
+    if (id) {
+      await PUT(`/users/${id}`, body);
+      toast('Utilisateur mis à jour ✓');
+    } else {
+      await POST('/users', body);
+      toast('Utilisateur ajouté ✓');
+    }
+    closeUserForm();
+    await reload('users');
+  } catch(e) { toast(e.message, false); }
+}
+
+async function deleteUser(id) {
+  if (!confirm('Supprimer cet utilisateur ?')) return;
+  try {
+    await DELETE(`/users/${id}`);
+    toast('Utilisateur supprimé');
+    await reload('users');
+  } catch(e) { toast(e.message, false); }
+}
+
+// ─── PRODUCTS ─────────────────────────────────────────────────
+function renderProducts(data = S.products) {
+  document.getElementById('products-sub').textContent = `${data.length} produit(s)`;
+
+  const tb = document.getElementById('products-tbody');
+  const em = document.getElementById('products-empty');
+  const gr = document.getElementById('products-grid');
+  const ge = document.getElementById('products-grid-empty');
+
+  if (!data.length) {
+    tb.innerHTML=''; em.style.display='block';
+    gr.innerHTML=''; ge.style.display='block';
+    return;
+  }
+  em.style.display='none'; ge.style.display='none';
+
+  tb.innerHTML = data.map(p => `
+    <tr>
+      <td><span class="badge-id">#${p.id}</span></td>
+      <td style="font-weight:500">${esc(p.name||'—')}</td>
+      <td style="color:var(--muted)">${esc(p.company||'—')}</td>
+      <td>${p.category ? `<span class="badge badge-sub">${esc(p.category.name)}</span>` : '<span style="color:var(--muted)">—</span>'}</td>
+      <td><span class="price">${p.price != null ? fmt(p.price) : '—'}</span></td>
+      <td><div class="actions">
+        <button class="btn btn-ghost btn-sm" onclick='editProduct(${JSON.stringify(p)})'>Éditer</button>
+        <button class="btn btn-danger btn-sm" onclick="deleteProduct(${p.id})">Suppr.</button>
+      </div></td>
+    </tr>`).join('');
+
+  gr.innerHTML = data.map(p => `
+    <div class="product-card" onclick='editProduct(${JSON.stringify(p).replace(/'/g,"&#39;")})'>
+      <div class="pc-name">${esc(p.name||'—')}</div>
+      <div class="pc-company">${esc(p.company||'—')}</div>
+      <div class="pc-desc">${esc(p.description||'Aucune description')}</div>
+      <div class="pc-footer">
+        <span class="price">${p.price != null ? fmt(p.price) : '—'}</span>
+        ${p.category ? `<span class="pc-cat">${esc(p.category.name)}</span>` : ''}
+      </div>
+    </div>`).join('');
+}
+
+function filterProducts() {
+  const q   = document.getElementById('p-search').value.toLowerCase();
+  const cat = document.getElementById('p-cat-filter').value;
+  renderProducts(S.products.filter(p =>
+    (p.name||'').toLowerCase().includes(q) &&
+    (!cat || p.category?.id == cat)
+  ));
+}
+
+function setProdTab(tab, btn) {
+  S.prodTab = tab;
+  ['list','grid','search'].forEach(t => {
+    const el = document.getElementById('prod-tab-' + t);
+    if (el) el.style.display = t === tab ? (t==='grid'?'block':'block') : 'none';
+  });
+  document.querySelectorAll('.tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function openProductForm(p = null) {
+  const panel = document.getElementById('product-form-panel');
+  panel.style.display = 'block';
+  document.getElementById('pf-title').textContent = p ? 'Modifier le produit' : 'Ajouter un produit';
+  document.getElementById('pf-id').value      = p?.id || '';
+  document.getElementById('pf-name').value    = p?.name || '';
+  document.getElementById('pf-company').value = p?.company || '';
+  document.getElementById('pf-desc').value    = p?.description || '';
+  document.getElementById('pf-price').value   = p?.price ?? '';
+  document.getElementById('pf-cat').value     = p?.category?.id || '';
+  panel.scrollIntoView({ behavior:'smooth' });
+}
+
+function editProduct(p) { openProductForm(p); }
+function closeProductForm() { document.getElementById('product-form-panel').style.display = 'none'; }
+
+async function saveProduct() {
+  const id  = document.getElementById('pf-id').value;
+  const catId = document.getElementById('pf-cat').value;
+  const cat   = catId ? (S.categories.find(c => c.id == catId) || null) : null;
+  const body  = {
+    name:        document.getElementById('pf-name').value,
+    company:     document.getElementById('pf-company').value,
+    description: document.getElementById('pf-desc').value,
+    price:       parseFloat(document.getElementById('pf-price').value) || null,
+    category:    cat,
+  };
+  if (!body.name) { toast('Le nom est requis', false); return; }
+  try {
+    if (id) {
+      await PUT(`/products/${id}`, body);
+      toast('Produit mis à jour ✓');
+    } else {
+      await POST('/products', body);
+      toast('Produit ajouté ✓');
+    }
+    closeProductForm();
+    await reload('products');
+  } catch(e) { toast(e.message, false); }
+}
+
+async function deleteProduct(id) {
+  if (!confirm('Supprimer ce produit ?')) return;
+  try {
+    await DELETE(`/products/${id}`);
+    toast('Produit supprimé');
+    await reload('products');
+  } catch(e) { toast(e.message, false); }
+}
+
+// ─── Product search tab ───────────────────────────────────────
+function showSearchResult(data) {
+  const box = document.getElementById('search-result');
+  box.style.display = 'block';
+  if (!data || !data.length) {
+    box.className = 'response-box empty';
+    box.textContent = 'Aucun résultat.';
+    return;
+  }
+  box.className = 'response-box';
+  box.textContent = JSON.stringify(data, null, 2);
+}
+
+async function searchByName() {
+  const name = document.getElementById('s-name').value.trim();
+  if (!name) return;
+  try { showSearchResult(await GET(`/products/name/${encodeURIComponent(name)}`)); }
+  catch(e) { toast(e.message, false); }
+}
+
+async function searchByCategory() {
+  const id = document.getElementById('s-cat-id').value;
+  if (!id) return;
+  try { showSearchResult(await GET(`/products/category/${id}`)); }
+  catch(e) { toast(e.message, false); }
+}
+
+async function searchByPrice() {
+  const p = document.getElementById('s-price').value;
+  if (!p) return;
+  try { showSearchResult(await GET(`/products/price/${p}`)); }
+  catch(e) { toast(e.message, false); }
+}
+
+async function searchByRange() {
+  const min = document.getElementById('s-min').value;
+  const max = document.getElementById('s-max').value;
+  if (!min || !max) { toast('Min et max requis', false); return; }
+  try { showSearchResult(await GET(`/products/price-range/${min}/${max}`)); }
+  catch(e) { toast(e.message, false); }
+}
+
+// ─── CATEGORIES ───────────────────────────────────────────────
+function renderCategories(data = S.categories) {
+  document.getElementById('cats-sub').textContent = `${data.length} catégorie(s)`;
+  const container = document.getElementById('cats-tree');
+  const em        = document.getElementById('cats-empty');
+
+  if (!data.length) { container.innerHTML=''; em.style.display='block'; return; }
+  em.style.display = 'none';
+
+  const mains = data.filter(c => c.isMainCategory || !c.parentCategory);
+  const subs  = data.filter(c => !c.isMainCategory && c.parentCategory);
+
+  let html = '';
+  mains.forEach(cat => {
+    html += catRow(cat, false);
+    subs.filter(s => s.parentCategory?.id === cat.id).forEach(sub => {
+      html += catRow(sub, true);
+    });
+  });
+  // orphan subs
+  subs.filter(s => !mains.find(m => m.id === s.parentCategory?.id))
+      .forEach(cat => { html += catRow(cat, false); });
+
+  container.innerHTML = html;
+}
+
+function catRow(cat, isChild) {
+  return `
+  <div class="tree-item ${isChild ? 'child' : ''}">
+    ${isChild ? '<span class="chevron">↳</span>' : ''}
+    <div class="tree-item-info">
+      <div class="tree-item-name">${esc(cat.name||'—')}</div>
+      ${cat.description ? `<div class="tree-item-desc">${esc(cat.description)}</div>` : ''}
+    </div>
+    <span class="badge ${cat.isMainCategory?'badge-main':'badge-sub'}" style="margin:0 10px">
+      ${cat.isMainCategory ? 'Principal' : 'Sous-cat.'}
+    </span>
+    <span class="badge-id" style="margin-right:10px">#${cat.id}</span>
+    <button class="btn btn-ghost btn-sm" onclick="viewSubcats(${cat.id},'${esc(cat.name)}')">Sous-cats</button>
+    <div class="actions" style="margin-left:5px">
+      <button class="btn btn-ghost btn-sm" onclick='editCat(${JSON.stringify(cat)})'>Éditer</button>
+      <button class="btn btn-danger btn-sm" onclick="deleteCat(${cat.id})">Suppr.</button>
+    </div>
+  </div>`;
+}
+
+async function viewSubcats(id, name) {
+  const panel = document.getElementById('subcats-explorer');
+  const body  = document.getElementById('subcats-body');
+  const title = document.getElementById('subcats-title');
+  panel.style.display = 'block';
+  title.textContent   = `Sous-catégories de « ${name} »`;
+  body.innerHTML      = '<div class="empty" style="padding:20px"><div class="spin"></div></div>';
+  try {
+    const subs = await GET(`/categories/${id}/subcategories`);
+    if (!subs || !subs.length) {
+      body.innerHTML = '<div class="empty"><div class="ico">◫</div><p>Aucune sous-catégorie</p></div>';
+    } else {
+      body.innerHTML = subs.map(s => catRow(s, false)).join('');
+    }
+  } catch(e) {
+    body.innerHTML = `<div class="empty"><p style="color:var(--red)">${e.message}</p></div>`;
+  }
+  panel.scrollIntoView({ behavior:'smooth' });
+}
+
+function openCatForm(c = null) {
+  const panel = document.getElementById('cat-form-panel');
+  panel.style.display = 'block';
+  document.getElementById('cf-title').textContent = c ? 'Modifier la catégorie' : 'Ajouter une catégorie';
+  document.getElementById('cf-id').value     = c?.id || '';
+  document.getElementById('cf-name').value   = c?.name || '';
+  document.getElementById('cf-desc').value   = c?.description || '';
+  document.getElementById('cf-parent').value = c?.parentCategory?.id || '';
+  document.getElementById('cf-main').checked = c?.isMainCategory || false;
+  panel.scrollIntoView({ behavior:'smooth' });
+}
+
+function editCat(c) { openCatForm(c); }
+function closeCatForm() { document.getElementById('cat-form-panel').style.display = 'none'; }
+
+async function saveCat() {
+  const id     = document.getElementById('cf-id').value;
+  const pId    = document.getElementById('cf-parent').value;
+  const parent = pId ? (S.categories.find(c => c.id == pId) || null) : null;
+  const body   = {
+    name:           document.getElementById('cf-name').value,
+    description:    document.getElementById('cf-desc').value,
+    isMainCategory: document.getElementById('cf-main').checked,
+    parentCategory: parent,
+    subCategories:  [],
+    categoryDescriptions: {},
+  };
+  if (!body.name) { toast('Le nom est requis', false); return; }
+  try {
+    if (id) {
+      await PUT(`/categories/${id}`, body);
+      toast('Catégorie mise à jour ✓');
+    } else {
+      await POST('/categories', body);
+      toast('Catégorie ajoutée ✓');
+    }
+    closeCatForm();
+    await reload('categories');
+  } catch(e) { toast(e.message, false); }
+}
+
+async function deleteCat(id) {
+  if (!confirm('Supprimer cette catégorie ?')) return;
+  try {
+    await DELETE(`/categories/${id}`);
+    toast('Catégorie supprimée');
+    await reload('categories');
+  } catch(e) { toast(e.message, false); }
+}
+
+// ─── Helpers ──────────────────────────────────────────────────
+function populateCategorySelects() {
+  const opts = S.categories.map(c => `<option value="${c.id}">${esc(c.name||'—')}</option>`).join('');
+  ['pf-cat','cf-parent','s-cat-id','p-cat-filter'].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    const placeholder = id === 'pf-cat'      ? '— Aucune —'
+                      : id === 'cf-parent'   ? '— Catégorie principale —'
+                      : id === 's-cat-id'    ? 'Choisir une catégorie...'
+                      : 'Toutes les catégories';
+    el.innerHTML = `<option value="">${placeholder}</option>` + opts;
+  });
+}
+
+async function reload(entity) {
+  try {
+    if (entity === 'users')      S.users      = await GET('/users')      || [];
+    if (entity === 'products')   S.products   = await GET('/products')   || [];
+    if (entity === 'categories') S.categories = await GET('/categories') || [];
+  } catch(e) { /* keep existing */ }
+  renderAll();
+}
+
+function fmt(price) {
+  return Number(price).toLocaleString('fr-FR', { minimumFractionDigits:2, maximumFractionDigits:2 }) + ' €';
+}
+
+function esc(str) {
+  return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function emptyHtml(ico, msg) {
+  return `<div class="empty"><div class="ico">${ico}</div><p>${msg}</p></div>`;
+}
+
+// ─── Init ─────────────────────────────────────────────────────
+loadAll();
+</script>
+</body>
+</html>

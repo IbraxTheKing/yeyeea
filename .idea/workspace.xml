@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="Ajout de fichier de population + mis a jour des liens DB">
-      <change afterPath="$PROJECT_DIR$/Persistence/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="changement dans le gitignore et creation de persistence.xml (avec mot de passe et utilisateur de test); TODO: faire que ces informations sensible doivent etre parse avec un .env">
+      <change afterPath="$PROJECT_DIR$/Business/src/test/kotlin/PopulateTest1.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/filters/CorsFilter.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ia_slop_test/yeyeea-poc.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/src/test/kotlin/PopulateTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Business/src/test/kotlin/PopulateTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/Main.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +54,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$MAVEN_REPOSITORY$/jakarta/ws/rs/jakarta.ws.rs-api/3.1.0/jakarta.ws.rs-api-3.1.0-sources.jar!/jakarta/ws/rs/GET.java" root0="SKIP_INSPECTION" />
   </component>
+  <component name="HttpClientOnboardingState"><![CDATA[{
+  "isOnboardingCommentShown": true
+}]]></component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
@@ -57,60 +64,60 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.000000023630474" />
-      <entry key="S5" value="1.0009350561182808" />
-      <entry key="S10" value="1.0424307177253864" />
-      <entry key="S30" value="1.9609690687215369" />
-      <entry key="S60" value="3.7409891318752764" />
-      <entry key="M2" value="8.080382042337403" />
-      <entry key="M5" value="18.15460676363965" />
-      <entry key="M10" value="25.377790828177083" />
-      <entry key="M15" value="28.610329521001457" />
-      <entry key="M30" value="32.47964834152991" />
-      <entry key="H1" value="37.19836931500168" />
-      <entry key="H2" value="64.66761708789636" />
-      <entry key="H4" value="166.36429617619856" />
-      <entry key="D1" value="606.7434822884123" />
-      <entry key="W1" value="787.304582739659" />
+      <entry key="MS500" value="1.0000578228802857" />
+      <entry key="S2" value="1.0872016957152282" />
+      <entry key="S5" value="1.3768859712579167" />
+      <entry key="S10" value="1.6139103935086263" />
+      <entry key="S30" value="1.8499009773959094" />
+      <entry key="S60" value="1.92190074161947" />
+      <entry key="M2" value="1.9601580359346338" />
+      <entry key="M5" value="2.0153564236412675" />
+      <entry key="M10" value="3.5214375549854546" />
+      <entry key="M15" value="7.768717391185132" />
+      <entry key="M30" value="24.131012736302182" />
+      <entry key="H1" value="46.8541176748762" />
+      <entry key="H2" value="83.78957282082212" />
+      <entry key="H4" value="184.35515894560865" />
+      <entry key="D1" value="639.6665541204561" />
+      <entry key="W1" value="834.9686819473114" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="9.539752363729119E-251" />
-      <entry key="S2" value="3.1256569276080477E-63" />
-      <entry key="S5" value="1.0231798674745205E-25" />
-      <entry key="S10" value="3.6828567629625343E-13" />
-      <entry key="S30" value="1.055917558383502E-4" />
-      <entry key="S60" value="0.01437583457351737" />
-      <entry key="M2" value="0.169096513078018" />
-      <entry key="M5" value="0.7440175239737586" />
-      <entry key="M10" value="1.219715124627" />
-      <entry key="M15" value="1.438268338633273" />
-      <entry key="M30" value="1.7047874820702391" />
-      <entry key="H1" value="2.248904186032928" />
-      <entry key="H2" value="5.721401666229874" />
-      <entry key="H4" value="18.01753671325172" />
-      <entry key="D1" value="71.5712360108887" />
-      <entry key="W1" value="93.63511108004849" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="3.381058942689676E-202" />
+      <entry key="S10" value="1.83876560297654E-101" />
+      <entry key="S30" value="2.6394301156548118E-34" />
+      <entry key="S60" value="1.6286773293282077E-17" />
+      <entry key="M2" value="4.3144073271072486E-9" />
+      <entry key="M5" value="6.685604085139103E-4" />
+      <entry key="M10" value="0.04238427478781003" />
+      <entry key="M15" value="0.1732154713602401" />
+      <entry key="M30" value="0.7189074522091267" />
+      <entry key="H1" value="1.6717607741443596" />
+      <entry key="H2" value="4.810119312889883" />
+      <entry key="H4" value="16.076622065013076" />
+      <entry key="D1" value="70.56413238715396" />
+      <entry key="W1" value="94.25664551514359" />
     </decayedSelected>
     <decayedShown>
       <entry key="MS100" value="0.8766057213160351" />
-      <entry key="MS500" value="0.974004268543241" />
-      <entry key="S2" value="0.9934367581913031" />
-      <entry key="S5" value="0.9982944670325764" />
-      <entry key="S10" value="1.0400426918312748" />
-      <entry key="S30" value="1.9451881148023693" />
-      <entry key="S60" value="3.7332931393670417" />
-      <entry key="M2" value="8.223977463904127" />
-      <entry key="M5" value="18.874838720136236" />
-      <entry key="M10" value="26.580511417565457" />
-      <entry key="M15" value="30.03570691690567" />
-      <entry key="M30" value="34.17704495088579" />
-      <entry key="H1" value="39.443063317263324" />
-      <entry key="H2" value="70.38520650690211" />
-      <entry key="H4" value="184.3759611628765" />
-      <entry key="D1" value="678.3104237707446" />
-      <entry key="W1" value="880.9388767568053" />
+      <entry key="MS500" value="0.9740495726072861" />
+      <entry key="S2" value="1.0754783666656953" />
+      <entry key="S5" value="1.3651711930049502" />
+      <entry key="S10" value="1.6051504455993202" />
+      <entry key="S30" value="1.84601300677543" />
+      <entry key="S60" value="1.9198087355528755" />
+      <entry key="M2" value="1.9590726832476493" />
+      <entry key="M5" value="2.015571787222917" />
+      <entry key="M10" value="3.5632571916781095" />
+      <entry key="M15" value="7.940811067042168" />
+      <entry key="M30" value="24.847742392338883" />
+      <entry key="H1" value="48.523522186933356" />
+      <entry key="H2" value="88.59683265424916" />
+      <entry key="H4" value="200.4267402907925" />
+      <entry key="D1" value="710.2264960113721" />
+      <entry key="W1" value="929.2245115088339" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -132,6 +139,7 @@
   "keyToString": {
     "Kotlin.MainKt.executor": "Run",
     "Kotlin.PopulateTest.executor": "Run",
+    "Kotlin.PopulateTestKt.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
@@ -150,7 +158,7 @@
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
     "last_directory_selection": "C:/dev/yeyeea/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver",
-    "last_opened_file_path": "C:/dev/yeyeea",
+    "last_opened_file_path": "C:/dev/yeyeea/ia_slop_test",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -170,6 +178,9 @@
   }
 }]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\dev\yeyeea\ia_slop_test" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\dev\yeyeea\Persistence\src\main\resources\META-INF" />
     </key>
@@ -196,9 +207,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PopulateTestKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PopulateTestKt" />
+      <module name="Business" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.PopulateTestKt" />
         <item itemvalue="Kotlin.PopulateTest" />
       </list>
     </recent_temporary>
@@ -225,7 +244,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1780994997629</updated>
-      <workItem from="1781599715728" duration="660000" />
+      <workItem from="1781599715728" duration="3631000" />
     </task>
     <task id="LOCAL-00001" summary="debut du projj">
       <option name="closed" value="true" />
@@ -299,7 +318,23 @@
       <option name="project" value="LOCAL" />
       <updated>1781597453583</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="changement dans le gitignore et creation de persistence.xml (avec mot de passe et utilisateur de test); TODO: faire que ces informations sensible doivent etre parse avec un .env">
+      <option name="closed" value="true" />
+      <created>1781600512496</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1781600512496</updated>
+    </task>
+    <task id="LOCAL-00011" summary="changement dans le gitignore et creation de persistence.xml (avec mot de passe et utilisateur de test); TODO: faire que ces informations sensible doivent etre parse avec un .env">
+      <option name="closed" value="true" />
+      <created>1781600543543</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1781600543543</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,7 +373,8 @@
     <MESSAGE value="changement de la structure du projet - c'etait pas du tout Java-like" />
     <MESSAGE value="Mise a jour du client REST, prés à l'emploie." />
     <MESSAGE value="Ajout de fichier de population + mis a jour des liens DB" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de fichier de population + mis a jour des liens DB" />
+    <MESSAGE value="changement dans le gitignore et creation de persistence.xml (avec mot de passe et utilisateur de test); TODO: faire que ces informations sensible doivent etre parse avec un .env" />
+    <option name="LAST_COMMIT_MESSAGE" value="changement dans le gitignore et creation de persistence.xml (avec mot de passe et utilisateur de test); TODO: faire que ces informations sensible doivent etre parse avec un .env" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
