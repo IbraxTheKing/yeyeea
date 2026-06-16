@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="Ajout de fichier de population + mis a jour des liens DB">
+      <change afterPath="$PROJECT_DIR$/Persistence/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="65" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Interface" />
+        <option value="Kotlin Annotation" />
+        <option value="Kotlin Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
+    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;IbraxTheKing&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/IbraxTheKing/yeyeea.git&quot;,
+    &quot;accountId&quot;: &quot;1000be42-f3c5-405f-912b-e9b90fe0c824&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$MAVEN_REPOSITORY$/jakarta/ws/rs/jakarta.ws.rs-api/3.1.0/jakarta.ws.rs-api-3.1.0-sources.jar!/jakarta/ws/rs/GET.java" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="NextEditCompletionFeaturesState">
+    <decayedCancelled>
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.000000023630474" />
+      <entry key="S5" value="1.0009350561182808" />
+      <entry key="S10" value="1.0424307177253864" />
+      <entry key="S30" value="1.9609690687215369" />
+      <entry key="S60" value="3.7409891318752764" />
+      <entry key="M2" value="8.080382042337403" />
+      <entry key="M5" value="18.15460676363965" />
+      <entry key="M10" value="25.377790828177083" />
+      <entry key="M15" value="28.610329521001457" />
+      <entry key="M30" value="32.47964834152991" />
+      <entry key="H1" value="37.19836931500168" />
+      <entry key="H2" value="64.66761708789636" />
+      <entry key="H4" value="166.36429617619856" />
+      <entry key="D1" value="606.7434822884123" />
+      <entry key="W1" value="787.304582739659" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="9.539752363729119E-251" />
+      <entry key="S2" value="3.1256569276080477E-63" />
+      <entry key="S5" value="1.0231798674745205E-25" />
+      <entry key="S10" value="3.6828567629625343E-13" />
+      <entry key="S30" value="1.055917558383502E-4" />
+      <entry key="S60" value="0.01437583457351737" />
+      <entry key="M2" value="0.169096513078018" />
+      <entry key="M5" value="0.7440175239737586" />
+      <entry key="M10" value="1.219715124627" />
+      <entry key="M15" value="1.438268338633273" />
+      <entry key="M30" value="1.7047874820702391" />
+      <entry key="H1" value="2.248904186032928" />
+      <entry key="H2" value="5.721401666229874" />
+      <entry key="H4" value="18.01753671325172" />
+      <entry key="D1" value="71.5712360108887" />
+      <entry key="W1" value="93.63511108004849" />
+    </decayedSelected>
+    <decayedShown>
+      <entry key="MS100" value="0.8766057213160351" />
+      <entry key="MS500" value="0.974004268543241" />
+      <entry key="S2" value="0.9934367581913031" />
+      <entry key="S5" value="0.9982944670325764" />
+      <entry key="S10" value="1.0400426918312748" />
+      <entry key="S30" value="1.9451881148023693" />
+      <entry key="S60" value="3.7332931393670417" />
+      <entry key="M2" value="8.223977463904127" />
+      <entry key="M5" value="18.874838720136236" />
+      <entry key="M10" value="26.580511417565457" />
+      <entry key="M15" value="30.03570691690567" />
+      <entry key="M30" value="34.17704495088579" />
+      <entry key="H1" value="39.443063317263324" />
+      <entry key="H2" value="70.38520650690211" />
+      <entry key="H4" value="184.3759611628765" />
+      <entry key="D1" value="678.3104237707446" />
+      <entry key="W1" value="880.9388767568053" />
+    </decayedShown>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6,
+  &quot;fromUser&quot;: false
+}</component>
+  <component name="ProjectId" id="3EtPfMgqa8Vg61rJpKjRvWgv2Y8" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Kotlin.MainKt.executor": "Run",
+    "Kotlin.PopulateTest.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/dev/yeyeea/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver",
+    "last_opened_file_path": "C:/dev/yeyeea",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb"
+    ]
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\yeyeea\Persistence\src\main\resources\META-INF" />
+    </key>
+    <key name="CreateKotlinClassDialog.RecentsKey">
+      <recent name="jpa" />
+      <recent name="ax.ibr.entities" />
+    </key>
+    <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="ax.ibr.entities" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Kotlin.MainKt">
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ax.ibr.yeyeea.restserver.MainKt" />
+      <module name="RestServer" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PopulateTest" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PopulateTest" />
+      <module name="Business" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.PopulateTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-37e91769500f-intellij.indexing.shared.core-IU-261.25134.95" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="ShelveChangesManager">
+    <option name="groupingKeys">
+      <option value="directory" />
+    </option>
+  </component>
+  <component name="StructureViewState">
+    <option name="selectedTab" value="Logical" />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="" />
+      <created>1780994997629</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1780994997629</updated>
+      <workItem from="1781599715728" duration="660000" />
+    </task>
+    <task id="LOCAL-00001" summary="debut du projj">
+      <option name="closed" value="true" />
+      <created>1781012208575</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1781012208575</updated>
+    </task>
+    <task id="LOCAL-00002" summary="correction">
+      <option name="closed" value="true" />
+      <created>1781012863275</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1781012863275</updated>
+    </task>
+    <task id="LOCAL-00003" summary="correction et ajout de support JDBC">
+      <option name="closed" value="true" />
+      <created>1781015354648</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1781015354648</updated>
+    </task>
+    <task id="LOCAL-00004" summary="cleanupp">
+      <option name="closed" value="true" />
+      <created>1781015600130</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1781015600130</updated>
+    </task>
+    <task id="LOCAL-00005" summary="cleanupp + ajout des derniers Resources">
+      <option name="closed" value="true" />
+      <created>1781016659728</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1781016659728</updated>
+    </task>
+    <task id="LOCAL-00006" summary="ajout du template angular">
+      <option name="closed" value="true" />
+      <created>1781019726152</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1781019726152</updated>
+    </task>
+    <task id="LOCAL-00007" summary="changement de la structure du projet - c'etait pas du tout Java-like">
+      <option name="closed" value="true" />
+      <created>1781021350218</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1781021350218</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Mise a jour du client REST, prés à l'emploie.">
+      <option name="closed" value="true" />
+      <created>1781256214973</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1781256214973</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Ajout de fichier de population + mis a jour des liens DB">
+      <option name="closed" value="true" />
+      <created>1781597453582</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1781597453583</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="debut du projj" />
+    <MESSAGE value="correction" />
+    <MESSAGE value="correction et ajout de support JDBC" />
+    <MESSAGE value="cleanupp" />
+    <MESSAGE value="cleanupp + ajout des derniers Resources" />
+    <MESSAGE value="ajout du template angular" />
+    <MESSAGE value="changement de la structure du projet - c'etait pas du tout Java-like" />
+    <MESSAGE value="Mise a jour du client REST, prés à l'emploie." />
+    <MESSAGE value="Ajout de fichier de population + mis a jour des liens DB" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de fichier de population + mis a jour des liens DB" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
