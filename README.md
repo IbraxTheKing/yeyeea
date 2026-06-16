@@ -35,10 +35,10 @@ Project
 │   ├── DTOs
 │   └── Services Interfaces
 │
-├── Data
+├── Persistence
 │   ├── JPA Implementations
+│   ├── JDBC Implementations
 │   ├── Database Access
-│   └── Persistence Layer
 │
 ├── Business
 │   ├── Business Services
