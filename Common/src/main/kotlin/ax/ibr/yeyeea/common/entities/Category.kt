@@ -1,5 +1,7 @@
 package ax.ibr.yeyeea.common.entities
 
+import com.fasterxml.jackson.annotation.JsonBackReference
+import com.fasterxml.jackson.annotation.JsonManagedReference
 import jakarta.persistence.*
 
 /**
@@ -19,11 +21,13 @@ open class Category() {
 
     var isMainCategory: Boolean = false
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "parent_id")
     var parentCategory: Category? = null
 
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "parentCategory", cascade = [CascadeType.ALL])
     var subCategories: MutableList<Category> = mutableListOf()
 

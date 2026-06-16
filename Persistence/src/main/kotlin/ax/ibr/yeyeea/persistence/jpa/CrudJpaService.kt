@@ -1,40 +1,108 @@
 package ax.ibr.yeyeea.persistence.jpa
 
 import jakarta.persistence.EntityManager
-import ax.ibr.yeyeea.common.services.CrudService
 
-open class CrudJpaService<T : Any>(
+
+open class CrudJpaService<T>(
     protected val em: EntityManager,
     private val entityClass: Class<T>
-) : CrudService<T> {
 
-    override fun add(t: T) {
-        em.transaction.begin()
-        em.persist(t)
-        em.transaction.commit()
+) {
+    private var entityName: String? = entityClass.simpleName
+
+    open fun add(t: T) {
+
+        val tx = em.transaction
+
+        try {
+
+            tx.begin()
+
+            em.persist(t)
+
+            tx.commit()
+
+
+        } catch(e: Exception) {
+
+            if (tx.isActive)
+                tx.rollback()
+
+            throw e
+        }
     }
 
-    override fun update(t: T) {
-        em.transaction.begin()
-        em.merge(t)
-        em.transaction.commit()
+
+
+    open fun update(t: T) {
+
+        val tx = em.transaction
+
+        try {
+
+            tx.begin()
+
+            em.merge(t)
+
+            tx.commit()
+
+
+        } catch(e: Exception) {
+
+            if(tx.isActive)
+                tx.rollback()
+
+            throw e
+        }
     }
 
-    override fun remove(t: T) {
-        em.transaction.begin()
-        val managed = if (em.contains(t)) t else em.merge(t)
-        em.remove(managed)
-        em.transaction.commit()
+
+
+    open fun remove(t: T) {
+
+        val tx = em.transaction
+
+        try {
+
+            tx.begin()
+
+            em.remove(
+                if(em.contains(t))
+                    t
+                else
+                    em.merge(t)
+            )
+
+            tx.commit()
+
+
+        } catch(e: Exception) {
+
+            if(tx.isActive)
+                tx.rollback()
+
+            throw e
+        }
     }
 
-    override fun getAll(): List<T> {
+
+
+    open fun getAll(): List<T> {
+
         return em.createQuery(
-            "SELECT e FROM ${entityClass.simpleName} e",
+            "SELECT e FROM $entityName e",
             entityClass
         ).resultList
+
     }
 
-    override fun getById(id: Long): T? {
-        return em.find(entityClass, id)
+
+
+    open fun getById(id: Long): T? {
+
+        return em.find(
+            entityClass,
+            id
+        )
     }
 }
