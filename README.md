@@ -1,4 +1,4 @@
-# Website Template Starter
+# Website Template Starter - Yeyeea
 
 A reusable full-stack website template designed to serve as a foundation for future projects, client websites, and personal applications.
 
