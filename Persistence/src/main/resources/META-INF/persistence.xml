@@ -31,8 +31,6 @@
             <property name="jakarta.persistence.jdbc.password"
                       value="1010"/>
 
-
-            <!-- évite l'effacement -->
             <property name="jakarta.persistence.schema-generation.database.action"
                       value="create"/>
 

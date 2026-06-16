@@ -17,6 +17,7 @@ open class Product {
     var price: Float? = null
     var description: String? = null
     var name: String? = null
+    var image: String? = null
 
     var company: String? = null
     @ManyToOne
@@ -28,5 +29,8 @@ open class Product {
     @GeneratedValue(strategy = GenerationType.AUTO)
     var id: Long? = null
 
+    constructor() {
+        image = "http://www.konvertra.com/sites/default/files/default_images/default_product.jpg"
+    }
 
 }

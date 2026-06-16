@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+    <div>Yeya</div>
+    <div>
+        <a href="cart.html">Panier</a>
+        <a href="login.html">Login</a>
+    </div>
+</header>
+
+<div class="container">
+
+    <div class="filter">
+
+        <select id="categoryFilter" onchange="applyFilters()">
+            <option value="all">
+                Toutes catégories
+            </option>
+        </select>
+
+
+        <select id="priceFilter" onchange="applyFilters()">
+
+            <option value="default">
+                Trier par prix
+            </option>
+
+            <option value="asc">
+                Prix : croissant
+            </option>
+
+            <option value="desc">
+                Prix : décroissant
+            </option>
+
+        </select>
+
+    </div>
+
+    <div id="products"></div>
+
+</div>
+
+<script src="js/api.js"></script>
+<script src="js/cart.js"></script>
+<script src="js/products.js"></script>

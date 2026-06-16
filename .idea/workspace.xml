@@ -4,13 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="changement dans le gitignore et creation de persistence.xml (avec mot de passe et utilisateur de test); TODO: faire que ces informations sensible doivent etre parse avec un .env">
-      <change afterPath="$PROJECT_DIR$/Business/src/test/kotlin/PopulateTest1.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/filters/CorsFilter.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ia_slop_test/yeyeea-poc.html" afterDir="false" />
+    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="Ajout de Population beaucoup plus réaliste + Ajout de filtre REST">
+      <change afterPath="$PROJECT_DIR$/WebClient/client/components/products/products.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebClient/client/components/products/products.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebClient/client/models/category.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebClient/client/models/product.model.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/WebClient/client/services/product.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webDemo/admin.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webDemo/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webDemo/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webDemo/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webDemo/js/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webDemo/js/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webDemo/js/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webDemo/js/cart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webDemo/js/cartPage.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webDemo/js/product.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webDemo/js/products.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webDemo/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webDemo/product.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/src/test/kotlin/PopulateTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Business/src/test/kotlin/PopulateTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/Product.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/resources/META-INF/persistence.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +41,8 @@
         <option value="Kotlin Interface" />
         <option value="Kotlin Annotation" />
         <option value="Kotlin Class" />
+        <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -63,61 +80,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0000578228802857" />
-      <entry key="S2" value="1.0872016957152282" />
-      <entry key="S5" value="1.3768859712579167" />
-      <entry key="S10" value="1.6139103935086263" />
-      <entry key="S30" value="1.8499009773959094" />
-      <entry key="S60" value="1.92190074161947" />
-      <entry key="M2" value="1.9601580359346338" />
-      <entry key="M5" value="2.0153564236412675" />
-      <entry key="M10" value="3.5214375549854546" />
-      <entry key="M15" value="7.768717391185132" />
-      <entry key="M30" value="24.131012736302182" />
-      <entry key="H1" value="46.8541176748762" />
-      <entry key="H2" value="83.78957282082212" />
-      <entry key="H4" value="184.35515894560865" />
-      <entry key="D1" value="639.6665541204561" />
-      <entry key="W1" value="834.9686819473114" />
+      <entry key="MS100" value="4.916775146761323E-4" />
+      <entry key="MS500" value="0.21793955988426553" />
+      <entry key="S2" value="0.683256886139947" />
+      <entry key="S5" value="0.8586844671304608" />
+      <entry key="S10" value="0.9266522903065963" />
+      <entry key="S30" value="0.9749285307593055" />
+      <entry key="S60" value="0.989044883000126" />
+      <entry key="M2" value="1.082034946366325" />
+      <entry key="M5" value="2.5613503348550823" />
+      <entry key="M10" value="6.264969098942257" />
+      <entry key="M15" value="9.265640551700844" />
+      <entry key="M30" value="14.464954229660407" />
+      <entry key="H1" value="21.970741622731268" />
+      <entry key="H2" value="45.38980869726207" />
+      <entry key="H4" value="121.76849153725759" />
+      <entry key="D1" value="608.7370153902413" />
+      <entry key="W1" value="864.3855719032637" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="0.0" />
-      <entry key="S5" value="3.381058942689676E-202" />
-      <entry key="S10" value="1.83876560297654E-101" />
-      <entry key="S30" value="2.6394301156548118E-34" />
-      <entry key="S60" value="1.6286773293282077E-17" />
-      <entry key="M2" value="4.3144073271072486E-9" />
-      <entry key="M5" value="6.685604085139103E-4" />
-      <entry key="M10" value="0.04238427478781003" />
-      <entry key="M15" value="0.1732154713602401" />
-      <entry key="M30" value="0.7189074522091267" />
-      <entry key="H1" value="1.6717607741443596" />
-      <entry key="H2" value="4.810119312889883" />
-      <entry key="H4" value="16.076622065013076" />
-      <entry key="D1" value="70.56413238715396" />
-      <entry key="W1" value="94.25664551514359" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0" />
+      <entry key="S10" value="1.0" />
+      <entry key="S30" value="1.000000000120212" />
+      <entry key="S60" value="1.0000109697066693" />
+      <entry key="M2" value="1.0033859328650303" />
+      <entry key="M5" value="1.1242130492055094" />
+      <entry key="M10" value="1.4686682033168328" />
+      <entry key="M15" value="1.748721143898683" />
+      <entry key="M30" value="2.2163975382601775" />
+      <entry key="H1" value="2.6488189435096743" />
+      <entry key="H2" value="3.9010239567399965" />
+      <entry key="H4" value="10.69798631922625" />
+      <entry key="D1" value="65.55743372762866" />
+      <entry key="W1" value="95.65023430982127" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.8766057213160351" />
-      <entry key="MS500" value="0.9740495726072861" />
-      <entry key="S2" value="1.0754783666656953" />
-      <entry key="S5" value="1.3651711930049502" />
-      <entry key="S10" value="1.6051504455993202" />
-      <entry key="S30" value="1.84601300677543" />
-      <entry key="S60" value="1.9198087355528755" />
-      <entry key="M2" value="1.9590726832476493" />
-      <entry key="M5" value="2.015571787222917" />
-      <entry key="M10" value="3.5632571916781095" />
-      <entry key="M15" value="7.940811067042168" />
-      <entry key="M30" value="24.847742392338883" />
-      <entry key="H1" value="48.523522186933356" />
-      <entry key="H2" value="88.59683265424916" />
-      <entry key="H4" value="200.4267402907925" />
-      <entry key="D1" value="710.2264960113721" />
-      <entry key="W1" value="929.2245115088339" />
+      <entry key="MS100" value="5.926413018196387E-4" />
+      <entry key="MS500" value="0.30863639668202897" />
+      <entry key="S2" value="1.225699785704114" />
+      <entry key="S5" value="1.6411657040503436" />
+      <entry key="S10" value="1.8111491661203696" />
+      <entry key="S30" value="1.9348227766724198" />
+      <entry key="S60" value="1.968772662607738" />
+      <entry key="M2" value="2.074817941824664" />
+      <entry key="M5" value="3.6792924394334987" />
+      <entry key="M10" value="7.728420540800655" />
+      <entry key="M15" value="11.009873108648204" />
+      <entry key="M30" value="16.678308777830395" />
+      <entry key="H1" value="24.61762662045268" />
+      <entry key="H2" value="49.28916254591695" />
+      <entry key="H4" value="132.4634999582006" />
+      <entry key="D1" value="674.2906402138462" />
+      <entry key="W1" value="960.0349907638318" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -137,6 +154,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
     "Kotlin.MainKt.executor": "Run",
     "Kotlin.PopulateTest.executor": "Run",
     "Kotlin.PopulateTestKt.executor": "Run",
@@ -182,6 +200,8 @@
       <recent name="C:\dev\yeyeea\ia_slop_test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\yeyeea\webDemo\css" />
+      <recent name="C:\dev\yeyeea\webDemo\js" />
       <recent name="C:\dev\yeyeea\Persistence\src\main\resources\META-INF" />
     </key>
     <key name="CreateKotlinClassDialog.RecentsKey">
@@ -244,7 +264,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1780994997629</updated>
-      <workItem from="1781599715728" duration="3631000" />
+      <workItem from="1781599715728" duration="9179000" />
     </task>
     <task id="LOCAL-00001" summary="debut du projj">
       <option name="closed" value="true" />
@@ -334,7 +354,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781600543543</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Ajout de Population beaucoup plus réaliste + Ajout de filtre REST">
+      <option name="closed" value="true" />
+      <created>1781604329739</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1781604329739</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -374,7 +402,8 @@
     <MESSAGE value="Mise a jour du client REST, prés à l'emploie." />
     <MESSAGE value="Ajout de fichier de population + mis a jour des liens DB" />
     <MESSAGE value="changement dans le gitignore et creation de persistence.xml (avec mot de passe et utilisateur de test); TODO: faire que ces informations sensible doivent etre parse avec un .env" />
-    <option name="LAST_COMMIT_MESSAGE" value="changement dans le gitignore et creation de persistence.xml (avec mot de passe et utilisateur de test); TODO: faire que ces informations sensible doivent etre parse avec un .env" />
+    <MESSAGE value="Ajout de Population beaucoup plus réaliste + Ajout de filtre REST" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajout de Population beaucoup plus réaliste + Ajout de filtre REST" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

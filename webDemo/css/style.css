@@ -1,0 +1,534 @@
+/* ===========================
+   RESET
+=========================== */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+    margin: 0;
+    font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            "SF Pro Display",
+            "Segoe UI",
+            Arial;
+
+    background:
+            linear-gradient(
+                    180deg,
+                    #f8f9fb,
+                    #eef1f6
+            );
+
+    color: #111;
+}
+
+
+
+/* ===========================
+   HEADER APPLE STYLE
+=========================== */
+
+
+header {
+
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 50px;
+
+
+    background:
+            rgba(255,255,255,.75);
+
+    backdrop-filter:
+            blur(25px);
+
+    border-bottom:
+            1px solid #ddd;
+
+
+}
+
+
+
+header a {
+
+    color:#111;
+
+    text-decoration:none;
+
+    margin-left:25px;
+
+    font-weight:600;
+
+}
+
+
+header a:hover {
+
+    opacity:.6;
+
+}
+
+
+
+/* ===========================
+   CONTAINER
+=========================== */
+
+
+.container {
+
+    max-width:1200px;
+
+    margin:auto;
+
+    padding:40px 20px;
+
+}
+
+
+
+
+/* ===========================
+   FILTER
+=========================== */
+
+
+.filter {
+
+
+    display:flex;
+
+    justify-content:center;
+
+    margin-bottom:40px;
+
+}
+
+
+
+select,
+input,
+textarea {
+
+
+    width:100%;
+
+    max-width:400px;
+
+    padding:14px 18px;
+
+    border-radius:18px;
+
+    border:1px solid #ddd;
+
+    background:white;
+
+    font-size:15px;
+
+}
+
+
+
+
+/* ===========================
+   PRODUCTS GRID
+=========================== */
+
+
+#products,
+#adminProducts {
+
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(260px,1fr));
+
+    gap:25px;
+
+
+}
+
+
+
+
+/* ===========================
+   CARD AMAZON PREMIUM
+=========================== */
+
+
+.product {
+
+
+    background:white;
+
+
+    border-radius:28px;
+
+
+    padding:25px;
+
+
+    box-shadow:
+            0 15px 40px
+            rgba(0,0,0,.08);
+
+
+    transition:
+            .25s ease;
+
+
+    overflow:hidden;
+
+
+}
+
+
+
+.product:hover {
+
+
+    transform:
+            translateY(-8px);
+
+
+    box-shadow:
+            0 25px 60px
+            rgba(0,0,0,.15);
+
+
+}
+
+
+
+
+
+/* IMAGE */
+
+
+.product img {
+
+
+    width:100%;
+
+    height:220px;
+
+    object-fit:cover;
+
+
+    border-radius:22px;
+
+
+    background:#eee;
+
+
+    cursor:pointer;
+
+
+}
+
+
+
+
+/* TITLE */
+
+
+.product h1,
+.product h2,
+.product h3 {
+
+
+    margin-top:15px;
+
+
+}
+
+
+
+.product p {
+
+
+    color:#555;
+
+    line-height:1.5;
+
+}
+
+
+
+
+/* PRICE */
+
+
+.price {
+
+
+    font-size:25px;
+
+    font-weight:700;
+
+    margin:15px 0;
+
+
+}
+
+
+
+/* ===========================
+ BUTTONS
+=========================== */
+
+
+button {
+
+
+    border:none;
+
+
+    padding:14px 20px;
+
+
+    border-radius:999px;
+
+
+    cursor:pointer;
+
+
+    font-weight:600;
+
+
+    transition:.2s;
+
+
+}
+
+
+
+button:hover {
+
+
+    transform:
+            scale(1.05);
+
+
+}
+
+
+
+
+button {
+
+
+    background:#111;
+
+    color:white;
+
+
+}
+
+
+
+button.secondary {
+
+
+    background:#eee;
+
+    color:#111;
+
+
+}
+
+
+
+
+/* ===========================
+   PRODUCT DETAIL
+=========================== */
+
+
+.product.big {
+
+
+    display:flex;
+
+
+    gap:50px;
+
+
+    padding:50px;
+
+
+}
+
+
+
+.product.big img {
+
+
+    width:450px;
+
+    height:450px;
+
+}
+
+
+
+
+
+.product.big div {
+
+
+    flex:1;
+
+}
+
+
+
+
+/* ===========================
+ CART
+=========================== */
+
+
+.total {
+
+
+    margin-top:30px;
+
+
+    font-size:30px;
+
+    font-weight:700;
+
+
+}
+
+
+
+
+
+/* ===========================
+ LOGIN
+=========================== */
+
+
+.login {
+
+
+    width:400px;
+
+    margin:120px auto;
+
+
+    background:white;
+
+
+    padding:40px;
+
+
+    border-radius:30px;
+
+
+    box-shadow:
+            0 20px 60px rgba(0,0,0,.12);
+
+
+}
+
+
+
+.login input {
+
+
+    margin-bottom:15px;
+
+
+}
+
+
+
+/* ===========================
+ ADMIN DASHBOARD
+=========================== */
+
+
+.admin-card {
+
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:30px;
+
+
+    box-shadow:
+            0 15px 50px rgba(0,0,0,.1);
+
+
+}
+
+
+
+textarea {
+
+
+    height:120px;
+
+    resize:none;
+
+
+}
+
+
+
+/* ===========================
+ MOBILE
+=========================== */
+
+
+@media(max-width:700px){
+
+
+    header{
+
+        padding:0 20px;
+
+    }
+
+
+
+    .product.big {
+
+
+        flex-direction:column;
+
+
+    }
+
+
+
+    .product.big img {
+
+
+        width:100%;
+
+
+    }
+
+
+
+}

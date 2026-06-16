@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h2>Login</h2>
+
+    <input id="username" placeholder="username">
+    <input id="password" type="password" placeholder="password">
+
+    <button onclick="doLogin()">Login</button>
+
+</div>
+
+<script src="js/api.js"></script>
+<script>
+
+    async function doLogin() {
+        const u = document.getElementById("username").value;
+        const p = document.getElementById("password").value;
+
+        const ok = await login(u, p);
+
+        if (ok) {
+            alert("OK");
+            window.location.href = "index.html";
+        } else {
+            alert("fail");
+        }
+    }
+
+</script>
+
+</body>
+</html>
