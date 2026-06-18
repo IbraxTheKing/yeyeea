@@ -1,9 +1,10 @@
 package ax.ibr.yeyeea.restserver.resources
 
+import ax.ibr.utils.LogLevel
+import ax.ibr.utils.Logger
 import ax.ibr.yeyeea.common.entities.Product
 import ax.ibr.yeyeea.common.entities.Category
 import ax.ibr.yeyeea.business.implementations.BusinessFactory
-import ax.ibr.yeyeea.common.services.ProductService
 import jakarta.ws.rs.*
 import jakarta.ws.rs.core.MediaType
 
@@ -34,6 +35,7 @@ class ProductResource {
     @POST
     fun add(product: Product) {
         service.add(product)
+
     }
 
 
@@ -45,6 +47,7 @@ class ProductResource {
     ) {
         product.id = id
         service.update(product)
+
     }
 
 
@@ -57,6 +60,7 @@ class ProductResource {
 
         if (product != null) {
             service.remove(product)
+
         }
     }
 

@@ -5,27 +5,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="Ajout de Population beaucoup plus réaliste + Ajout de filtre REST">
-      <change afterPath="$PROJECT_DIR$/WebClient/client/components/products/products.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/client/components/products/products.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/client/models/category.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/client/models/product.model.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/WebClient/client/services/product.service.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webDemo/admin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webDemo/cart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webDemo/css/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webDemo/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webDemo/js/admin.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webDemo/js/api.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webDemo/js/auth.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webDemo/js/cart.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webDemo/js/cartPage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webDemo/js/product.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webDemo/js/products.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webDemo/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webDemo/product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ibr-utils/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/JsonLogger.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/Logger.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_06_2026_09_56_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_06_2026_09_56__Changes_.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/Product.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/CategoryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/CategoryService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/CrudService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/services/CrudService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/ProductService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/ProductService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/UserService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jdbc/JdbcDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jdbc/JdbcDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/CategoryDataServiceJPAImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/CategoryDataServiceJPAImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/CrudJpaService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/services/jpa/CrudJpaService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/ProductDataServiceJPAImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/ProductDataServiceJPAImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/UserDataServiceJPAImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/UserDataServiceJPAImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/filters/CorsFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/filters/CorsFilter.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/CategoryResource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/CategoryResource.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/ProductResource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/ProductResource.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/UserResource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/UserResource.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,16 +35,18 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="65" />
+    <option name="cachedIndexableFilesCount" value="90" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Interface" />
         <option value="Kotlin Annotation" />
-        <option value="Kotlin Class" />
         <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="Kotlin Script MainKts.main" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin Object" />
       </list>
     </option>
   </component>
@@ -71,70 +75,70 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$MAVEN_REPOSITORY$/jakarta/ws/rs/jakarta.ws.rs-api/3.1.0/jakarta.ws.rs-api-3.1.0-sources.jar!/jakarta/ws/rs/GET.java" root0="SKIP_INSPECTION" />
   </component>
-  <component name="HttpClientOnboardingState"><![CDATA[{
-  "isOnboardingCommentShown": true
-}]]></component>
+  <component name="HttpClientOnboardingState">{
+  &quot;isOnboardingCommentShown&quot;: true
+}</component>
   <component name="McpProjectServerCommands">
     <commands />
     <urls />
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="4.916775146761323E-4" />
-      <entry key="MS500" value="0.21793955988426553" />
-      <entry key="S2" value="0.683256886139947" />
-      <entry key="S5" value="0.8586844671304608" />
-      <entry key="S10" value="0.9266522903065963" />
-      <entry key="S30" value="0.9749285307593055" />
-      <entry key="S60" value="0.989044883000126" />
-      <entry key="M2" value="1.082034946366325" />
-      <entry key="M5" value="2.5613503348550823" />
-      <entry key="M10" value="6.264969098942257" />
-      <entry key="M15" value="9.265640551700844" />
-      <entry key="M30" value="14.464954229660407" />
-      <entry key="H1" value="21.970741622731268" />
-      <entry key="H2" value="45.38980869726207" />
-      <entry key="H4" value="121.76849153725759" />
-      <entry key="D1" value="608.7370153902413" />
-      <entry key="W1" value="864.3855719032637" />
-    </decayedCancelled>
-    <decayedSelected>
       <entry key="MS100" value="1.0" />
       <entry key="MS500" value="1.0" />
       <entry key="S2" value="1.0" />
       <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.0" />
-      <entry key="S30" value="1.000000000120212" />
-      <entry key="S60" value="1.0000109697066693" />
-      <entry key="M2" value="1.0033859328650303" />
-      <entry key="M5" value="1.1242130492055094" />
-      <entry key="M10" value="1.4686682033168328" />
-      <entry key="M15" value="1.748721143898683" />
-      <entry key="M30" value="2.2163975382601775" />
-      <entry key="H1" value="2.6488189435096743" />
-      <entry key="H2" value="3.9010239567399965" />
-      <entry key="H4" value="10.69798631922625" />
-      <entry key="D1" value="65.55743372762866" />
-      <entry key="W1" value="95.65023430982127" />
+      <entry key="S10" value="1.000000010324226" />
+      <entry key="S30" value="1.0022957017229366" />
+      <entry key="S60" value="1.0761144816558799" />
+      <entry key="M2" value="1.7151748739034678" />
+      <entry key="M5" value="4.619606233792472" />
+      <entry key="M10" value="9.104254366171624" />
+      <entry key="M15" value="13.264680577205153" />
+      <entry key="M30" value="27.08332764426348" />
+      <entry key="H1" value="54.3354395301516" />
+      <entry key="H2" value="96.00064930170912" />
+      <entry key="H4" value="177.64409329723398" />
+      <entry key="D1" value="686.4392841364902" />
+      <entry key="W1" value="974.2932209769698" />
+    </decayedCancelled>
+    <decayedSelected>
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="1.3864317282617012E-259" />
+      <entry key="S5" value="2.8625916189956115E-104" />
+      <entry key="S10" value="1.6919195072451847E-52" />
+      <entry key="S30" value="5.5311935711133096E-18" />
+      <entry key="S60" value="2.3698447337099517E-9" />
+      <entry key="M2" value="5.274546160480007E-5" />
+      <entry key="M5" value="0.025911022726239515" />
+      <entry key="M10" value="0.2270759162728388" />
+      <entry key="M15" value="0.5247523950074834" />
+      <entry key="M30" value="1.7741765727630048" />
+      <entry key="H1" value="4.363420432785018" />
+      <entry key="H2" value="7.898080475113841" />
+      <entry key="H4" value="15.171171279389963" />
+      <entry key="D1" value="71.29930274998382" />
+      <entry key="W1" value="104.76874480952686" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="5.926413018196387E-4" />
-      <entry key="MS500" value="0.30863639668202897" />
-      <entry key="S2" value="1.225699785704114" />
-      <entry key="S5" value="1.6411657040503436" />
-      <entry key="S10" value="1.8111491661203696" />
-      <entry key="S30" value="1.9348227766724198" />
-      <entry key="S60" value="1.968772662607738" />
-      <entry key="M2" value="2.074817941824664" />
-      <entry key="M5" value="3.6792924394334987" />
-      <entry key="M10" value="7.728420540800655" />
-      <entry key="M15" value="11.009873108648204" />
-      <entry key="M30" value="16.678308777830395" />
-      <entry key="H1" value="24.61762662045268" />
-      <entry key="H2" value="49.28916254591695" />
-      <entry key="H4" value="132.4634999582006" />
-      <entry key="D1" value="674.2906402138462" />
-      <entry key="W1" value="960.0349907638318" />
+      <entry key="MS100" value="2.0783300196385464E-8" />
+      <entry key="MS500" value="0.02907655180321922" />
+      <entry key="S2" value="0.41293883246785995" />
+      <entry key="S5" value="0.7020277674561214" />
+      <entry key="S10" value="0.837870983341529" />
+      <entry key="S30" value="0.9450322510044277" />
+      <entry key="S60" value="1.0466686242545151" />
+      <entry key="M2" value="1.6973858266624338" />
+      <entry key="M5" value="4.631130004460431" />
+      <entry key="M10" value="9.315976759193811" />
+      <entry key="M15" value="13.773543358838118" />
+      <entry key="M30" value="28.841518314991458" />
+      <entry key="H1" value="58.684543209153674" />
+      <entry key="H2" value="103.88796006256314" />
+      <entry key="H4" value="192.80708930293406" />
+      <entry key="D1" value="757.7337834020964" />
+      <entry key="W1" value="1079.0609778298842" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -152,49 +156,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "Kotlin.MainKt.executor": "Run",
-    "Kotlin.PopulateTest.executor": "Run",
-    "Kotlin.PopulateTestKt.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cidr.known.project.marker": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/dev/yeyeea/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver",
-    "last_opened_file_path": "C:/dev/yeyeea/ia_slop_test",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.yeyeea-poc.html.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.PopulateTest.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.PopulateTestKt.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/dev/yeyeea/Common/src/main/kotlin/ax/ibr&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/dev/yeyeea/ia_slop_test&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\dev\yeyeea\ia_slop_test" />
@@ -209,10 +214,16 @@
       <recent name="ax.ibr.entities" />
     </key>
     <key name="K2MoveDeclarationsDialog.RECENT_PACKAGE_KEY">
+      <recent name="ax.ibr.utils" />
+      <recent name="ax.ibr.utils.services" />
+      <recent name="ax.ibr.utils.services.jpa" />
       <recent name="ax.ibr.entities" />
     </key>
   </component>
   <component name="RunManager" selected="Kotlin.MainKt">
+    <configuration name="yeyeea-poc.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/yeyeea/ia_slop_test/yeyeea-poc.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ax.ibr.yeyeea.restserver.MainKt" />
       <module name="RestServer" />
@@ -237,6 +248,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="JavaScript Debug.yeyeea-poc.html" />
         <item itemvalue="Kotlin.PopulateTestKt" />
         <item itemvalue="Kotlin.PopulateTest" />
       </list>
@@ -265,6 +277,10 @@
       <option name="presentableId" value="Default" />
       <updated>1780994997629</updated>
       <workItem from="1781599715728" duration="9179000" />
+      <workItem from="1781684025823" duration="6860000" />
+      <workItem from="1781699976037" duration="1190000" />
+      <workItem from="1781705811406" duration="2021000" />
+      <workItem from="1781769846672" duration="34000" />
     </task>
     <task id="LOCAL-00001" summary="debut du projj">
       <option name="closed" value="true" />

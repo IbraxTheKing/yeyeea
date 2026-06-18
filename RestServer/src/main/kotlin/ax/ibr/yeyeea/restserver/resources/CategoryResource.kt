@@ -1,8 +1,9 @@
 package ax.ibr.yeyeea.restserver.resources
 
+import ax.ibr.utils.LogLevel
+import ax.ibr.utils.Logger
 import ax.ibr.yeyeea.common.entities.Category
 import ax.ibr.yeyeea.business.implementations.BusinessFactory
-import ax.ibr.yeyeea.common.services.CategoryService
 import jakarta.ws.rs.*
 import jakarta.ws.rs.core.MediaType
 
@@ -29,6 +30,7 @@ class CategoryResource {
     @POST
     fun add(category: Category) {
         service.add(category)
+
     }
 
 
@@ -40,6 +42,7 @@ class CategoryResource {
     ) {
         category.id = id
         service.update(category)
+
     }
 
 
@@ -52,6 +55,7 @@ class CategoryResource {
 
         if (category != null) {
             service.remove(category)
+
         }
     }
 

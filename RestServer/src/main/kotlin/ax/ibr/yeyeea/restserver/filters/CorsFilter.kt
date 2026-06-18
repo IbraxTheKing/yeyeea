@@ -13,7 +13,7 @@ class CorsFilter : ContainerResponseFilter {
         responseContext: ContainerResponseContext
     ) {
         responseContext.headers.apply {
-            putSingle("Access-Control-Allow-Origin", "http://localhost:8000")
+            putSingle("Access-Control-Allow-Origin", "*")
             putSingle("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS, HEAD")
             putSingle("Access-Control-Allow-Headers", "Content-Type, Accept, Authorization")
             putSingle("Access-Control-Max-Age", "86400")

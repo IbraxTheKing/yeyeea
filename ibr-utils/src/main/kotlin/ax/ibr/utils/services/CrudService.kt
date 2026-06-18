@@ -1,4 +1,4 @@
-package ax.ibr.yeyeea.common.services
+package ax.ibr.utils.services
 
 /**
  * @author ib <pro.ibr.ben@gmail.com>

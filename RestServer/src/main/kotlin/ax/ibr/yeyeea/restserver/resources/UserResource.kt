@@ -1,10 +1,11 @@
 package ax.ibr.yeyeea.restserver.resources
 
+import ax.ibr.utils.LogLevel
+import ax.ibr.utils.Logger
 import jakarta.ws.rs.*
 import jakarta.ws.rs.core.MediaType
 import ax.ibr.yeyeea.common.entities.User
 import ax.ibr.yeyeea.business.implementations.BusinessFactory
-import ax.ibr.yeyeea.common.services.UserService
 
 @Path("/users")
 @Produces(MediaType.APPLICATION_JSON)
@@ -32,6 +33,7 @@ class UserResource {
     @POST
     fun add(user: User) {
         service.add(user)
+
     }
 
 
@@ -43,6 +45,7 @@ class UserResource {
     ) {
         user.id = id
         service.update(user)
+
     }
 
 
@@ -55,6 +58,7 @@ class UserResource {
 
         if (user != null) {
             service.remove(user)
+
         }
     }
 

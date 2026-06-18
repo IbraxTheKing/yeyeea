@@ -1,6 +1,6 @@
 package ax.ibr.yeyeea.persistence.jdbc
 
-import ax.ibr.yeyeea.common.services.CrudService
+import ax.ibr.utils.services.CrudService
 import java.sql.Connection
 import java.sql.ResultSet
 

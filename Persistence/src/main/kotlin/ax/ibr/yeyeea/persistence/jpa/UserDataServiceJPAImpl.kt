@@ -1,5 +1,6 @@
 package ax.ibr.yeyeea.persistence.jpa
 
+import ax.ibr.utils.services.jpa.CrudJpaService
 import ax.ibr.yeyeea.persistence.dataservice.UserDataService
 import ax.ibr.yeyeea.common.entities.User
 import jakarta.persistence.EntityManager

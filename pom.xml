@@ -12,6 +12,7 @@
     <module>Business</module>
     <module>Persistence</module>
     <module>RestServer</module>
+      <module>ibr-utils</module>
   </modules>
 
 <properties>

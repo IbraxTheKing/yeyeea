@@ -1,4 +1,4 @@
-package ax.ibr.yeyeea.persistence.jpa
+package ax.ibr.utils.services.jpa
 
 import jakarta.persistence.EntityManager
 
