@@ -75,4 +75,32 @@ open class Category() {
             }
         }
     }
+
+    override fun equals(other: Any?): Boolean {
+        if (this === other) return true
+        if (javaClass != other?.javaClass) return false
+
+        other as Category
+
+        if (isMainCategory != other.isMainCategory) return false
+        if (name != other.name) return false
+        if (description != other.description) return false
+        if (parentCategory != other.parentCategory) return false
+        if (subCategories != other.subCategories) return false
+        if (categoryDescriptions != other.categoryDescriptions) return false
+
+        return true
+    }
+
+    override fun hashCode(): Int {
+        var result = isMainCategory.hashCode()
+        result = 31 * result + (name?.hashCode() ?: 0)
+        result = 31 * result + (description?.hashCode() ?: 0)
+        result = 31 * result + (parentCategory?.hashCode() ?: 0)
+        result = 31 * result + subCategories.hashCode()
+        result = 31 * result + categoryDescriptions.hashCode()
+        return result
+    }
+
+
 }

@@ -1,5 +1,6 @@
 package ax.ibr.yeyeea.business.implementations
 
+import ax.ibr.utils.exceptions.AlreadyExistsException
 import ax.ibr.yeyeea.persistence.dataservice.PersistenceFactory
 import ax.ibr.yeyeea.common.entities.Category
 import ax.ibr.yeyeea.common.entities.Product
@@ -26,6 +27,12 @@ class ProductServiceImpl : ProductService {
     }
 
     override fun add(t: Product) {
+        val existingProduct = productService.getByName(t.name!!).firstOrNull()
+
+        if (existingProduct != null) {
+            throw AlreadyExistsException("Product ${t.name} already exists")
+        }
+
         productService.add(t)
     }
 

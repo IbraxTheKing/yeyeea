@@ -10,7 +10,7 @@ class UserDataServiceJPAImpl(pu: String, em: EntityManager,
 ) : UserDataService, CrudJpaService<User>(em, entityClass) {
 
 
-    override fun getByUsername(username: String): List<User> {
+    override fun getByUsername(username: String?): List<User> {
         return em.createQuery(
             "SELECT u FROM User u WHERE u.username = :username",
             User::class.java

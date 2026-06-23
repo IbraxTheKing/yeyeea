@@ -3,13 +3,17 @@ package ax.ibr.yeyeea.persistence.jpa
 import ax.ibr.utils.services.jpa.CrudJpaService
 import ax.ibr.yeyeea.persistence.dataservice.CategoryDataService
 import ax.ibr.yeyeea.common.entities.Category
+import ax.ibr.yeyeea.common.entities.Product
 import jakarta.persistence.EntityManager
+import jakarta.persistence.NoResultException
+import jakarta.persistence.NonUniqueResultException
+import java.sql.SQLException
 
 class CategoryDataServiceJPAImpl(em: EntityManager,
                                  entityClass: Class<Category>
 ) : CategoryDataService, CrudJpaService<Category>(em, entityClass) {
 
-    override fun getSubCategories(category: Category): List<Category> {
+    override fun getSubCategories(category: Category): List<Category>? {
         return em.createQuery(
             "SELECT c FROM Category c WHERE c.parentCategory = :category",
             Category::class.java
@@ -18,7 +22,7 @@ class CategoryDataServiceJPAImpl(em: EntityManager,
             .resultList
     }
 
-    override fun getParentCategories(category: Category): List<Category> {
+    override fun getParentCategories(category: Category): List<Category>? {
         val result = mutableListOf<Category>()
 
         var current = category.parentCategory
@@ -29,5 +33,16 @@ class CategoryDataServiceJPAImpl(em: EntityManager,
         }
 
         return result
+    }
+
+    override fun getByName(name: String): Category? {
+        return em.createQuery(
+            "SELECT c FROM Category c WHERE c.name = :name",
+            Category::class.java
+        )
+            .setParameter("name", name)
+            .setMaxResults(1)
+            .resultList
+            .firstOrNull()
     }
 }

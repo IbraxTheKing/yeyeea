@@ -1,11 +1,11 @@
 package ax.ibr.yeyeea.restserver.resources
 
-import ax.ibr.utils.LogLevel
-import ax.ibr.utils.Logger
+import ax.ibr.utils.exceptions.AlreadyExistsException
 import jakarta.ws.rs.*
 import jakarta.ws.rs.core.MediaType
 import ax.ibr.yeyeea.common.entities.User
 import ax.ibr.yeyeea.business.implementations.BusinessFactory
+import jakarta.ws.rs.core.Response
 
 @Path("/users")
 @Produces(MediaType.APPLICATION_JSON)
@@ -31,9 +31,27 @@ class UserResource {
 
 
     @POST
-    fun add(user: User) {
-        service.add(user)
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    fun add(user: User): Response {
+        return try {
+            service.add(user)
 
+            Response
+                .status(Response.Status.CREATED)
+                .build()
+
+        } catch (e: AlreadyExistsException) {
+
+            Response
+                .status(Response.Status.CONFLICT) // 409
+                .entity(
+                    mapOf(
+                        "error" to e.message
+                    )
+                )
+                .build()
+        }
     }
 
 

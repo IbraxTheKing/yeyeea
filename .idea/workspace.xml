@@ -4,30 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="Ajout de Population beaucoup plus réaliste + Ajout de filtre REST">
-      <change afterPath="$PROJECT_DIR$/ibr-utils/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/JsonLogger.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/Logger.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_06_2026_09_56_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_06_2026_09_56__Changes_.xml" beforeDir="false" />
+    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="déplacement des services générique dans le module ibr-utils (faut vraiment faire un repo) et quelques ajustement pour les tests">
+      <change afterPath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/exceptions/AlreadyExistsException.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/src/main/kotlin/ax/ibr/yeyeea/business/implementations/CategoryServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Business/src/main/kotlin/ax/ibr/yeyeea/business/implementations/CategoryServiceImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/src/main/kotlin/ax/ibr/yeyeea/business/implementations/ProductServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Business/src/main/kotlin/ax/ibr/yeyeea/business/implementations/ProductServiceImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/src/main/kotlin/ax/ibr/yeyeea/business/implementations/UserServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Business/src/main/kotlin/ax/ibr/yeyeea/business/implementations/UserServiceImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/Category.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/Category.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/Product.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/Product.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/UserType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/UserType.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/CategoryService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/CategoryService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/CrudService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/services/CrudService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/ProductService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/ProductService.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/UserService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jdbc/JdbcDao.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jdbc/JdbcDao.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jdbc/CategoryDataServiceJDBCImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jdbc/CategoryDataServiceJDBCImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jdbc/UserDataServiceJDBCImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jdbc/UserDataServiceJDBCImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/CategoryDataServiceJPAImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/CategoryDataServiceJPAImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/CrudJpaService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/services/jpa/CrudJpaService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/ProductDataServiceJPAImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/ProductDataServiceJPAImpl.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/UserDataServiceJPAImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/UserDataServiceJPAImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/filters/CorsFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/filters/CorsFilter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/CategoryResource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/CategoryResource.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/ProductResource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/ProductResource.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/UserResource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/UserResource.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,8 +38,8 @@
         <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Kotlin Script MainKts.main" />
-        <option value="Kotlin Class" />
         <option value="Kotlin Object" />
+        <option value="Kotlin Class" />
       </list>
     </option>
   </component>
@@ -85,60 +78,60 @@
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
       <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0" />
-      <entry key="S5" value="1.0" />
-      <entry key="S10" value="1.000000010324226" />
-      <entry key="S30" value="1.0022957017229366" />
-      <entry key="S60" value="1.0761144816558799" />
-      <entry key="M2" value="1.7151748739034678" />
-      <entry key="M5" value="4.619606233792472" />
-      <entry key="M10" value="9.104254366171624" />
-      <entry key="M15" value="13.264680577205153" />
-      <entry key="M30" value="27.08332764426348" />
-      <entry key="H1" value="54.3354395301516" />
-      <entry key="H2" value="96.00064930170912" />
-      <entry key="H4" value="177.64409329723398" />
-      <entry key="D1" value="686.4392841364902" />
-      <entry key="W1" value="974.2932209769698" />
+      <entry key="MS500" value="1.000000004734962" />
+      <entry key="S2" value="1.0084543870408966" />
+      <entry key="S5" value="1.206948752565827" />
+      <entry key="S10" value="1.856036162370648" />
+      <entry key="S30" value="4.188390544339171" />
+      <entry key="S60" value="6.527302766249081" />
+      <entry key="M2" value="9.070144053658808" />
+      <entry key="M5" value="12.724863014174836" />
+      <entry key="M10" value="19.032765462691074" />
+      <entry key="M15" value="28.38787809350102" />
+      <entry key="M30" value="63.52125569118684" />
+      <entry key="H1" value="124.47606525487716" />
+      <entry key="H2" value="202.77535209220312" />
+      <entry key="H4" value="310.16073918086136" />
+      <entry key="D1" value="858.5727706246485" />
+      <entry key="W1" value="1175.2645009825674" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="0.0" />
-      <entry key="S2" value="1.3864317282617012E-259" />
-      <entry key="S5" value="2.8625916189956115E-104" />
-      <entry key="S10" value="1.6919195072451847E-52" />
-      <entry key="S30" value="5.5311935711133096E-18" />
-      <entry key="S60" value="2.3698447337099517E-9" />
-      <entry key="M2" value="5.274546160480007E-5" />
-      <entry key="M5" value="0.025911022726239515" />
-      <entry key="M10" value="0.2270759162728388" />
-      <entry key="M15" value="0.5247523950074834" />
-      <entry key="M30" value="1.7741765727630048" />
-      <entry key="H1" value="4.363420432785018" />
-      <entry key="H2" value="7.898080475113841" />
-      <entry key="H4" value="15.171171279389963" />
-      <entry key="D1" value="71.29930274998382" />
-      <entry key="W1" value="104.76874480952686" />
+      <entry key="MS100" value="1.654660469476013E-76" />
+      <entry key="MS500" value="6.978173742556313E-16" />
+      <entry key="S2" value="1.6253071450639294E-4" />
+      <entry key="S5" value="0.03050522115275094" />
+      <entry key="S10" value="0.17465743944290188" />
+      <entry key="S30" value="0.5589812604305793" />
+      <entry key="S60" value="0.7490721380354329" />
+      <entry key="M2" value="0.909698460662661" />
+      <entry key="M5" value="1.6982573544941202" />
+      <entry key="M10" value="4.000994327089458" />
+      <entry key="M15" value="6.649431798810988" />
+      <entry key="M30" value="14.175888878125885" />
+      <entry key="H1" value="24.551900538093943" />
+      <entry key="H2" value="35.371004633215804" />
+      <entry key="H4" value="47.45029606663774" />
+      <entry key="D1" value="109.10016309097594" />
+      <entry key="W1" value="145.94768414029568" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="2.0783300196385464E-8" />
-      <entry key="MS500" value="0.02907655180321922" />
-      <entry key="S2" value="0.41293883246785995" />
-      <entry key="S5" value="0.7020277674561214" />
-      <entry key="S10" value="0.837870983341529" />
-      <entry key="S30" value="0.9450322510044277" />
-      <entry key="S60" value="1.0466686242545151" />
-      <entry key="M2" value="1.6973858266624338" />
-      <entry key="M5" value="4.631130004460431" />
-      <entry key="M10" value="9.315976759193811" />
-      <entry key="M15" value="13.773543358838118" />
-      <entry key="M30" value="28.841518314991458" />
-      <entry key="H1" value="58.684543209153674" />
-      <entry key="H2" value="103.88796006256314" />
-      <entry key="H4" value="192.80708930293406" />
-      <entry key="D1" value="757.7337834020964" />
-      <entry key="W1" value="1079.0609778298842" />
+      <entry key="MS100" value="2.4207007776386616E-8" />
+      <entry key="MS500" value="0.029977005109569625" />
+      <entry key="S2" value="0.4223994511452165" />
+      <entry key="S5" value="0.9055739759878583" />
+      <entry key="S10" value="1.765074361997222" />
+      <entry key="S30" value="4.539927597562486" />
+      <entry key="S60" value="7.124240898967468" />
+      <entry key="M2" value="9.88047724484457" />
+      <entry key="M5" value="14.367006484632139" />
+      <entry key="M10" value="22.986974579135993" />
+      <entry key="M15" value="34.98824722260457" />
+      <entry key="M30" value="77.64322441689994" />
+      <entry key="H1" value="148.97945300208886" />
+      <entry key="H2" value="238.1108669216687" />
+      <entry key="H4" value="357.5877653637634" />
+      <entry key="D1" value="967.6651051296434" />
+      <entry key="W1" value="1321.2107308442532" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -248,8 +241,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.MainKt" />
-        <item itemvalue="JavaScript Debug.yeyeea-poc.html" />
         <item itemvalue="Kotlin.PopulateTestKt" />
+        <item itemvalue="JavaScript Debug.yeyeea-poc.html" />
         <item itemvalue="Kotlin.PopulateTest" />
       </list>
     </recent_temporary>
@@ -281,6 +274,12 @@
       <workItem from="1781699976037" duration="1190000" />
       <workItem from="1781705811406" duration="2021000" />
       <workItem from="1781769846672" duration="34000" />
+      <workItem from="1781773777641" duration="309000" />
+      <workItem from="1781774112615" duration="2230000" />
+      <workItem from="1781856367455" duration="3375000" />
+      <workItem from="1781943071624" duration="2862000" />
+      <workItem from="1781967337696" duration="2769000" />
+      <workItem from="1782201830712" duration="5517000" />
     </task>
     <task id="LOCAL-00001" summary="debut du projj">
       <option name="closed" value="true" />
@@ -378,7 +377,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781604329739</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="déplacement des services générique dans le module ibr-utils (faut vraiment faire un repo) et quelques ajustement pour les tests">
+      <option name="closed" value="true" />
+      <created>1781773939006</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1781773939006</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -419,7 +426,18 @@
     <MESSAGE value="Ajout de fichier de population + mis a jour des liens DB" />
     <MESSAGE value="changement dans le gitignore et creation de persistence.xml (avec mot de passe et utilisateur de test); TODO: faire que ces informations sensible doivent etre parse avec un .env" />
     <MESSAGE value="Ajout de Population beaucoup plus réaliste + Ajout de filtre REST" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de Population beaucoup plus réaliste + Ajout de filtre REST" />
+    <MESSAGE value="déplacement des services générique dans le module ibr-utils (faut vraiment faire un repo) et quelques ajustement pour les tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="déplacement des services générique dans le module ibr-utils (faut vraiment faire un repo) et quelques ajustement pour les tests" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

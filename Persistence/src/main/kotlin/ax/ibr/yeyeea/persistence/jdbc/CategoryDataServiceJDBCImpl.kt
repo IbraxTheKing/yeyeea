@@ -58,4 +58,8 @@ class CategoryDataServiceJDBCImpl(
         }
         return result
     }
+
+    override fun getByName(name: String): Category? {
+        TODO("Not yet implemented")
+    }
 }

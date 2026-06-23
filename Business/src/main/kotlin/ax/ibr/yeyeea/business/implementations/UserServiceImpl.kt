@@ -1,14 +1,16 @@
 package ax.ibr.yeyeea.business.implementations
 
+import ax.ibr.utils.exceptions.AlreadyExistsException
 import ax.ibr.yeyeea.persistence.dataservice.PersistenceFactory
 import ax.ibr.yeyeea.common.entities.User
 import ax.ibr.yeyeea.common.services.UserService
+import kotlin.jvm.Throws
 
 class UserServiceImpl : UserService {
 
     private val userService: UserService = PersistenceFactory().getUserDataService()
 
-    override fun getByUsername(username: String): List<User> {
+    override fun getByUsername(username: String?): List<User> {
         return userService.getByUsername(username)
     }
 
@@ -17,6 +19,12 @@ class UserServiceImpl : UserService {
     }
 
     override fun add(t: User) {
+        val existingUser = userService.getByUsername(t.username).firstOrNull()
+
+        if (existingUser != null) {
+            throw AlreadyExistsException("User ${t.username} already exists")
+        }
+
         userService.add(t)
     }
 

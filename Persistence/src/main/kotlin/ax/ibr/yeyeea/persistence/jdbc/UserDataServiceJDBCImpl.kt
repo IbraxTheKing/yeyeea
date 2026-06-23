@@ -38,7 +38,7 @@ class UserDataServiceJDBCImpl(
 
     override fun idOf(t: User): Long? = t.id
 
-    override fun getByUsername(username: String): List<User> {
+    override fun getByUsername(username: String?): List<User> {
         return query("SELECT * FROM $tableName WHERE username = ?", username)
     }
 
