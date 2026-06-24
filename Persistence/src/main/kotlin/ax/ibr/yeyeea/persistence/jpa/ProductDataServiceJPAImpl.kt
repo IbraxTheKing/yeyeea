@@ -1,9 +1,10 @@
 package ax.ibr.yeyeea.persistence.jpa
 
 import ax.ibr.utils.services.jpa.CrudJpaService
-import ax.ibr.yeyeea.persistence.dataservice.ProductDataService
 import ax.ibr.yeyeea.common.entities.Category
 import ax.ibr.yeyeea.common.entities.Product
+import ax.ibr.yeyeea.common.entities.User
+import ax.ibr.yeyeea.persistence.dataservice.ProductDataService
 import jakarta.persistence.EntityManager
 
 class ProductDataServiceJPAImpl(em: EntityManager,
@@ -45,6 +46,10 @@ class ProductDataServiceJPAImpl(em: EntityManager,
             .setParameter("min", range.start)
             .setParameter("max", range.endInclusive)
             .resultList
+    }
+
+    override fun getByVendor(user: User): List<Product> {
+        TODO("Not yet implemented")
     }
 
 }

@@ -1,8 +1,9 @@
 package ax.ibr.yeyeea.persistence.jdbc
 
-import ax.ibr.yeyeea.persistence.dataservice.ProductDataService
 import ax.ibr.yeyeea.common.entities.Category
 import ax.ibr.yeyeea.common.entities.Product
+import ax.ibr.yeyeea.common.entities.User
+import ax.ibr.yeyeea.persistence.dataservice.ProductDataService
 import java.sql.Connection
 import java.sql.ResultSet
 
@@ -63,5 +64,9 @@ class ProductDataServiceJDBCImpl(
             range.start,
             range.endInclusive
         )
+    }
+
+    override fun getByVendor(user: User): List<Product> {
+        TODO("Not yet implemented")
     }
 }
