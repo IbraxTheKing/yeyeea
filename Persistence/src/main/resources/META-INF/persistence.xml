@@ -16,6 +16,7 @@
         <class>ax.ibr.yeyeea.common.entities.User</class>
         <class>ax.ibr.yeyeea.common.entities.Product</class>
         <class>ax.ibr.yeyeea.common.entities.Category</class>
+        <class>ax.ibr.yeyeea.common.entities.Cart</class>
 
         <properties>
 
