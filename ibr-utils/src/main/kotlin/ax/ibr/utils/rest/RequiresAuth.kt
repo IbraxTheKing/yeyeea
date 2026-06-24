@@ -65,6 +65,7 @@ package ax.ibr.utils.rest
  *
  * @author ib
  * @since 1.0
+ *
  */
 
 @Target(AnnotationTarget.FUNCTION)
