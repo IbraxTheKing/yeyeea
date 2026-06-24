@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="Ajout de sécu">
-      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/UserType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/UserType.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Business/src/main/kotlin/ax/ibr/yeyeea/business/implementations/CartServiceImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/Cart.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/CartService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/dataservice/CartDataService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jdbc/CartDataServiceJDBCImpl.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/CartDataServiceJPAImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Business/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/src/main/kotlin/ax/ibr/yeyeea/business/implementations/BusinessFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Business/src/main/kotlin/ax/ibr/yeyeea/business/implementations/BusinessFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Business/src/main/kotlin/ax/ibr/yeyeea/business/implementations/UserServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Business/src/main/kotlin/ax/ibr/yeyeea/business/implementations/UserServiceImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/User.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/User.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/UserService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/UserService.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/dataservice/PersistenceFactory.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/dataservice/PersistenceFactory.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/main/resources/META-INF/persistence.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/resources/META-INF/persistence.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/UserResource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/UserResource.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,12 +44,33 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="develop" />
+              </list>
+            </value>
+          </entry>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/develop" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
     <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -61,61 +97,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.087797072965807" />
-      <entry key="MS500" value="2.226147248432917" />
-      <entry key="S2" value="3.355230166705151" />
-      <entry key="S5" value="3.7188015070643248" />
-      <entry key="S10" value="3.856976541249817" />
-      <entry key="S30" value="4.217918639020573" />
-      <entry key="S60" value="5.114249082169203" />
-      <entry key="M2" value="6.838243355657629" />
-      <entry key="M5" value="11.40101995301397" />
-      <entry key="M10" value="17.059749042156838" />
-      <entry key="M15" value="21.84914655739695" />
-      <entry key="M30" value="34.55975774607719" />
-      <entry key="H1" value="52.410005776899766" />
-      <entry key="H2" value="90.42922373900046" />
-      <entry key="H4" value="187.511073378661" />
-      <entry key="D1" value="825.1394880175528" />
-      <entry key="W1" value="1264.0402024458133" />
+      <entry key="MS100" value="1.0006267398602557" />
+      <entry key="MS500" value="1.2655515540401883" />
+      <entry key="S2" value="2.1993700182149247" />
+      <entry key="S5" value="2.9265617757863547" />
+      <entry key="S10" value="3.364040578065454" />
+      <entry key="S30" value="3.759630843602663" />
+      <entry key="S60" value="3.8789439994089654" />
+      <entry key="M2" value="4.178813675297366" />
+      <entry key="M5" value="7.922375613473324" />
+      <entry key="M10" value="14.257450653069336" />
+      <entry key="M15" value="18.160549603156575" />
+      <entry key="M30" value="24.29918344860688" />
+      <entry key="H1" value="37.152656391268486" />
+      <entry key="H2" value="77.63321820505169" />
+      <entry key="H4" value="173.89326129701783" />
+      <entry key="D1" value="864.9542037280695" />
+      <entry key="W1" value="1409.5919828816602" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.870718251805315E-256" />
-      <entry key="MS500" value="7.151574656912967E-52" />
-      <entry key="S2" value="1.6353112303001732E-13" />
-      <entry key="S5" value="7.68219168150726E-6" />
-      <entry key="S10" value="0.0028004623446189693" />
-      <entry key="S30" value="0.1851418704851266" />
-      <entry key="S60" value="0.7195133570993156" />
-      <entry key="M2" value="1.6608431091849816" />
-      <entry key="M5" value="3.195498438495569" />
-      <entry key="M10" value="4.4743310302773915" />
-      <entry key="M15" value="5.448309191401674" />
-      <entry key="M30" value="7.555654554987693" />
-      <entry key="H1" value="9.924751325000909" />
-      <entry key="H2" value="15.120273305568285" />
-      <entry key="H4" value="28.163600823874432" />
-      <entry key="D1" value="104.96669722941964" />
-      <entry key="W1" value="157.01732048047813" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="4.6871010283198084E-114" />
+      <entry key="S5" value="5.971545383186841E-46" />
+      <entry key="S10" value="4.461692544235938E-23" />
+      <entry key="S30" value="1.1540693165699013E-7" />
+      <entry key="S60" value="9.741320119813355E-4" />
+      <entry key="M2" value="0.09813270314044868" />
+      <entry key="M5" value="1.640344138519357" />
+      <entry key="M10" value="4.2363206200024575" />
+      <entry key="M15" value="5.823558118913912" />
+      <entry key="M30" value="8.270841719522247" />
+      <entry key="H1" value="12.316065098928538" />
+      <entry key="H2" value="22.005656351912133" />
+      <entry key="H4" value="39.96574887542465" />
+      <entry key="D1" value="132.84250697800593" />
+      <entry key="W1" value="199.9586768547579" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.0370872275298044" />
-      <entry key="MS500" value="2.2053871587650566" />
-      <entry key="S2" value="3.347194166177732" />
-      <entry key="S5" value="3.7152146355915034" />
-      <entry key="S10" value="3.8567121209446675" />
-      <entry key="S30" value="4.373252672288708" />
-      <entry key="S60" value="5.782301683625183" />
-      <entry key="M2" value="8.44396012139897" />
-      <entry key="M5" value="14.555417476207436" />
-      <entry key="M10" value="21.505560977958268" />
-      <entry key="M15" value="27.27457428542736" />
-      <entry key="M30" value="42.09965589067288" />
-      <entry key="H1" value="62.32399971944271" />
-      <entry key="H2" value="105.53955807049464" />
-      <entry key="H4" value="215.66354639633047" />
-      <entry key="D1" value="930.0989898243463" />
-      <entry key="W1" value="1421.0560025693194" />
+      <entry key="MS100" value="0.8893959047004789" />
+      <entry key="MS500" value="1.2355164471775621" />
+      <entry key="S2" value="2.184667588626486" />
+      <entry key="S5" value="2.9174856120632495" />
+      <entry key="S10" value="3.35838069716737" />
+      <entry key="S30" value="3.757384592029017" />
+      <entry key="S60" value="3.878673933976069" />
+      <entry key="M2" value="4.273942509724895" />
+      <entry key="M5" value="9.547932181273685" />
+      <entry key="M10" value="18.475252339547012" />
+      <entry key="M15" value="23.96724280320071" />
+      <entry key="M30" value="32.557553452756096" />
+      <entry key="H1" value="49.45744638812902" />
+      <entry key="H2" value="99.6267217979462" />
+      <entry key="H4" value="213.84628505287793" />
+      <entry key="D1" value="997.7883997742365" />
+      <entry key="W1" value="1609.5488393246235" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -153,7 +189,7 @@
     "cidr.known.project.marker": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
+    "git-widget-placeholder": "develop",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
@@ -265,7 +301,7 @@
       <workItem from="1781943071624" duration="2862000" />
       <workItem from="1781967337696" duration="2769000" />
       <workItem from="1782201830712" duration="10639000" />
-      <workItem from="1782288658993" duration="2555000" />
+      <workItem from="1782288658993" duration="12491000" />
     </task>
     <task id="LOCAL-00001" summary="debut du projj">
       <option name="closed" value="true" />
@@ -403,7 +439,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782292269204</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Ajout de sécu">
+      <option name="closed" value="true" />
+      <created>1782292610315</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1782292610315</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -450,6 +494,8 @@
     <MESSAGE value="Ajout de commentaire bien handy" />
     <MESSAGE value="Ajout de sécu" />
     <option name="LAST_COMMIT_MESSAGE" value="Ajout de sécu" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
