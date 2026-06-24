@@ -1,11 +1,5 @@
 package ax.ibr.yeyeea.restserver.filters
 
-import ax.ibr.yeyeea.restserver.RequiresRole
-import jakarta.ws.rs.container.ContainerRequestContext
-import jakarta.ws.rs.container.ContainerRequestFilter
-import jakarta.ws.rs.core.Response
-import jakarta.ws.rs.ext.Provider
-
 /*
 
 @Provider

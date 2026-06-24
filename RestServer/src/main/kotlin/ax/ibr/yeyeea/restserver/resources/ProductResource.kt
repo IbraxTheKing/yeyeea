@@ -2,6 +2,8 @@ package ax.ibr.yeyeea.restserver.resources
 
 import ax.ibr.utils.LogLevel
 import ax.ibr.utils.Logger
+import ax.ibr.utils.rest.RequiresAuth
+import ax.ibr.utils.rest.RequiresRole
 import ax.ibr.yeyeea.common.entities.Product
 import ax.ibr.yeyeea.common.entities.Category
 import ax.ibr.yeyeea.business.implementations.BusinessFactory
@@ -41,6 +43,7 @@ class ProductResource {
 
     @PUT
     @Path("/{id}")
+    @RequiresAuth(roles = ["ADMIN"], allowOwner = true)
     fun updateById(
         @PathParam("id") id: Long,
         product: Product
@@ -53,6 +56,7 @@ class ProductResource {
 
     @DELETE
     @Path("/{id}")
+    @RequiresAuth(roles = ["ADMIN"], allowOwner = true)
     fun removeById(
         @PathParam("id") id: Long
     ) {

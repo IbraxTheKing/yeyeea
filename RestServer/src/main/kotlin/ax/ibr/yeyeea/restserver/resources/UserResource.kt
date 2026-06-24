@@ -1,6 +1,8 @@
 package ax.ibr.yeyeea.restserver.resources
 
 import ax.ibr.utils.exceptions.AlreadyExistsException
+import ax.ibr.utils.rest.RequiresAuth
+import ax.ibr.utils.rest.RequiresRole
 import jakarta.ws.rs.*
 import jakarta.ws.rs.core.MediaType
 import ax.ibr.yeyeea.common.entities.User
@@ -16,6 +18,7 @@ class UserResource {
 
 
     @GET
+    @RequiresRole("ADMIN")
     fun getAll(): List<User> {
         return service.getAll()
     }
@@ -57,18 +60,19 @@ class UserResource {
 
     @PUT
     @Path("/{id}")
+    @RequiresAuth(roles = ["ADMIN"], allowOwner = true)
     fun updateById(
         @PathParam("id") id: Long,
         user: User
     ) {
         user.id = id
         service.update(user)
-
     }
 
 
     @DELETE
     @Path("/{id}")
+    @RequiresAuth(roles = ["ADMIN"], allowOwner = true)
     fun removeById(
         @PathParam("id") id: Long
     ) {

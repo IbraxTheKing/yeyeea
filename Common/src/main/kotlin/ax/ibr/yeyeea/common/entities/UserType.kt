@@ -4,6 +4,9 @@ package ax.ibr.yeyeea.common.entities
  * @author ib <pro.ibr.ben@gmail.com>
  */
 
-enum class UserType {
-    CUSTOMER,OWNER,ADMIN,VENDOR
+enum class UserType(val id: Int) {
+    CUSTOMER(2),
+    OWNER(0),
+    ADMIN(1),
+    VENDOR(3)
 }
