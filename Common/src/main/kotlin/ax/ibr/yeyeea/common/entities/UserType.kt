@@ -5,8 +5,8 @@ package ax.ibr.yeyeea.common.entities
  */
 
 enum class UserType(val id: Int) {
-    CUSTOMER(2),
     OWNER(0),
     ADMIN(1),
+    CUSTOMER(2),
     VENDOR(3)
 }
