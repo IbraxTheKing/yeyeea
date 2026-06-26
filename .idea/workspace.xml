@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="Ajout de documentation">
+    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="getByVendor() pour Product (JPA non implémenté)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Business/src/main/kotlin/ax/ibr/yeyeea/business/implementations/ProductServiceImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Business/src/main/kotlin/ax/ibr/yeyeea/business/implementations/ProductServiceImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/ProductService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/services/ProductService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jdbc/ProductDataServiceJDBCImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jdbc/ProductDataServiceJDBCImpl.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/ProductDataServiceJPAImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/ProductDataServiceJPAImpl.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/CategoryDataServiceJPAImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/CategoryDataServiceJPAImpl.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="94" />
+    <option name="cachedIndexableFilesCount" value="101" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -87,61 +84,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.000038639417016" />
-      <entry key="S5" value="1.0492998394094755" />
-      <entry key="S10" value="1.5742173660182153" />
-      <entry key="S30" value="4.02556367415448" />
-      <entry key="S60" value="5.644143901886798" />
-      <entry key="M2" value="7.269594116975071" />
-      <entry key="M5" value="11.770012131663865" />
-      <entry key="M10" value="19.56657482213778" />
-      <entry key="M15" value="25.976523575198605" />
-      <entry key="M30" value="37.89890818816347" />
-      <entry key="H1" value="54.51770914264336" />
-      <entry key="H2" value="95.55369750960395" />
-      <entry key="H4" value="191.23585006247686" />
-      <entry key="D1" value="884.4217917102114" />
-      <entry key="W1" value="1435.6089630886938" />
+      <entry key="MS100" value="1.000000000000083" />
+      <entry key="MS500" value="1.0037366749341579" />
+      <entry key="S2" value="1.6945469356866596" />
+      <entry key="S5" value="3.792126722113695" />
+      <entry key="S10" value="6.177545155987266" />
+      <entry key="S30" value="9.419229799591829" />
+      <entry key="S60" value="10.822011926584162" />
+      <entry key="M2" value="12.715312030370947" />
+      <entry key="M5" value="17.868801747816477" />
+      <entry key="M10" value="26.013709742091624" />
+      <entry key="M15" value="32.84224419832715" />
+      <entry key="M30" value="45.97904546348797" />
+      <entry key="H1" value="63.634497816986894" />
+      <entry key="H2" value="105.00280019669034" />
+      <entry key="H4" value="200.67249038873996" />
+      <entry key="D1" value="894.438727572542" />
+      <entry key="W1" value="1447.1487659857123" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="3.1443844342054996E-17" />
-      <entry key="MS500" value="5.0061876850029E-4" />
-      <entry key="S2" value="0.14958112040383928" />
-      <entry key="S5" value="0.46768206193704615" />
-      <entry key="S10" value="0.6838728404733193" />
-      <entry key="S30" value="0.8810322548259703" />
-      <entry key="S60" value="0.9390027738895406" />
-      <entry key="M2" value="1.005402166727956" />
-      <entry key="M5" value="1.688627465028481" />
-      <entry key="M10" value="3.581223009445718" />
-      <entry key="M15" value="5.400970544513763" />
-      <entry key="M30" value="9.088449918177956" />
-      <entry key="H1" value="14.15638892462922" />
-      <entry key="H2" value="24.267767325231773" />
-      <entry key="H4" value="42.53639808069956" />
-      <entry key="D1" value="136.52560788912405" />
-      <entry key="W1" value="204.67623081516254" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="2.1430006990537615E-172" />
+      <entry key="S2" value="1.2099169981356413E-43" />
+      <entry key="S5" value="6.809296280769753E-18" />
+      <entry key="S10" value="2.609462833759038E-9" />
+      <entry key="S30" value="0.0013767351311377099" />
+      <entry key="S60" value="0.037118991519091586" />
+      <entry key="M2" value="0.19989616553585443" />
+      <entry key="M5" value="0.8849519841150583" />
+      <entry key="M10" value="2.5925330139200655" />
+      <entry key="M15" value="4.354454547141952" />
+      <entry key="M30" value="8.160575644302243" />
+      <entry key="H1" value="13.414298738294404" />
+      <entry key="H2" value="23.623136883580063" />
+      <entry key="H4" value="41.967643468803" />
+      <entry key="D1" value="136.21965131677504" />
+      <entry key="W1" value="204.6106415855405" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.022097086912079608" />
-      <entry key="MS500" value="0.4666915391336401" />
-      <entry key="S2" value="0.9415072011961602" />
-      <entry key="S5" value="1.3947162026440962" />
-      <entry key="S10" value="2.173151463721951" />
-      <entry key="S30" value="4.8565044865198805" />
-      <entry key="S60" value="6.551685643933537" />
-      <entry key="M2" value="8.256864878479531" />
-      <entry key="M5" value="13.448464859776905" />
-      <entry key="M10" value="23.13732673711509" />
-      <entry key="M15" value="31.36643290768571" />
-      <entry key="M30" value="46.976985673270235" />
-      <entry key="H1" value="68.66378827739658" />
-      <entry key="H2" value="119.80993078714485" />
-      <entry key="H4" value="233.7598766984278" />
-      <entry key="D1" value="1020.9391065563752" />
-      <entry key="W1" value="1640.2833670221796" />
+      <entry key="MS100" value="0.952637998044017" />
+      <entry key="MS500" value="0.9940474613171313" />
+      <entry key="S2" value="1.676707258576253" />
+      <entry key="S5" value="3.737530229211058" />
+      <entry key="S10" value="6.121059075856161" />
+      <entry key="S30" value="9.389751148634325" />
+      <entry key="S60" value="10.840474631182968" />
+      <entry key="M2" value="12.902341087150736" />
+      <entry key="M5" value="18.74457632899127" />
+      <entry key="M10" value="28.596715915590455" />
+      <entry key="M15" value="37.186477719455766" />
+      <entry key="M30" value="54.12965339577178" />
+      <entry key="H1" value="77.03869941689115" />
+      <entry key="H2" value="128.61454534645756" />
+      <entry key="H4" value="242.62784575523634" />
+      <entry key="D1" value="1030.65009074596" />
+      <entry key="W1" value="1651.757579319823" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -291,7 +288,8 @@
       <workItem from="1781943071624" duration="2862000" />
       <workItem from="1781967337696" duration="2769000" />
       <workItem from="1782201830712" duration="10639000" />
-      <workItem from="1782288658993" duration="13738000" />
+      <workItem from="1782288658993" duration="16243000" />
+      <workItem from="1782469861335" duration="5874000" />
     </task>
     <task id="LOCAL-00001" summary="debut du projj">
       <option name="closed" value="true" />
@@ -461,7 +459,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782312721690</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="getByVendor() pour Product (JPA non implémenté)">
+      <option name="closed" value="true" />
+      <created>1782313231617</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1782313231617</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -509,7 +515,8 @@
     <MESSAGE value="Ajout de sécu" />
     <MESSAGE value="Ajout de l'entité Cart&#10;&#10;Signed-off-by: ib &lt;pro.ibr.ben@gmail.com&gt;" />
     <MESSAGE value="Ajout de documentation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de documentation" />
+    <MESSAGE value="getByVendor() pour Product (JPA non implémenté)" />
+    <option name="LAST_COMMIT_MESSAGE" value="getByVendor() pour Product (JPA non implémenté)" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
