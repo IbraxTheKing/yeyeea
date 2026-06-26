@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="getByVendor() pour Product (JPA non implémenté)">
+    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="formate un peu le code">
+      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/CategoryDataServiceJPAImpl.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/src/main/kotlin/ax/ibr/yeyeea/persistence/jpa/CategoryDataServiceJPAImpl.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,61 +84,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.000000000000083" />
-      <entry key="MS500" value="1.0037366749341579" />
-      <entry key="S2" value="1.6945469356866596" />
-      <entry key="S5" value="3.792126722113695" />
-      <entry key="S10" value="6.177545155987266" />
-      <entry key="S30" value="9.419229799591829" />
-      <entry key="S60" value="10.822011926584162" />
-      <entry key="M2" value="12.715312030370947" />
-      <entry key="M5" value="17.868801747816477" />
-      <entry key="M10" value="26.013709742091624" />
-      <entry key="M15" value="32.84224419832715" />
-      <entry key="M30" value="45.97904546348797" />
-      <entry key="H1" value="63.634497816986894" />
-      <entry key="H2" value="105.00280019669034" />
-      <entry key="H4" value="200.67249038873996" />
-      <entry key="D1" value="894.438727572542" />
-      <entry key="W1" value="1447.1487659857123" />
+      <entry key="MS100" value="1.0001603155219267" />
+      <entry key="MS500" value="1.2941918357896451" />
+      <entry key="S2" value="2.236696265431081" />
+      <entry key="S5" value="2.6499457750844924" />
+      <entry key="S10" value="2.8165230262811427" />
+      <entry key="S30" value="2.936860383721955" />
+      <entry key="S60" value="2.9683055168888375" />
+      <entry key="M2" value="3.0327197696178834" />
+      <entry key="M5" value="5.080508395151731" />
+      <entry key="M10" value="12.75671669420228" />
+      <entry key="M15" value="21.525042435582396" />
+      <entry key="M30" value="43.01836317894087" />
+      <entry key="H1" value="70.39332231526949" />
+      <entry key="H2" value="117.01425913717551" />
+      <entry key="H4" value="214.50649822720757" />
+      <entry key="D1" value="914.0468830194725" />
+      <entry key="W1" value="1477.8299611215502" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
-      <entry key="MS500" value="2.1430006990537615E-172" />
-      <entry key="S2" value="1.2099169981356413E-43" />
-      <entry key="S5" value="6.809296280769753E-18" />
-      <entry key="S10" value="2.609462833759038E-9" />
-      <entry key="S30" value="0.0013767351311377099" />
-      <entry key="S60" value="0.037118991519091586" />
-      <entry key="M2" value="0.19989616553585443" />
-      <entry key="M5" value="0.8849519841150583" />
-      <entry key="M10" value="2.5925330139200655" />
-      <entry key="M15" value="4.354454547141952" />
-      <entry key="M30" value="8.160575644302243" />
-      <entry key="H1" value="13.414298738294404" />
-      <entry key="H2" value="23.623136883580063" />
-      <entry key="H4" value="41.967643468803" />
-      <entry key="D1" value="136.21965131677504" />
-      <entry key="W1" value="204.6106415855405" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="9.882999718842487E-137" />
+      <entry key="S10" value="9.941327737703084E-69" />
+      <entry key="S30" value="2.1502130172204696E-23" />
+      <entry key="S60" value="4.638864791806595E-12" />
+      <entry key="M2" value="2.234664019439004E-6" />
+      <entry key="M5" value="0.009253005418852333" />
+      <entry key="M10" value="0.26509763304478523" />
+      <entry key="M15" value="0.9521852829578497" />
+      <entry key="M30" value="3.816055183498703" />
+      <entry key="H1" value="9.173074056252673" />
+      <entry key="H2" value="19.534892666226554" />
+      <entry key="H4" value="38.16377398649077" />
+      <entry key="D1" value="134.07955282487626" />
+      <entry key="W1" value="204.14829558503044" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.952637998044017" />
-      <entry key="MS500" value="0.9940474613171313" />
-      <entry key="S2" value="1.676707258576253" />
-      <entry key="S5" value="3.737530229211058" />
-      <entry key="S10" value="6.121059075856161" />
-      <entry key="S30" value="9.389751148634325" />
-      <entry key="S60" value="10.840474631182968" />
-      <entry key="M2" value="12.902341087150736" />
-      <entry key="M5" value="18.74457632899127" />
-      <entry key="M10" value="28.596715915590455" />
-      <entry key="M15" value="37.186477719455766" />
-      <entry key="M30" value="54.12965339577178" />
-      <entry key="H1" value="77.03869941689115" />
-      <entry key="H2" value="128.61454534645756" />
-      <entry key="H4" value="242.62784575523634" />
-      <entry key="D1" value="1030.65009074596" />
-      <entry key="W1" value="1651.757579319823" />
+      <entry key="MS100" value="0.16624142455002405" />
+      <entry key="MS500" value="0.9907274654550843" />
+      <entry key="S2" value="2.148924131052014" />
+      <entry key="S5" value="2.61365019139075" />
+      <entry key="S10" value="2.7981645905817927" />
+      <entry key="S30" value="2.930692761565195" />
+      <entry key="S60" value="2.9652155684061996" />
+      <entry key="M2" value="3.031170916347569" />
+      <entry key="M5" value="5.088984448064421" />
+      <entry key="M10" value="13.020416032432" />
+      <entry key="M15" value="22.4746638987772" />
+      <entry key="M30" value="46.82955346784042" />
+      <entry key="H1" value="79.5593748944168" />
+      <entry key="H2" value="136.53966853479523" />
+      <entry key="H4" value="252.6590650941556" />
+      <entry key="D1" value="1048.1182722568308" />
+      <entry key="W1" value="1681.9764317734396" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -205,6 +205,7 @@
       <recent name="C:\dev\yeyeea\ia_slop_test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\yeyeea" />
       <recent name="C:\dev\yeyeea\webDemo\css" />
       <recent name="C:\dev\yeyeea\webDemo\js" />
       <recent name="C:\dev\yeyeea\Persistence\src\main\resources\META-INF" />
@@ -289,7 +290,7 @@
       <workItem from="1781967337696" duration="2769000" />
       <workItem from="1782201830712" duration="10639000" />
       <workItem from="1782288658993" duration="16243000" />
-      <workItem from="1782469861335" duration="5874000" />
+      <workItem from="1782469861335" duration="7960000" />
     </task>
     <task id="LOCAL-00001" summary="debut du projj">
       <option name="closed" value="true" />
@@ -467,7 +468,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782313231617</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="formate un peu le code">
+      <option name="closed" value="true" />
+      <created>1782488345381</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1782488345381</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -516,7 +525,8 @@
     <MESSAGE value="Ajout de l'entité Cart&#10;&#10;Signed-off-by: ib &lt;pro.ibr.ben@gmail.com&gt;" />
     <MESSAGE value="Ajout de documentation" />
     <MESSAGE value="getByVendor() pour Product (JPA non implémenté)" />
-    <option name="LAST_COMMIT_MESSAGE" value="getByVendor() pour Product (JPA non implémenté)" />
+    <MESSAGE value="formate un peu le code" />
+    <option name="LAST_COMMIT_MESSAGE" value="formate un peu le code" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
