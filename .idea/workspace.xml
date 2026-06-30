@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="formate un peu le code">
-      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="mouais jarrive pas a faire en sorte que ibr-utils soit un submodule">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="101" />
+    <option name="cachedIndexableFilesCount" value="111" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -84,61 +83,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0001603155219267" />
-      <entry key="MS500" value="1.2941918357896451" />
-      <entry key="S2" value="2.236696265431081" />
-      <entry key="S5" value="2.6499457750844924" />
-      <entry key="S10" value="2.8165230262811427" />
-      <entry key="S30" value="2.936860383721955" />
-      <entry key="S60" value="2.9683055168888375" />
-      <entry key="M2" value="3.0327197696178834" />
-      <entry key="M5" value="5.080508395151731" />
-      <entry key="M10" value="12.75671669420228" />
-      <entry key="M15" value="21.525042435582396" />
-      <entry key="M30" value="43.01836317894087" />
-      <entry key="H1" value="70.39332231526949" />
-      <entry key="H2" value="117.01425913717551" />
-      <entry key="H4" value="214.50649822720757" />
-      <entry key="D1" value="914.0468830194725" />
-      <entry key="W1" value="1477.8299611215502" />
+      <entry key="MS100" value="1.0" />
+      <entry key="MS500" value="1.0" />
+      <entry key="S2" value="1.0" />
+      <entry key="S5" value="1.0000000014711752" />
+      <entry key="S10" value="1.0000878697126174" />
+      <entry key="S30" value="1.2243977119247864" />
+      <entry key="S60" value="3.504907200962953" />
+      <entry key="M2" value="10.92752412143632" />
+      <entry key="M5" value="25.833452897645756" />
+      <entry key="M10" value="39.455830939423834" />
+      <entry key="M15" value="50.25187470215395" />
+      <entry key="M30" value="74.74167847920867" />
+      <entry key="H1" value="105.11227741189896" />
+      <entry key="H2" value="153.67769971791282" />
+      <entry key="H4" value="252.07178509092148" />
+      <entry key="D1" value="953.4371726932692" />
+      <entry key="W1" value="1520.0025842891719" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="9.882999718842487E-137" />
-      <entry key="S10" value="9.941327737703084E-69" />
-      <entry key="S30" value="2.1502130172204696E-23" />
-      <entry key="S60" value="4.638864791806595E-12" />
-      <entry key="M2" value="2.234664019439004E-6" />
-      <entry key="M5" value="0.009253005418852333" />
-      <entry key="M10" value="0.26509763304478523" />
-      <entry key="M15" value="0.9521852829578497" />
-      <entry key="M30" value="3.816055183498703" />
-      <entry key="H1" value="9.173074056252673" />
-      <entry key="H2" value="19.534892666226554" />
-      <entry key="H4" value="38.16377398649077" />
-      <entry key="D1" value="134.07955282487626" />
-      <entry key="W1" value="204.14829558503044" />
+      <entry key="S5" value="1.050980321359811E-165" />
+      <entry key="S10" value="3.241882664995465E-83" />
+      <entry key="S30" value="3.1885932344024125E-28" />
+      <entry key="S60" value="1.7863663577810853E-14" />
+      <entry key="M2" value="1.3867291500011673E-7" />
+      <entry key="M5" value="0.0030436490884855096" />
+      <entry key="M10" value="0.15204135513201397" />
+      <entry key="M15" value="0.6572925640820759" />
+      <entry key="M30" value="3.170540269393828" />
+      <entry key="H1" value="8.361307841018347" />
+      <entry key="H2" value="18.650508884585882" />
+      <entry key="H4" value="37.289893550796414" />
+      <entry key="D1" value="133.56290536105388" />
+      <entry key="W1" value="204.03573203360472" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.16624142455002405" />
-      <entry key="MS500" value="0.9907274654550843" />
-      <entry key="S2" value="2.148924131052014" />
-      <entry key="S5" value="2.61365019139075" />
-      <entry key="S10" value="2.7981645905817927" />
-      <entry key="S30" value="2.930692761565195" />
-      <entry key="S60" value="2.9652155684061996" />
-      <entry key="M2" value="3.031170916347569" />
-      <entry key="M5" value="5.088984448064421" />
-      <entry key="M10" value="13.020416032432" />
-      <entry key="M15" value="22.4746638987772" />
-      <entry key="M30" value="46.82955346784042" />
-      <entry key="H1" value="79.5593748944168" />
-      <entry key="H2" value="136.53966853479523" />
-      <entry key="H4" value="252.6590650941556" />
-      <entry key="D1" value="1048.1182722568308" />
-      <entry key="W1" value="1681.9764317734396" />
+      <entry key="MS100" value="0.6643429070482558" />
+      <entry key="MS500" value="0.921464186198704" />
+      <entry key="S2" value="0.9797597976233297" />
+      <entry key="S5" value="0.9918542228697566" />
+      <entry key="S10" value="0.996006627137836" />
+      <entry key="S30" value="1.2230011178155533" />
+      <entry key="S60" value="3.503949941734248" />
+      <entry key="M2" value="10.926496599903931" />
+      <entry key="M5" value="25.835506779913448" />
+      <entry key="M10" value="39.606593243766916" />
+      <entry key="M15" value="50.907049284323136" />
+      <entry key="M30" value="77.90798594404147" />
+      <entry key="H1" value="113.46708517980089" />
+      <entry key="H2" value="172.319103501433" />
+      <entry key="H4" value="289.350702264139" />
+      <entry key="D1" value="1086.9919415677384" />
+      <entry key="W1" value="1724.036491772578" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -290,7 +289,8 @@
       <workItem from="1781967337696" duration="2769000" />
       <workItem from="1782201830712" duration="10639000" />
       <workItem from="1782288658993" duration="16243000" />
-      <workItem from="1782469861335" duration="7960000" />
+      <workItem from="1782469861335" duration="8861000" />
+      <workItem from="1782806342190" duration="5341000" />
     </task>
     <task id="LOCAL-00001" summary="debut du projj">
       <option name="closed" value="true" />
@@ -476,7 +476,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782488345381</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="mouais jarrive pas a faire en sorte que ibr-utils soit un submodule">
+      <option name="closed" value="true" />
+      <created>1782490510654</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1782490510654</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,7 +534,8 @@
     <MESSAGE value="Ajout de documentation" />
     <MESSAGE value="getByVendor() pour Product (JPA non implémenté)" />
     <MESSAGE value="formate un peu le code" />
-    <option name="LAST_COMMIT_MESSAGE" value="formate un peu le code" />
+    <MESSAGE value="mouais jarrive pas a faire en sorte que ibr-utils soit un submodule" />
+    <option name="LAST_COMMIT_MESSAGE" value="mouais jarrive pas a faire en sorte que ibr-utils soit un submodule" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
