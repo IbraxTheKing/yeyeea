@@ -1,229 +1,206 @@
 let allProducts = [];
+let selectedCategory = "all";
+let selectedSort = "default";
 
+/* =========================
+   INIT
+========================= */
 
+window.addEventListener("DOMContentLoaded", () => {
+    loadProducts();
+});
 
-async function loadProducts(){
+/* =========================
+   LOAD PRODUCTS
+========================= */
 
+async function loadProducts() {
 
     allProducts = await getProducts();
 
-
     renderProducts(allProducts);
 
-
     loadCategories();
-
-
 }
 
+/* =========================
+   RENDER PRODUCTS
+========================= */
 
+function renderProducts(products) {
 
+    const container = document.getElementById("products");
 
+    container.innerHTML = "";
 
-function renderProducts(products){
+    if (!products || products.length === 0) {
+        container.innerHTML = `<p class="empty-state">Aucun produit trouvé</p>`;
+        return;
+    }
 
+    products.forEach(p => {
 
-    const container =
-        document.getElementById("products");
-
-
-    container.innerHTML="";
-
-
-    products.forEach(p=>{
-
-
-        const div =
-            document.createElement("div");
-
-
-        div.className="product";
-
-
+        const div = document.createElement("div");
+        div.className = "product";
 
         div.innerHTML = `
 
-        <img
-        onclick="openProduct(${p.id})"
-        src="
-        ${p.image ??
-        'https://via.placeholder.com/300'}
-        ">
+            <img
+                onclick="openProduct(${p.id})"
+                src="${p.image ?? 'https://via.placeholder.com/300'}"
+            >
 
+            <h3>${p.name}</h3>
 
-        <h3>
-        ${p.name}
-        </h3>
+            <p>${p.description ?? ""}</p>
 
+            <div class="price">
+                ${p.price ?? 0} €
+            </div>
 
-        <p>
-        ${p.description ?? ""}
-        </p>
-
-
-        <div class="price">
-        ${p.price ?? 0} <span>&#8364;</span> 
-        </div>
-
-
-        <button onclick='addToCart(${JSON.stringify(p)})'>
-            Ajouter au panier
-        </button>
+            <button onclick='addToCart(${safeJson(p)})'>
+                Ajouter au panier
+            </button>
 
         `;
 
-
         container.appendChild(div);
-
-
-
     });
-
-
 }
 
+/* =========================
+   SAFE JSON (IMPORTANT)
+========================= */
 
-
-
-
-function loadCategories(){
-
-
-    const select =
-        document.getElementById("categoryFilter");
-
-
-
-    const categories =
-        [
-            ...new Set(
-                allProducts
-                    .map(p=>p.category?.name)
-                    .filter(Boolean)
-            )
-        ];
-
-
-
-    categories.forEach(c=>{
-
-
-        let option =
-            document.createElement("option");
-
-
-        option.value=c;
-
-        option.textContent=c;
-
-
-        select.appendChild(option);
-
-
-
-    });
-
-
+function safeJson(obj) {
+    return JSON.stringify(obj).replace(/'/g, "\\'");
 }
 
+/* =========================
+   CATEGORIES (REST API)
+========================= */
+
+async function loadCategories() {
+
+    const categories = await getCategories();
+
+    const select = document.getElementById("categoryFilter");
+    const list = document.getElementById("categoryList");
+
+    if (!select || !list) return;
 
 
+    categories.forEach(c => {
 
 
+        /* SIDEBAR */
+        const li = document.createElement("li");
+        li.textContent = c.name;
+        li.onclick = () => filterCategory(c.name);
+        list.appendChild(li);
+    });
+}
 
-function applyFilters(){
+/* =========================
+   CATEGORY FILTER
+========================= */
 
+function filterCategory(category) {
 
-    let result =
-        [...allProducts];
+    selectedCategory = category;
 
+    document.getElementById("categoryFilter").value = category;
 
+    updateSidebarActive();
 
-    /*
-     FILTRE CATEGORIE
-    */
+    applyFilters();
+}
 
+/* dropdown change */
+function onDropdownCategoryChange() {
 
-    const category =
-        document.getElementById("categoryFilter").value;
+    selectedCategory = document.getElementById("categoryFilter").value;
 
+    updateSidebarActive();
 
+    applyFilters();
+}
 
-    if(category !== "all"){
+/* sidebar active UI */
+function updateSidebarActive() {
 
+    document.querySelectorAll("#categoryList li").forEach(li => {
 
-        result =
-            result.filter(
-                p =>
-                    p.category?.name === category
-            );
+        li.classList.remove("active");
 
+        if (
+            (selectedCategory === "all" && li.textContent === "Toutes") ||
+            li.textContent === selectedCategory
+        ) {
+            li.classList.add("active");
+        }
+    });
+}
 
-    }
+/* =========================
+   FILTERS (CATEGORY + SORT)
+========================= */
 
+function applyFilters() {
 
+    let result = [...allProducts];
 
-
-    /*
-     TRI PRIX
-    */
-
-
-    const price =
-        document.getElementById("priceFilter").value;
-
-
-
-    if(price === "asc"){
-
-
-        result.sort(
-            (a,b)=>
-                (a.price ?? 0)
-                -
-                (b.price ?? 0)
+    /* CATEGORY */
+    if (selectedCategory !== "all") {
+        result = result.filter(p =>
+            p.category?.name === selectedCategory
         );
-
-
     }
 
+    /* SORT PRICE */
+    const priceSort = document.getElementById("priceFilter")?.value;
 
-
-    if(price === "desc"){
-
-
-        result.sort(
-            (a,b)=>
-                (b.price ?? 0)
-                -
-                (a.price ?? 0)
+    if (priceSort === "asc") {
+        result.sort((a, b) =>
+            Number(a.price ?? 0) - Number(b.price ?? 0)
         );
-
-
     }
 
-
-
+    if (priceSort === "desc") {
+        result.sort((a, b) =>
+            Number(b.price ?? 0) - Number(a.price ?? 0)
+        );
+    }
 
     renderProducts(result);
-
-
-
 }
 
+/* =========================
+   PRICE RANGE (BACKEND)
+========================= */
 
+async function applyPriceRange() {
 
+    const min = document.getElementById("minPrice")?.value || 0;
+    const max = document.getElementById("maxPrice")?.value || 999999;
 
+    const products = await getProductsByPriceRange(min, max);
 
-function openProduct(id){
-
-    window.location.href =
-        `product.html?id=${id}`;
-
+    renderProducts(products);
 }
 
+/* =========================
+   OPEN PRODUCT PAGE
+========================= */
 
+function openProduct(id) {
+    window.location.href = `product.html?id=${id}`;
+}
 
+/* =========================
+   INIT ALL FILTERS (OPTION)
+========================= */
 
-
-loadProducts();
+function applyAllFilters() {
+    applyFilters();
+}

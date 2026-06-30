@@ -15,6 +15,11 @@ async function getProduct(id) {
     return res.json();
 }
 
+async function getProductsByPriceRange(min, max) {
+    const res = await fetch(`${API}/products/price-range/${min}/${max}`);
+    return res.json();
+}
+
 async function login(username, password) {
     const res = await fetch(`${API}/users`);
     const users = await res.json();

@@ -4,27 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="mouais jarrive pas a faire en sorte que ibr-utils soit un submodule">
+    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="Création du projet Angular">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/client.routes.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/components/client/client.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/components/client/client.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/components/client/client.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/components/client/client.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/components/products/products.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/components/products/products.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/models/category.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/models/product.model.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/services/client.service.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/services/client.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/services/product.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/store/client.actions.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/store/client.effects.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/store/client.reducer.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/store/client.selectors.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/store/client.state.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebClient/client/store/index.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="101" />
+    <option name="cachedIndexableFilesCount" value="92" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -102,61 +83,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.2716837156315144" />
-      <entry key="MS500" value="1.770571108358408" />
-      <entry key="S2" value="1.9369214468724256" />
-      <entry key="S5" value="1.9742743573088017" />
-      <entry key="S10" value="1.9870533710538663" />
-      <entry key="S30" value="1.9956656980290943" />
-      <entry key="S60" value="1.9978419115350476" />
-      <entry key="M2" value="2.0048621441794894" />
-      <entry key="M5" value="2.4192354205782864" />
-      <entry key="M10" value="5.666176811381389" />
-      <entry key="M15" value="11.374269944513884" />
-      <entry key="M30" value="30.3891799412633" />
-      <entry key="H1" value="59.1848813795096" />
-      <entry key="H2" value="107.46630505956905" />
-      <entry key="H4" value="205.646965447734" />
-      <entry key="D1" value="908.1666114289035" />
-      <entry key="W1" value="1478.0030837932363" />
+      <entry key="MS100" value="1.0007651486045792" />
+      <entry key="MS500" value="1.4402556348881694" />
+      <entry key="S2" value="4.025234426702921" />
+      <entry key="S5" value="6.25509527999958" />
+      <entry key="S10" value="7.460290964119871" />
+      <entry key="S30" value="10.030184758629515" />
+      <entry key="S60" value="14.064828914316223" />
+      <entry key="M2" value="18.671636088462268" />
+      <entry key="M5" value="23.38763874865374" />
+      <entry key="M10" value="28.138560999296214" />
+      <entry key="M15" value="34.187254292739084" />
+      <entry key="M30" value="53.47691749023178" />
+      <entry key="H1" value="82.60932732037706" />
+      <entry key="H2" value="131.16071643981067" />
+      <entry key="H4" value="229.46877628858388" />
+      <entry key="D1" value="932.3439146120422" />
+      <entry key="W1" value="1502.8129567150645" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="1.034939958073348E-201" />
-      <entry key="S10" value="3.21704827143353E-101" />
-      <entry key="S30" value="3.1804302978722605E-34" />
-      <entry key="S60" value="1.7840783049118167E-17" />
-      <entry key="M2" value="4.3824133234831615E-9" />
-      <entry key="M5" value="7.643341359144178E-4" />
-      <entry key="M10" value="0.07619142037827065" />
-      <entry key="M15" value="0.41468813657342835" />
-      <entry key="M30" value="2.518342064160747" />
-      <entry key="H1" value="7.451864276002864" />
-      <entry key="H2" value="17.607027707475307" />
-      <entry key="H4" value="36.23170939795219" />
-      <entry key="D1" value="132.92361311499164" />
-      <entry key="W1" value="203.89592971165968" />
+      <entry key="S5" value="2.117620016048983E-208" />
+      <entry key="S10" value="1.455204458503678E-104" />
+      <entry key="S30" value="2.4414136127547424E-35" />
+      <entry key="S60" value="4.9430118536035685E-18" />
+      <entry key="M2" value="2.3067589015874647E-9" />
+      <entry key="M5" value="5.912876443621089E-4" />
+      <entry key="M10" value="0.06701373807201311" />
+      <entry key="M15" value="0.3806800583490928" />
+      <entry key="M30" value="2.4128702993262774" />
+      <entry key="H1" value="7.2941479042129735" />
+      <entry key="H2" value="17.41970765290686" />
+      <entry key="H4" value="36.038460600358306" />
+      <entry key="D1" value="132.80518737499008" />
+      <entry key="W1" value="203.8699687741936" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.226552769135126" />
-      <entry key="MS500" value="1.7572807558196193" />
-      <entry key="S2" value="1.933243830348848" />
-      <entry key="S5" value="1.9727714086041945" />
-      <entry key="S10" value="1.9862964389066164" />
-      <entry key="S30" value="1.9954121611643132" />
-      <entry key="S60" value="1.997714977111987" />
-      <entry key="M2" value="2.0047956068543056" />
-      <entry key="M5" value="2.419910166210264" />
-      <entry key="M10" value="5.74195364322592" />
-      <entry key="M15" value="11.78783303565008" />
-      <entry key="M30" value="32.90430726352769" />
-      <entry key="H1" value="66.63103955068863" />
-      <entry key="H2" value="125.06478432694173" />
-      <entry key="H4" value="241.86803456399548" />
-      <entry key="D1" value="1041.0821312488458" />
-      <entry key="W1" value="1681.8971908151104" />
+      <entry key="MS100" value="0.9467966425764882" />
+      <entry key="MS500" value="1.425734011320753" />
+      <entry key="S2" value="4.012583720748068" />
+      <entry key="S5" value="6.245271557148632" />
+      <entry key="S10" value="7.453890777434394" />
+      <entry key="S30" value="10.026905824190118" />
+      <entry key="S60" value="14.062240293107022" />
+      <entry key="M2" value="18.669785441654906" />
+      <entry key="M5" value="23.387226073206385" />
+      <entry key="M10" value="28.20469859078621" />
+      <entry key="M15" value="34.566549922903015" />
+      <entry key="M30" value="55.886526315430714" />
+      <entry key="H1" value="89.8977977725325" />
+      <entry key="H2" value="148.5719201782967" />
+      <entry key="H4" value="265.49663005746123" />
+      <entry key="D1" value="1065.1410120061546" />
+      <entry key="W1" value="1706.6811024746048" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -210,6 +191,7 @@
     "project.structure.side.proportion": "0.2",
     "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
     "to.speed.mode.migration.done": "true",
+    "ts.external.directory.path": "C:\\dev\\yeyeea\\WebClient\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -240,7 +222,7 @@
       <recent name="ax.ibr.entities" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.MainKt">
+  <component name="RunManager" selected="Kotlin.PopulateTestKt">
     <configuration name="yeyeea-poc.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/yeyeea/ia_slop_test/yeyeea-poc.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -267,8 +249,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="Kotlin.PopulateTestKt" />
+        <item itemvalue="Kotlin.MainKt" />
         <item itemvalue="JavaScript Debug.yeyeea-poc.html" />
         <item itemvalue="Kotlin.PopulateTest" />
       </list>
@@ -309,6 +291,7 @@
       <workItem from="1782201830712" duration="10639000" />
       <workItem from="1782288658993" duration="16243000" />
       <workItem from="1782469861335" duration="7960000" />
+      <workItem from="1782824326502" duration="642000" />
     </task>
     <task id="LOCAL-00001" summary="debut du projj">
       <option name="closed" value="true" />
@@ -494,7 +477,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782488345381</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Création du projet Angular">
+      <option name="closed" value="true" />
+      <created>1782824469420</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1782824469420</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -544,7 +535,8 @@
     <MESSAGE value="Ajout de documentation" />
     <MESSAGE value="getByVendor() pour Product (JPA non implémenté)" />
     <MESSAGE value="formate un peu le code" />
-    <option name="LAST_COMMIT_MESSAGE" value="formate un peu le code" />
+    <MESSAGE value="Création du projet Angular" />
+    <option name="LAST_COMMIT_MESSAGE" value="Création du projet Angular" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
