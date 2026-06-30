@@ -4,9 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="formate un peu le code">
-      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
+    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="mouais jarrive pas a faire en sorte que ibr-utils soit un submodule">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/client.routes.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/components/client/client.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/components/client/client.component.scss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/components/client/client.component.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/components/client/client.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/components/products/products.component.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/components/products/products.component.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/models/category.model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/models/product.model.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/services/client.service.spec.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/services/client.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/services/product.service.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/store/client.actions.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/store/client.effects.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/store/client.reducer.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/store/client.selectors.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/store/client.state.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebClient/client/store/index.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,61 +102,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0001603155219267" />
-      <entry key="MS500" value="1.2941918357896451" />
-      <entry key="S2" value="2.236696265431081" />
-      <entry key="S5" value="2.6499457750844924" />
-      <entry key="S10" value="2.8165230262811427" />
-      <entry key="S30" value="2.936860383721955" />
-      <entry key="S60" value="2.9683055168888375" />
-      <entry key="M2" value="3.0327197696178834" />
-      <entry key="M5" value="5.080508395151731" />
-      <entry key="M10" value="12.75671669420228" />
-      <entry key="M15" value="21.525042435582396" />
-      <entry key="M30" value="43.01836317894087" />
-      <entry key="H1" value="70.39332231526949" />
-      <entry key="H2" value="117.01425913717551" />
-      <entry key="H4" value="214.50649822720757" />
-      <entry key="D1" value="914.0468830194725" />
-      <entry key="W1" value="1477.8299611215502" />
+      <entry key="MS100" value="1.2716837156315144" />
+      <entry key="MS500" value="1.770571108358408" />
+      <entry key="S2" value="1.9369214468724256" />
+      <entry key="S5" value="1.9742743573088017" />
+      <entry key="S10" value="1.9870533710538663" />
+      <entry key="S30" value="1.9956656980290943" />
+      <entry key="S60" value="1.9978419115350476" />
+      <entry key="M2" value="2.0048621441794894" />
+      <entry key="M5" value="2.4192354205782864" />
+      <entry key="M10" value="5.666176811381389" />
+      <entry key="M15" value="11.374269944513884" />
+      <entry key="M30" value="30.3891799412633" />
+      <entry key="H1" value="59.1848813795096" />
+      <entry key="H2" value="107.46630505956905" />
+      <entry key="H4" value="205.646965447734" />
+      <entry key="D1" value="908.1666114289035" />
+      <entry key="W1" value="1478.0030837932363" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="9.882999718842487E-137" />
-      <entry key="S10" value="9.941327737703084E-69" />
-      <entry key="S30" value="2.1502130172204696E-23" />
-      <entry key="S60" value="4.638864791806595E-12" />
-      <entry key="M2" value="2.234664019439004E-6" />
-      <entry key="M5" value="0.009253005418852333" />
-      <entry key="M10" value="0.26509763304478523" />
-      <entry key="M15" value="0.9521852829578497" />
-      <entry key="M30" value="3.816055183498703" />
-      <entry key="H1" value="9.173074056252673" />
-      <entry key="H2" value="19.534892666226554" />
-      <entry key="H4" value="38.16377398649077" />
-      <entry key="D1" value="134.07955282487626" />
-      <entry key="W1" value="204.14829558503044" />
+      <entry key="S5" value="1.034939958073348E-201" />
+      <entry key="S10" value="3.21704827143353E-101" />
+      <entry key="S30" value="3.1804302978722605E-34" />
+      <entry key="S60" value="1.7840783049118167E-17" />
+      <entry key="M2" value="4.3824133234831615E-9" />
+      <entry key="M5" value="7.643341359144178E-4" />
+      <entry key="M10" value="0.07619142037827065" />
+      <entry key="M15" value="0.41468813657342835" />
+      <entry key="M30" value="2.518342064160747" />
+      <entry key="H1" value="7.451864276002864" />
+      <entry key="H2" value="17.607027707475307" />
+      <entry key="H4" value="36.23170939795219" />
+      <entry key="D1" value="132.92361311499164" />
+      <entry key="W1" value="203.89592971165968" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.16624142455002405" />
-      <entry key="MS500" value="0.9907274654550843" />
-      <entry key="S2" value="2.148924131052014" />
-      <entry key="S5" value="2.61365019139075" />
-      <entry key="S10" value="2.7981645905817927" />
-      <entry key="S30" value="2.930692761565195" />
-      <entry key="S60" value="2.9652155684061996" />
-      <entry key="M2" value="3.031170916347569" />
-      <entry key="M5" value="5.088984448064421" />
-      <entry key="M10" value="13.020416032432" />
-      <entry key="M15" value="22.4746638987772" />
-      <entry key="M30" value="46.82955346784042" />
-      <entry key="H1" value="79.5593748944168" />
-      <entry key="H2" value="136.53966853479523" />
-      <entry key="H4" value="252.6590650941556" />
-      <entry key="D1" value="1048.1182722568308" />
-      <entry key="W1" value="1681.9764317734396" />
+      <entry key="MS100" value="1.226552769135126" />
+      <entry key="MS500" value="1.7572807558196193" />
+      <entry key="S2" value="1.933243830348848" />
+      <entry key="S5" value="1.9727714086041945" />
+      <entry key="S10" value="1.9862964389066164" />
+      <entry key="S30" value="1.9954121611643132" />
+      <entry key="S60" value="1.997714977111987" />
+      <entry key="M2" value="2.0047956068543056" />
+      <entry key="M5" value="2.419910166210264" />
+      <entry key="M10" value="5.74195364322592" />
+      <entry key="M15" value="11.78783303565008" />
+      <entry key="M30" value="32.90430726352769" />
+      <entry key="H1" value="66.63103955068863" />
+      <entry key="H2" value="125.06478432694173" />
+      <entry key="H4" value="241.86803456399548" />
+      <entry key="D1" value="1041.0821312488458" />
+      <entry key="W1" value="1681.8971908151104" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -156,50 +174,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.yeyeea-poc.html.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.PopulateTest.executor&quot;: &quot;Run&quot;,
-    &quot;Kotlin.PopulateTestKt.executor&quot;: &quot;Run&quot;,
-    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
-    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/dev/yeyeea/ibr-utils/src/main/kotlin/ax/ibr/utils/rest&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/dev/yeyeea/ia_slop_test&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.yeyeea-poc.html.executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
+    "Kotlin.PopulateTest.executor": "Run",
+    "Kotlin.PopulateTestKt.executor": "Run",
+    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "cidr.known.project.marker": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "feature/angular",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "last_directory_selection": "C:/dev/yeyeea/ibr-utils/src/main/kotlin/ax/ibr/utils/rest",
+    "last_opened_file_path": "C:/dev/yeyeea/ia_slop_test",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mariadb&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mariadb"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\dev\yeyeea\ia_slop_test" />
