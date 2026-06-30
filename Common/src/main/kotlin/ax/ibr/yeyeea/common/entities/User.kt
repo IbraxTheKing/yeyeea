@@ -4,8 +4,6 @@ import jakarta.persistence.Entity
 import jakarta.persistence.GeneratedValue
 import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
-import jakarta.persistence.JoinColumn
-import jakarta.persistence.ManyToOne
 
 /**
  * @author ib <pro.ibr.ben@gmail.com>
@@ -28,8 +26,7 @@ open class User {
     var type: UserType? = UserType.CUSTOMER
 
 
-
-    constructor()
+    constructor() // TODO: REMOVE THIS SHIT
     public constructor(username: String?, password: String?, email: String?) {
         this.username = username
         this.password = password

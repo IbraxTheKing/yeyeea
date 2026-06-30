@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="ajout de secu business mais pas du tout encore fini">
-      <change afterPath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/exceptions/PermissionDeniedException.kt" afterDir="false" />
+    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="formate un peu le code">
+      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/exceptions/AlreadyExistsException.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/exceptions/AlreadyExistsException.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/services/CrudService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/services/CrudService.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/services/jpa/CrudJpaService.kt" beforeDir="false" afterPath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/services/jpa/CrudJpaService.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,29 +14,51 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="90" />
+    <option name="cachedIndexableFilesCount" value="101" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Kotlin Interface" />
         <option value="HTML File" />
         <option value="JavaScript File" />
         <option value="Kotlin Script MainKts.main" />
         <option value="Kotlin Object" />
         <option value="Kotlin Annotation" />
+        <option value="Kotlin Interface" />
         <option value="Kotlin Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="develop" />
+              </list>
+            </value>
+          </entry>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/develop" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
     <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -65,61 +84,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0000088248305046" />
-      <entry key="MS500" value="1.097530685021713" />
-      <entry key="S2" value="1.5588372136976423" />
-      <entry key="S5" value="1.7923446456030598" />
-      <entry key="S10" value="1.890137430740368" />
-      <entry key="S30" value="1.9626592970698236" />
-      <entry key="S60" value="2.109021321211488" />
-      <entry key="M2" value="3.862469182770285" />
-      <entry key="M5" value="12.553063637766853" />
-      <entry key="M10" value="21.686238438489863" />
-      <entry key="M15" value="26.410828928813277" />
-      <entry key="M30" value="32.51614904013023" />
-      <entry key="H1" value="40.707554971599855" />
-      <entry key="H2" value="77.22583264788354" />
-      <entry key="H4" value="177.98256952885913" />
-      <entry key="D1" value="807.8647637748298" />
-      <entry key="W1" value="1227.440882120979" />
+      <entry key="MS100" value="1.0001603155219267" />
+      <entry key="MS500" value="1.2941918357896451" />
+      <entry key="S2" value="2.236696265431081" />
+      <entry key="S5" value="2.6499457750844924" />
+      <entry key="S10" value="2.8165230262811427" />
+      <entry key="S30" value="2.936860383721955" />
+      <entry key="S60" value="2.9683055168888375" />
+      <entry key="M2" value="3.0327197696178834" />
+      <entry key="M5" value="5.080508395151731" />
+      <entry key="M10" value="12.75671669420228" />
+      <entry key="M15" value="21.525042435582396" />
+      <entry key="M30" value="43.01836317894087" />
+      <entry key="H1" value="70.39332231526949" />
+      <entry key="H2" value="117.01425913717551" />
+      <entry key="H4" value="214.50649822720757" />
+      <entry key="D1" value="914.0468830194725" />
+      <entry key="W1" value="1477.8299611215502" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="0.0" />
-      <entry key="S10" value="0.0" />
-      <entry key="S30" value="2.6684678303964585E-154" />
-      <entry key="S60" value="2.2971676044714828E-77" />
-      <entry key="M2" value="6.768491561142953E-39" />
-      <entry key="M5" value="8.178718951002919E-16" />
-      <entry key="M10" value="4.1030700728246564E-8" />
-      <entry key="M15" value="1.6699213989131584E-5" />
-      <entry key="M30" value="0.012936311453607758" />
-      <entry key="H1" value="0.6686549449214158" />
-      <entry key="H2" value="5.819165971632908" />
-      <entry key="H4" value="19.431123285331694" />
-      <entry key="D1" value="94.99731816336983" />
-      <entry key="W1" value="144.67161232930383" />
+      <entry key="S5" value="9.882999718842487E-137" />
+      <entry key="S10" value="9.941327737703084E-69" />
+      <entry key="S30" value="2.1502130172204696E-23" />
+      <entry key="S60" value="4.638864791806595E-12" />
+      <entry key="M2" value="2.234664019439004E-6" />
+      <entry key="M5" value="0.009253005418852333" />
+      <entry key="M10" value="0.26509763304478523" />
+      <entry key="M15" value="0.9521852829578497" />
+      <entry key="M30" value="3.816055183498703" />
+      <entry key="H1" value="9.173074056252673" />
+      <entry key="H2" value="19.534892666226554" />
+      <entry key="H4" value="38.16377398649077" />
+      <entry key="D1" value="134.07955282487626" />
+      <entry key="W1" value="204.14829558503044" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="3.1992026462376833E-4" />
-      <entry key="MS500" value="0.2015720701176257" />
-      <entry key="S2" value="0.8681682823382829" />
-      <entry key="S5" value="1.3760485197341794" />
-      <entry key="S10" value="1.647049186457506" />
-      <entry key="S30" value="1.8723296443211495" />
-      <entry key="S60" value="2.06219071824478" />
-      <entry key="M2" value="3.8354372744964107" />
-      <entry key="M5" value="12.53569225264857" />
-      <entry key="M10" value="21.674455368778613" />
-      <entry key="M15" value="26.40199033836891" />
-      <entry key="M30" value="32.52400399018885" />
-      <entry key="H1" value="41.3722226598718" />
-      <entry key="H2" value="83.03783092514713" />
-      <entry key="H4" value="197.40351122169736" />
-      <entry key="D1" value="902.8551451578746" />
-      <entry key="W1" value="1372.1110351106481" />
+      <entry key="MS100" value="0.16624142455002405" />
+      <entry key="MS500" value="0.9907274654550843" />
+      <entry key="S2" value="2.148924131052014" />
+      <entry key="S5" value="2.61365019139075" />
+      <entry key="S10" value="2.7981645905817927" />
+      <entry key="S30" value="2.930692761565195" />
+      <entry key="S60" value="2.9652155684061996" />
+      <entry key="M2" value="3.031170916347569" />
+      <entry key="M5" value="5.088984448064421" />
+      <entry key="M10" value="13.020416032432" />
+      <entry key="M15" value="22.4746638987772" />
+      <entry key="M30" value="46.82955346784042" />
+      <entry key="H1" value="79.5593748944168" />
+      <entry key="H2" value="136.53966853479523" />
+      <entry key="H4" value="252.6590650941556" />
+      <entry key="D1" value="1048.1182722568308" />
+      <entry key="W1" value="1681.9764317734396" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -157,11 +176,11 @@
     &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
     &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
     &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;C:/dev/yeyeea/Common/src/main/kotlin/ax/ibr&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/dev/yeyeea/ibr-utils/src/main/kotlin/ax/ibr/utils/rest&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/dev/yeyeea/ia_slop_test&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -186,6 +205,7 @@
       <recent name="C:\dev\yeyeea\ia_slop_test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\yeyeea" />
       <recent name="C:\dev\yeyeea\webDemo\css" />
       <recent name="C:\dev\yeyeea\webDemo\js" />
       <recent name="C:\dev\yeyeea\Persistence\src\main\resources\META-INF" />
@@ -268,7 +288,9 @@
       <workItem from="1781856367455" duration="3375000" />
       <workItem from="1781943071624" duration="2862000" />
       <workItem from="1781967337696" duration="2769000" />
-      <workItem from="1782201830712" duration="9932000" />
+      <workItem from="1782201830712" duration="10639000" />
+      <workItem from="1782288658993" duration="16243000" />
+      <workItem from="1782469861335" duration="7960000" />
     </task>
     <task id="LOCAL-00001" summary="debut du projj">
       <option name="closed" value="true" />
@@ -390,7 +412,71 @@
       <option name="project" value="LOCAL" />
       <updated>1782224896615</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Ajout de commentaire bien handy">
+      <option name="closed" value="true" />
+      <created>1782226141522</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1782226141522</updated>
+    </task>
+    <task id="LOCAL-00017" summary="Ajout de sécu">
+      <option name="closed" value="true" />
+      <created>1782292269204</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1782292269204</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Ajout de sécu">
+      <option name="closed" value="true" />
+      <created>1782292610315</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1782292610315</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Ajout de sécu">
+      <option name="closed" value="true" />
+      <created>1782311837271</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1782311837271</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Ajout de documentation">
+      <option name="closed" value="true" />
+      <created>1782312524227</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1782312524227</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Ajout de documentation">
+      <option name="closed" value="true" />
+      <created>1782312721690</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1782312721690</updated>
+    </task>
+    <task id="LOCAL-00022" summary="getByVendor() pour Product (JPA non implémenté)">
+      <option name="closed" value="true" />
+      <created>1782313231617</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1782313231617</updated>
+    </task>
+    <task id="LOCAL-00023" summary="formate un peu le code">
+      <option name="closed" value="true" />
+      <created>1782488345381</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1782488345381</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -434,7 +520,15 @@
     <MESSAGE value="déplacement des services générique dans le module ibr-utils (faut vraiment faire un repo) et quelques ajustement pour les tests" />
     <MESSAGE value="maj des services metiers, on ne peux plus ajouter des produits, utilisateurs et categories portant le meme nom" />
     <MESSAGE value="ajout de secu business mais pas du tout encore fini" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajout de secu business mais pas du tout encore fini" />
+    <MESSAGE value="Ajout de commentaire bien handy" />
+    <MESSAGE value="Ajout de sécu" />
+    <MESSAGE value="Ajout de l'entité Cart&#10;&#10;Signed-off-by: ib &lt;pro.ibr.ben@gmail.com&gt;" />
+    <MESSAGE value="Ajout de documentation" />
+    <MESSAGE value="getByVendor() pour Product (JPA non implémenté)" />
+    <MESSAGE value="formate un peu le code" />
+    <option name="LAST_COMMIT_MESSAGE" value="formate un peu le code" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

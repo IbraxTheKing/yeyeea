@@ -1,9 +1,10 @@
 package ax.ibr.yeyeea.restserver.resources
 
-import ax.ibr.utils.LogLevel
-import ax.ibr.utils.Logger
+import ax.ibr.utils.rest.RequiresAuth
+import ax.ibr.utils.rest.RequiresRole
 import ax.ibr.yeyeea.common.entities.Category
 import ax.ibr.yeyeea.business.implementations.BusinessFactory
+import ax.ibr.yeyeea.common.entities.UserType
 import jakarta.ws.rs.*
 import jakarta.ws.rs.core.MediaType
 
@@ -28,6 +29,7 @@ class CategoryResource {
     }
 
     @POST
+    @RequiresRole("ADMIN")
     fun add(category: Category) {
         service.add(category)
 
@@ -36,6 +38,7 @@ class CategoryResource {
 
     @PUT
     @Path("/{id}")
+    @RequiresRole("ADMIN")
     fun updateById(
         @PathParam("id") id: Long,
         category: Category
@@ -48,6 +51,7 @@ class CategoryResource {
 
     @DELETE
     @Path("/{id}")
+    @RequiresRole("ADMIN")
     fun removeById(
         @PathParam("id") id: Long
     ) {

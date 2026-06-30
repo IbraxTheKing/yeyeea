@@ -1,10 +1,13 @@
 package ax.ibr.yeyeea.restserver.resources
 
 import ax.ibr.utils.exceptions.AlreadyExistsException
+import ax.ibr.utils.rest.RequiresAuth
+import ax.ibr.utils.rest.RequiresRole
+import ax.ibr.yeyeea.business.implementations.BusinessFactory
+import ax.ibr.yeyeea.common.entities.User
+import ax.ibr.yeyeea.common.services.CartService
 import jakarta.ws.rs.*
 import jakarta.ws.rs.core.MediaType
-import ax.ibr.yeyeea.common.entities.User
-import ax.ibr.yeyeea.business.implementations.BusinessFactory
 import jakarta.ws.rs.core.Response
 
 @Path("/users")
@@ -13,9 +16,11 @@ import jakarta.ws.rs.core.Response
 class UserResource {
 
     private val service = BusinessFactory().getUserService()
+    private val cartService: CartService = BusinessFactory().getCartService()
 
 
     @GET
+    @RequiresRole("ADMIN")
     fun getAll(): List<User> {
         return service.getAll()
     }
@@ -57,18 +62,19 @@ class UserResource {
 
     @PUT
     @Path("/{id}")
+    @RequiresAuth(roles = ["ADMIN"], allowOwner = true)
     fun updateById(
         @PathParam("id") id: Long,
         user: User
     ) {
         user.id = id
         service.update(user)
-
     }
 
 
     @DELETE
     @Path("/{id}")
+    @RequiresAuth(roles = ["ADMIN"], allowOwner = true)
     fun removeById(
         @PathParam("id") id: Long
     ) {
@@ -97,4 +103,21 @@ class UserResource {
     ): List<User> {
         return service.getByEmail(email)
     }
+
+    /*
+
+    @GET
+    @Path("/me/cart/")
+    @RequiresAuth(roles = ["ADMIN"], allowOwner = true)
+    fun getMyCart() : Cart? {
+        TODO()
+    }
+
+    @PUT
+    @Path("me/cart/")
+    @RequiresAuth(roles = ["ADMIN"], allowOwner = true)
+    fun addToCart(userId: Long, product: Product) {
+        cartService.getByUserId(userId)?.addProduct(product)
+    }
+    */
 }
