@@ -60,7 +60,7 @@ open class CrudJpaService<T>(
             tx.commit()
 
 
-        } catch(e: Exception) {
+        } catch (e: Exception) {
 
             if (tx.isActive)
                 tx.rollback()
@@ -91,9 +91,9 @@ open class CrudJpaService<T>(
             tx.commit()
 
 
-        } catch(e: Exception) {
+        } catch (e: Exception) {
 
-            if(tx.isActive)
+            if (tx.isActive)
                 tx.rollback()
 
             throw e
@@ -118,7 +118,7 @@ open class CrudJpaService<T>(
             tx.begin()
 
             em.remove(
-                if(em.contains(t))
+                if (em.contains(t))
                     t
                 else
                     em.merge(t)
@@ -127,9 +127,9 @@ open class CrudJpaService<T>(
             tx.commit()
 
 
-        } catch(e: Exception) {
+        } catch (e: Exception) {
 
-            if(tx.isActive)
+            if (tx.isActive)
                 tx.rollback()
 
             throw e

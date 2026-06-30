@@ -4,16 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="Ajout de commentaire bien handy">
-      <change afterPath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/rest/RequiresAuth.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ibr-utils/src/main/kotlin/ax/ibr/utils/rest/RequiresRole.kt" afterDir="false" />
+    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="formate un peu le code">
+      <change afterPath="$PROJECT_DIR$/.gitmodules" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/UserType.kt" beforeDir="false" afterPath="$PROJECT_DIR$/Common/src/main/kotlin/ax/ibr/yeyeea/common/entities/UserType.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/RequiresRole.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/filters/SecurityFilter.kt" beforeDir="false" afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/filters/SecurityFilter.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/CategoryResource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/CategoryResource.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/ProductResource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/ProductResource.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/UserResource.kt" beforeDir="false" afterPath="$PROJECT_DIR$/RestServer/src/main/kotlin/ax/ibr/yeyeea/restserver/resources/UserResource.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,7 +14,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="94" />
+    <option name="cachedIndexableFilesCount" value="101" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -37,13 +30,35 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <favorite-branches>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="develop" />
+              </list>
+            </value>
+          </entry>
+          <entry type="REMOTE">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="origin/develop" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="SIGN_OFF_COMMIT" value="true" />
     <option name="SWAP_SIDES_IN_COMPARE_BRANCHES" value="true" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -69,61 +84,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="4.520256826827497E-50" />
-      <entry key="MS500" value="1.360427966964646E-10" />
-      <entry key="S2" value="0.0043688349553633" />
-      <entry key="S5" value="0.17291745182909132" />
-      <entry key="S10" value="0.6592814923997455" />
-      <entry key="S30" value="1.9021168517597435" />
-      <entry key="S60" value="3.0390629039349184" />
-      <entry key="M2" value="4.656409107103356" />
-      <entry key="M5" value="9.012097553876016" />
-      <entry key="M10" value="14.409166635097048" />
-      <entry key="M15" value="19.05776754351341" />
-      <entry key="M30" value="31.576849955124615" />
-      <entry key="H1" value="49.208758709665" />
-      <entry key="H2" value="87.1391726189727" />
-      <entry key="H4" value="184.26311540494592" />
-      <entry key="D1" value="821.6993211087075" />
-      <entry key="W1" value="1260.1628888554546" />
+      <entry key="MS100" value="1.0001603155219267" />
+      <entry key="MS500" value="1.2941918357896451" />
+      <entry key="S2" value="2.236696265431081" />
+      <entry key="S5" value="2.6499457750844924" />
+      <entry key="S10" value="2.8165230262811427" />
+      <entry key="S30" value="2.936860383721955" />
+      <entry key="S60" value="2.9683055168888375" />
+      <entry key="M2" value="3.0327197696178834" />
+      <entry key="M5" value="5.080508395151731" />
+      <entry key="M10" value="12.75671669420228" />
+      <entry key="M15" value="21.525042435582396" />
+      <entry key="M30" value="43.01836317894087" />
+      <entry key="H1" value="70.39332231526949" />
+      <entry key="H2" value="117.01425913717551" />
+      <entry key="H4" value="214.50649822720757" />
+      <entry key="D1" value="914.0468830194725" />
+      <entry key="W1" value="1477.8299611215502" />
     </decayedCancelled>
     <decayedSelected>
-      <entry key="MS100" value="1.0" />
-      <entry key="MS500" value="1.0" />
-      <entry key="S2" value="1.0000000001090341" />
-      <entry key="S5" value="1.000103556190962" />
-      <entry key="S10" value="1.0104379605989577" />
-      <entry key="S30" value="1.3180481801096509" />
-      <entry key="S60" value="1.9197831696484107" />
-      <entry key="M2" value="2.7129092642905803" />
-      <entry key="M5" value="3.888492570705374" />
-      <entry key="M10" value="4.935707832333362" />
-      <entry key="M15" value="5.816690647807153" />
-      <entry key="M30" value="7.806910568738716" />
-      <entry key="H1" value="10.088420807245425" />
-      <entry key="H2" value="15.244438021872732" />
-      <entry key="H4" value="28.279001377334858" />
-      <entry key="D1" value="105.0382587805615" />
-      <entry key="W1" value="157.03260848764302" />
+      <entry key="MS100" value="0.0" />
+      <entry key="MS500" value="0.0" />
+      <entry key="S2" value="0.0" />
+      <entry key="S5" value="9.882999718842487E-137" />
+      <entry key="S10" value="9.941327737703084E-69" />
+      <entry key="S30" value="2.1502130172204696E-23" />
+      <entry key="S60" value="4.638864791806595E-12" />
+      <entry key="M2" value="2.234664019439004E-6" />
+      <entry key="M5" value="0.009253005418852333" />
+      <entry key="M10" value="0.26509763304478523" />
+      <entry key="M15" value="0.9521852829578497" />
+      <entry key="M30" value="3.816055183498703" />
+      <entry key="H1" value="9.173074056252673" />
+      <entry key="H2" value="19.534892666226554" />
+      <entry key="H4" value="38.16377398649077" />
+      <entry key="D1" value="134.07955282487626" />
+      <entry key="W1" value="204.14829558503044" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="1.3683317837841395E-22" />
-      <entry key="MS500" value="4.238757539092502E-5" />
-      <entry key="S2" value="0.08385886451071795" />
-      <entry key="S5" value="0.5199317836770587" />
-      <entry key="S10" value="1.236963900530481" />
-      <entry key="S30" value="3.0125040832643992" />
-      <entry key="S60" value="4.82239742291123" />
-      <entry key="M2" value="7.27953538275912" />
-      <entry key="M5" value="12.85065444747502" />
-      <entry key="M10" value="19.313450245828797" />
-      <entry key="M15" value="24.850052635275297" />
-      <entry key="M30" value="39.36749128758744" />
-      <entry key="H1" value="59.28625021345658" />
-      <entry key="H2" value="102.3735927674239" />
-      <entry key="H4" value="212.5309447330823" />
-      <entry key="D1" value="926.7303797859121" />
-      <entry key="W1" value="1417.193976870189" />
+      <entry key="MS100" value="0.16624142455002405" />
+      <entry key="MS500" value="0.9907274654550843" />
+      <entry key="S2" value="2.148924131052014" />
+      <entry key="S5" value="2.61365019139075" />
+      <entry key="S10" value="2.7981645905817927" />
+      <entry key="S30" value="2.930692761565195" />
+      <entry key="S60" value="2.9652155684061996" />
+      <entry key="M2" value="3.031170916347569" />
+      <entry key="M5" value="5.088984448064421" />
+      <entry key="M10" value="13.020416032432" />
+      <entry key="M15" value="22.4746638987772" />
+      <entry key="M30" value="46.82955346784042" />
+      <entry key="H1" value="79.5593748944168" />
+      <entry key="H2" value="136.53966853479523" />
+      <entry key="H4" value="252.6590650941556" />
+      <entry key="D1" value="1048.1182722568308" />
+      <entry key="W1" value="1681.9764317734396" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -141,55 +156,56 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.yeyeea-poc.html.executor": "Run",
-    "Kotlin.MainKt.executor": "Run",
-    "Kotlin.PopulateTest.executor": "Run",
-    "Kotlin.PopulateTestKt.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cidr.known.project.marker": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/dev/yeyeea/ibr-utils/src/main/kotlin/ax/ibr/utils/rest",
-    "last_opened_file_path": "C:/dev/yeyeea/ia_slop_test",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "to.speed.mode.migration.done": "true",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.yeyeea-poc.html.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.PopulateTest.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.PopulateTestKt.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;develop&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/dev/yeyeea/ibr-utils/src/main/kotlin/ax/ibr/utils/rest&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/dev/yeyeea/ia_slop_test&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\dev\yeyeea\ia_slop_test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\dev\yeyeea" />
       <recent name="C:\dev\yeyeea\webDemo\css" />
       <recent name="C:\dev\yeyeea\webDemo\js" />
       <recent name="C:\dev\yeyeea\Persistence\src\main\resources\META-INF" />
@@ -273,7 +289,8 @@
       <workItem from="1781943071624" duration="2862000" />
       <workItem from="1781967337696" duration="2769000" />
       <workItem from="1782201830712" duration="10639000" />
-      <workItem from="1782288658993" duration="2421000" />
+      <workItem from="1782288658993" duration="16243000" />
+      <workItem from="1782469861335" duration="7960000" />
     </task>
     <task id="LOCAL-00001" summary="debut du projj">
       <option name="closed" value="true" />
@@ -403,7 +420,63 @@
       <option name="project" value="LOCAL" />
       <updated>1782226141522</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Ajout de sécu">
+      <option name="closed" value="true" />
+      <created>1782292269204</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1782292269204</updated>
+    </task>
+    <task id="LOCAL-00018" summary="Ajout de sécu">
+      <option name="closed" value="true" />
+      <created>1782292610315</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1782292610315</updated>
+    </task>
+    <task id="LOCAL-00019" summary="Ajout de sécu">
+      <option name="closed" value="true" />
+      <created>1782311837271</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1782311837271</updated>
+    </task>
+    <task id="LOCAL-00020" summary="Ajout de documentation">
+      <option name="closed" value="true" />
+      <created>1782312524227</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1782312524227</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Ajout de documentation">
+      <option name="closed" value="true" />
+      <created>1782312721690</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1782312721690</updated>
+    </task>
+    <task id="LOCAL-00022" summary="getByVendor() pour Product (JPA non implémenté)">
+      <option name="closed" value="true" />
+      <created>1782313231617</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1782313231617</updated>
+    </task>
+    <task id="LOCAL-00023" summary="formate un peu le code">
+      <option name="closed" value="true" />
+      <created>1782488345381</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1782488345381</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -448,7 +521,14 @@
     <MESSAGE value="maj des services metiers, on ne peux plus ajouter des produits, utilisateurs et categories portant le meme nom" />
     <MESSAGE value="ajout de secu business mais pas du tout encore fini" />
     <MESSAGE value="Ajout de commentaire bien handy" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajout de commentaire bien handy" />
+    <MESSAGE value="Ajout de sécu" />
+    <MESSAGE value="Ajout de l'entité Cart&#10;&#10;Signed-off-by: ib &lt;pro.ibr.ben@gmail.com&gt;" />
+    <MESSAGE value="Ajout de documentation" />
+    <MESSAGE value="getByVendor() pour Product (JPA non implémenté)" />
+    <MESSAGE value="formate un peu le code" />
+    <option name="LAST_COMMIT_MESSAGE" value="formate un peu le code" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+    <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -1,13 +1,9 @@
 package ax.ibr.yeyeea.persistence.jpa
 
 import ax.ibr.utils.services.jpa.CrudJpaService
-import ax.ibr.yeyeea.persistence.dataservice.CategoryDataService
 import ax.ibr.yeyeea.common.entities.Category
-import ax.ibr.yeyeea.common.entities.Product
+import ax.ibr.yeyeea.persistence.dataservice.CategoryDataService
 import jakarta.persistence.EntityManager
-import jakarta.persistence.NoResultException
-import jakarta.persistence.NonUniqueResultException
-import java.sql.SQLException
 
 class CategoryDataServiceJPAImpl(em: EntityManager,
                                  entityClass: Class<Category>

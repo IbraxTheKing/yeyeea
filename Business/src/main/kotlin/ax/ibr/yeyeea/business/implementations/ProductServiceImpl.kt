@@ -1,10 +1,11 @@
 package ax.ibr.yeyeea.business.implementations
 
 import ax.ibr.utils.exceptions.AlreadyExistsException
-import ax.ibr.yeyeea.persistence.dataservice.PersistenceFactory
 import ax.ibr.yeyeea.common.entities.Category
 import ax.ibr.yeyeea.common.entities.Product
+import ax.ibr.yeyeea.common.entities.User
 import ax.ibr.yeyeea.common.services.ProductService
+import ax.ibr.yeyeea.persistence.dataservice.PersistenceFactory
 
 class ProductServiceImpl : ProductService {
 
@@ -24,6 +25,10 @@ class ProductServiceImpl : ProductService {
 
     override fun getByPriceRange(range: ClosedRange<Float>): List<Product> {
         return productService.getByPriceRange(range)
+    }
+
+    override fun getByVendor(user: User): List<Product> {
+        return productService.getByVendor(user)
     }
 
     override fun add(t: Product) {
