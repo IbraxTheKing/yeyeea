@@ -17,6 +17,7 @@
 
     <nav>
         <a href="../index.html">Accueil</a>
+        <a href="index.html">Boutique</a>
         <a href="cart.html">Panier</a>
         <a href="../login.html">Login</a>
     </nav>
@@ -32,12 +33,12 @@
             <h3>Catégories</h3>
 
             <ul id="categoryList">
-                <li onclick="filterCategory('all')">Toutes</li>
+                <li onclick="filterCategory('all')" class="active">Toutes</li>
             </ul>
 
             <hr>
 
-            <h3>Prix</h3>
+            <h3>Prix maximum</h3>
 
             <div class="price-slider">
                 <input type="range" id="priceRange" min="0" max="2000" value="2000">
@@ -45,11 +46,11 @@
                     <span>0€</span>
                     <span id="priceMax">2000€</span>
                 </div>
-
-                <button onclick="applyPriceRange()">Appliquer</button>
             </div>
 
             <hr>
+
+            <button class="secondary reset-btn" onclick="resetFilters()">Réinitialiser</button>
 
         </aside>
 
@@ -65,8 +66,17 @@
             <div class="filter-bar">
 
                 <select id="categoryFilter" onchange="onDropdownCategoryChange()">
+                    <option value="all">Toutes les catégories</option>
                 </select>
 
+                <select id="sortFilter">
+                    <option value="default">Trier par défaut</option>
+                    <option value="price-asc">Prix croissant</option>
+                    <option value="price-desc">Prix décroissant</option>
+                    <option value="name-asc">Nom (A-Z)</option>
+                </select>
+
+                <span id="resultsCount" class="results-count"></span>
 
             </div>
 

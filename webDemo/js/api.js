@@ -33,3 +33,29 @@ async function login(username, password) {
 
     return false;
 }
+
+/* =========================
+   VENDEUR / PAGE UTILISATEUR
+========================= */
+
+async function getUserByUsername(username) {
+    const res = await fetch(`${API}/users/username/${encodeURIComponent(username)}`);
+
+    if (!res.ok) return null;
+
+    const users = await res.json();
+
+    // le backend renvoie une liste (getByUsername), on prend le premier match
+    if (Array.isArray(users)) {
+        return users[0] ?? null;
+    }
+
+    return users ?? null;
+}
+
+async function getProductsByVendor(username) {
+    // pas d'endpoint dédié côté backend : on filtre côté client
+    // sur product.vendor.username (relation one-to-one Product -> User)
+    const products = await getProducts();
+    return products.filter(p => p.vendor?.username === username);
+}

@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="Création du projet Angular">
+    <list default="true" id="7d9f8a2a-992f-409f-aa3f-8fbed3c20630" name="Changes" comment="améliorations de fou">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -13,7 +13,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="92" />
+    <option name="cachedIndexableFilesCount" value="138" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -51,7 +51,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="feature/angular" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -83,61 +83,61 @@
   </component>
   <component name="NextEditCompletionFeaturesState">
     <decayedCancelled>
-      <entry key="MS100" value="1.0007651486045792" />
-      <entry key="MS500" value="1.4402556348881694" />
-      <entry key="S2" value="4.025234426702921" />
-      <entry key="S5" value="6.25509527999958" />
-      <entry key="S10" value="7.460290964119871" />
-      <entry key="S30" value="10.030184758629515" />
-      <entry key="S60" value="14.064828914316223" />
-      <entry key="M2" value="18.671636088462268" />
-      <entry key="M5" value="23.38763874865374" />
-      <entry key="M10" value="28.138560999296214" />
-      <entry key="M15" value="34.187254292739084" />
-      <entry key="M30" value="53.47691749023178" />
-      <entry key="H1" value="82.60932732037706" />
-      <entry key="H2" value="131.16071643981067" />
-      <entry key="H4" value="229.46877628858388" />
-      <entry key="D1" value="932.3439146120422" />
-      <entry key="W1" value="1502.8129567150645" />
+      <entry key="MS100" value="1.1472841962017022" />
+      <entry key="MS500" value="2.4900302716940295" />
+      <entry key="S2" value="4.857990679665219" />
+      <entry key="S5" value="8.584827283849355" />
+      <entry key="S10" value="14.487874904135216" />
+      <entry key="S30" value="25.328981306252025" />
+      <entry key="S60" value="32.545766399295466" />
+      <entry key="M2" value="39.324142727362364" />
+      <entry key="M5" value="45.81708624299568" />
+      <entry key="M10" value="51.24767879167651" />
+      <entry key="M15" value="57.50799824017668" />
+      <entry key="M30" value="77.00274993587732" />
+      <entry key="H1" value="106.27092620051201" />
+      <entry key="H2" value="154.90720475101577" />
+      <entry key="H4" value="253.25671698199642" />
+      <entry key="D1" value="956.2069372344353" />
+      <entry key="W1" value="1526.7816039698469" />
     </decayedCancelled>
     <decayedSelected>
       <entry key="MS100" value="0.0" />
       <entry key="MS500" value="0.0" />
       <entry key="S2" value="0.0" />
-      <entry key="S5" value="2.117620016048983E-208" />
-      <entry key="S10" value="1.455204458503678E-104" />
-      <entry key="S30" value="2.4414136127547424E-35" />
-      <entry key="S60" value="4.9430118536035685E-18" />
-      <entry key="M2" value="2.3067589015874647E-9" />
-      <entry key="M5" value="5.912876443621089E-4" />
-      <entry key="M10" value="0.06701373807201311" />
-      <entry key="M15" value="0.3806800583490928" />
-      <entry key="M30" value="2.4128702993262774" />
-      <entry key="H1" value="7.2941479042129735" />
-      <entry key="H2" value="17.41970765290686" />
-      <entry key="H4" value="36.038460600358306" />
-      <entry key="D1" value="132.80518737499008" />
-      <entry key="W1" value="203.8699687741936" />
+      <entry key="S5" value="1.740825785595034E-209" />
+      <entry key="S10" value="4.172320440228712E-105" />
+      <entry key="S30" value="1.6098765513270738E-35" />
+      <entry key="S60" value="4.013906560864174E-18" />
+      <entry key="M2" value="2.0786913480247456E-9" />
+      <entry key="M5" value="5.671708804473252E-4" />
+      <entry key="M10" value="0.06563287135421185" />
+      <entry key="M15" value="0.37543247311220856" />
+      <entry key="M30" value="2.3961821639304377" />
+      <entry key="H1" value="7.268879879697719" />
+      <entry key="H2" value="17.389509234669113" />
+      <entry key="H4" value="36.00720931296715" />
+      <entry key="D1" value="132.78598643708168" />
+      <entry key="W1" value="203.86575773258804" />
     </decayedSelected>
     <decayedShown>
-      <entry key="MS100" value="0.9467966425764882" />
-      <entry key="MS500" value="1.425734011320753" />
-      <entry key="S2" value="4.012583720748068" />
-      <entry key="S5" value="6.245271557148632" />
-      <entry key="S10" value="7.453890777434394" />
-      <entry key="S30" value="10.026905824190118" />
-      <entry key="S60" value="14.062240293107022" />
-      <entry key="M2" value="18.669785441654906" />
-      <entry key="M5" value="23.387226073206385" />
-      <entry key="M10" value="28.20469859078621" />
-      <entry key="M15" value="34.566549922903015" />
-      <entry key="M30" value="55.886526315430714" />
-      <entry key="H1" value="89.8977977725325" />
-      <entry key="H2" value="148.5719201782967" />
-      <entry key="H4" value="265.49663005746123" />
-      <entry key="D1" value="1065.1410120061546" />
-      <entry key="W1" value="1706.6811024746048" />
+      <entry key="MS100" value="1.0812280793535058" />
+      <entry key="MS500" value="2.466973890072976" />
+      <entry key="S2" value="4.847574263262453" />
+      <entry key="S5" value="8.577238871154796" />
+      <entry key="S10" value="14.480885561778566" />
+      <entry key="S30" value="25.32422264208093" />
+      <entry key="S60" value="32.54219958868049" />
+      <entry key="M2" value="39.32169518626598" />
+      <entry key="M5" value="45.816366217182825" />
+      <entry key="M10" value="51.31228936593795" />
+      <entry key="M15" value="57.88195542449475" />
+      <entry key="M30" value="79.39563797168486" />
+      <entry key="H1" value="113.5341206300128" />
+      <entry key="H2" value="172.28821096557905" />
+      <entry key="H4" value="289.2533217336493" />
+      <entry key="D1" value="1088.9848337051453" />
+      <entry key="W1" value="1730.6455385604042" />
     </decayedShown>
   </component>
   <component name="ProblemsViewState">
@@ -155,51 +155,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JavaScript Debug.yeyeea-poc.html.executor": "Run",
-    "Kotlin.MainKt.executor": "Run",
-    "Kotlin.PopulateTest.executor": "Run",
-    "Kotlin.PopulateTestKt.executor": "Run",
-    "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "cidr.known.project.marker": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
-    "git-widget-placeholder": "feature/angular",
-    "ignore.virus.scanning.warn.message": "true",
-    "junie.onboarding.icon.badge.shown": "true",
-    "kotlin-language-version-configured": "true",
-    "last_directory_selection": "C:/dev/yeyeea/ibr-utils/src/main/kotlin/ax/ibr/utils/rest",
-    "last_opened_file_path": "C:/dev/yeyeea/ia_slop_test",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
-    "to.speed.mode.migration.done": "true",
-    "ts.external.directory.path": "C:\\dev\\yeyeea\\WebClient\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JavaScript Debug.yeyeea-poc.html.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.MainKt.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.PopulateTest.executor&quot;: &quot;Run&quot;,
+    &quot;Kotlin.PopulateTestKt.executor&quot;: &quot;Run&quot;,
+    &quot;Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/no-web-framework&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_directory_selection&quot;: &quot;C:/dev/yeyeea/ibr-utils/src/main/kotlin/ax/ibr/utils/rest&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/dev/yeyeea&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\dev\\yeyeea\\WebClient\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mariadb"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mariadb&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\dev\yeyeea\ia_slop_test" />
@@ -222,7 +222,7 @@
       <recent name="ax.ibr.entities" />
     </key>
   </component>
-  <component name="RunManager" selected="Kotlin.PopulateTestKt">
+  <component name="RunManager" selected="Kotlin.MainKt">
     <configuration name="yeyeea-poc.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/yeyeea/ia_slop_test/yeyeea-poc.html" useBuiltInWebServerPort="true">
       <method v="2" />
     </configuration>
@@ -249,8 +249,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Kotlin.PopulateTestKt" />
         <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Kotlin.PopulateTestKt" />
         <item itemvalue="JavaScript Debug.yeyeea-poc.html" />
         <item itemvalue="Kotlin.PopulateTest" />
       </list>
@@ -292,6 +292,8 @@
       <workItem from="1782288658993" duration="16243000" />
       <workItem from="1782469861335" duration="7960000" />
       <workItem from="1782824326502" duration="642000" />
+      <workItem from="1782836361004" duration="216000" />
+      <workItem from="1782892900275" duration="2486000" />
     </task>
     <task id="LOCAL-00001" summary="debut du projj">
       <option name="closed" value="true" />
@@ -485,7 +487,15 @@
       <option name="project" value="LOCAL" />
       <updated>1782824469420</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="améliorations de fou">
+      <option name="closed" value="true" />
+      <created>1782836436970</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1782836436970</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -536,7 +546,8 @@
     <MESSAGE value="getByVendor() pour Product (JPA non implémenté)" />
     <MESSAGE value="formate un peu le code" />
     <MESSAGE value="Création du projet Angular" />
-    <option name="LAST_COMMIT_MESSAGE" value="Création du projet Angular" />
+    <MESSAGE value="améliorations de fou" />
+    <option name="LAST_COMMIT_MESSAGE" value="améliorations de fou" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
