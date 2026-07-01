@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Vendeur - Yeya Informatique</title>
+
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+
+<header class="shop-header">
+    <h2>Yeya Informatique</h2>
+
+    <nav>
+        <a href="../index.html">Accueil</a>
+        <a href="../index.html">Boutique</a>
+        <a href="cart.html">Panier</a>
+        <a href="../login.html">Login</a>
+    </nav>
+</header>
+
+<main class="container">
+
+    <div class="vendor-card" id="vendorProfile">
+        <div class="empty-state">Chargement du profil…</div>
+    </div>
+
+    <div class="vendor-products-header">
+        <h2>Produits en vente</h2>
+        <span id="vendorProductCount" class="muted"></span>
+    </div>
+
+    <div id="vendorProducts" class="products-grid"></div>
+
+</main>
+
+<script src="../js/api.js"></script>
+<script src="../js/cart.js"></script>
+<script src="../js/user.js"></script>
+
+</body>
+</html>

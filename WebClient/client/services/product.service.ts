@@ -1,26 +1,27 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { Product } from '../models/product.model';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
+import {Product} from '../models/product.model';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class ProductService {
 
-    private api = 'http://localhost:8080/products';
+  private api = 'http://localhost:8080/products';
 
-    constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) {
+  }
 
-    getAll(): Observable<Product[]> {
-        return this.http.get<Product[]>(this.api);
-    }
+  getAll(): Observable<Product[]> {
+    return this.http.get<Product[]>(this.api);
+  }
 
-    getById(id: number): Observable<Product> {
-        return this.http.get<Product>(`${this.api}/${id}`);
-    }
+  getById(id: number): Observable<Product> {
+    return this.http.get<Product>(`${this.api}/${id}`);
+  }
 
-    getByCategory(id: number): Observable<Product[]> {
-        return this.http.get<Product[]>(`${this.api}/category/${id}`);
-    }
+  getByCategory(id: number): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.api}/category/${id}`);
+  }
 }

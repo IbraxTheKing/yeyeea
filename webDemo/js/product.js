@@ -5,13 +5,27 @@ const id = params.get("id");
 
 async function loadProduct(){
 
+    const container = document.getElementById("productDetails");
+
+    container.innerHTML = `
+        <div class="product big skeleton">
+            <div class="skeleton-block img"></div>
+            <div style="flex:1">
+                <div class="skeleton-block line short"></div>
+                <div class="skeleton-block line"></div>
+                <div class="skeleton-block line"></div>
+            </div>
+        </div>
+    `;
 
     const product = await getProduct(id);
 
+    if (!product) {
+        container.innerHTML = `<div class="empty-state">Produit introuvable.</div>`;
+        return;
+    }
 
-    document
-        .getElementById("productDetails")
-        .innerHTML = `
+    container.innerHTML = `
 
 
 <div class="product big">
@@ -34,22 +48,25 @@ ${product.name}
 ${product.price} €
 </h2>
 
+${product.category?.name
+        ? `<span class="category-tag">${product.category.name}</span>`
+        : ""
+    }
 
 <p>
 ${product.description}
 </p>
 
 
-<p>
-Entreprise :
-${product.company ?? "Inconnue"}
-</p>
-
-
-<p>
-Catégorie :
-${product.category?.name ?? "Aucune"}
-</p>
+${product.vendor?.username
+        ? `<p>
+        Vendu par :
+        <a class="vendor-link" href="user.html?username=${encodeURIComponent(product.vendor.username)}">
+            ${product.vendor.username}
+        </a>
+       </p>`
+        : `<p>Entreprise : ${product.company ?? "Inconnue"}</p>`
+    }
 
 
 <button onclick='addToCart(${JSON.stringify(product)})'>
