@@ -1,10 +1,8 @@
 package ax.ibr.yeyeea.restserver.resources
 
-import ax.ibr.utils.rest.RequiresAuth
 import ax.ibr.utils.rest.RequiresRole
 import ax.ibr.yeyeea.common.entities.Category
 import ax.ibr.yeyeea.business.implementations.BusinessFactory
-import ax.ibr.yeyeea.common.entities.UserType
 import jakarta.ws.rs.*
 import jakarta.ws.rs.core.MediaType
 

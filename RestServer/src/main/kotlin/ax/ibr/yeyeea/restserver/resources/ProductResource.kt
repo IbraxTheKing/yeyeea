@@ -1,7 +1,5 @@
 package ax.ibr.yeyeea.restserver.resources
 
-import ax.ibr.utils.LogLevel
-import ax.ibr.utils.Logger
 import ax.ibr.utils.rest.RequiresAuth
 import ax.ibr.utils.rest.RequiresRole
 import ax.ibr.yeyeea.common.entities.Product
@@ -35,9 +33,9 @@ class ProductResource {
 
 
     @POST
+    @RequiresRole("ADMIN")
     fun add(product: Product) {
         service.add(product)
-
     }
 
 

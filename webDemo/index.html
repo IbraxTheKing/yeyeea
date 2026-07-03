@@ -12,15 +12,17 @@
 
 </head>
 
-<body>
+<body class="home">
 
 <header>
 
     <h2>Yeya Informatique</h2>
 
     <nav>
-        <a href="#accueil">Accueil</a>
+        <a href="index.html">Accueil</a>
         <a href="shop/index.html">Boutique</a>
+        <a href="shop/cart.html">Panier</a>
+        <a href="about.html">À propos</a>
     </nav>
 
 </header>
@@ -28,80 +30,80 @@
 
 <main class="container">
 
+    <!-- HERO -->
+    <section class="hero reveal">
 
-    <section id="accueil" class="product big reveal">
+        <div class="hero-content">
 
-        <div>
+            <span class="badge">Service informatique local • Elbeuf</span>
 
-            <h1>Yeya Informatique</h1>
+            <h1>
+                Réparation, vente & assistance
+                <span class="highlight">informatique de proximité</span>
+            </h1>
 
             <p>
-                Yeya Informatique accompagne les particuliers et les professionnels
-                dans leurs besoins informatiques : réparation, maintenance,
-                vente de matériel et assistance numérique.
+                Yeya Informatique accompagne particuliers et professionnels
+                pour tous leurs besoins : dépannage, optimisation, installation
+                et matériel informatique.
             </p>
 
-            <button>Découvrir nos services</button>
+            <div class="hero-actions">
+                <a href="#services" class="primary-btn">Voir nos services</a>
+                <a href="#contact" class="secondary-btn">Nous contacter</a>
+            </div>
+
+            <div class="hero-stats">
+                <div>
+                    <strong>24h</strong>
+                    <span>Intervention rapide</span>
+                </div>
+                <div>
+                    <strong>Local</strong>
+                    <span>Elbeuf & alentours</span>
+                </div>
+                <div>
+                    <strong>Pro</strong>
+                    <span>Particuliers & entreprises</span>
+                </div>
+            </div>
 
         </div>
 
-        <img
-                src="https://images.unsplash.com/photo-1518770660439-4636190af475"
-                alt="Informatique"
-        >
+        <div class="hero-image">
+            <img src="https://prmeng.rosselcdn.net/sites/default/files/dpistyles_v2/ena_16_9_extra_big/2022/03/02/node_283682/38900109/public/2022/03/02/B9730125415Z.1_20220302110433_000%2BGFHK0JRQH.2-0.jpg"
+                 alt="Informatique">
+        </div>
 
     </section>
 
 
-    <section id="entreprise" class="reveal">
+    <!-- SERVICES (refactor léger) -->
+    <section id="services" class="reveal section-title">
 
-        <h1>Notre entreprise</h1>
-
-        <div class="product">
-
-            <h2>Une entreprise locale proche de ses clients</h2>
-
-            <p>
-                Située à Caudebec-lès-Elbeuf, Yeya Informatique propose des solutions
-                adaptées aux particuliers, étudiants, associations et entreprises.
-                Notre objectif est de rendre l'informatique plus simple,
-                accessible et fiable.
-            </p>
-
-            <p>
-                Nous intervenons aussi bien pour un ordinateur qui ne fonctionne plus
-                que pour la mise en place d'équipements complets.
-            </p>
-
-        </div>
-
-    </section>
-
-
-    <section id="services" class="reveal">
-
-        <h1>Nos services</h1>
+        <h2>Nos services</h2>
+        <p>Une solution complète pour tous vos besoins informatiques</p>
 
         <div id="products">
 
             <div class="product">
-                <h2>🔧 Réparation informatique</h2>
-                <p>Diagnostic et réparation d'ordinateurs fixes, portables, problèmes logiciels ou matériels.</p>
+                <h2>🔧 Réparation</h2>
+                <p>Pannes, virus, lenteurs, composants défectueux.</p>
             </div>
 
             <div class="product">
-                <h2>💻 Vente de matériel</h2>
-                <p>Ordinateurs, accessoires, périphériques, équipements adaptés à vos besoins.</p>
+                <h2>💻 Vente matériel</h2>
+                <p>PC, accessoires, périphériques et configuration.</p>
             </div>
 
             <div class="product">
                 <h2>🛠 Maintenance</h2>
-                <p>Entretien, optimisation et sécurisation de votre matériel informatique.</p>
+                <p>Optimisation, nettoyage et sécurité système.</p>
             </div>
 
             <div class="product">
-                <h2>🌐 Assistance numérique</h2>
-                <p>Aide pour l'installation, la configuration et l'utilisation de vos appareils.</p>
+                <h2>🌐 Assistance</h2>
+                <p>Installation, configuration et accompagnement.</p>
             </div>
 
         </div>
@@ -109,50 +111,50 @@
     </section>
 
 
-    <section class="reveal">
+    <!-- ENTREPRISE -->
+    <section class="reveal info-block">
 
-        <h1>Pourquoi choisir Yeya Informatique ?</h1>
-
-        <div class="product">
-
-            <ul>
-                <li>✔ Service de proximité à Elbeuf</li>
-                <li>✔ Conseils personnalisés</li>
-                <li>✔ Solutions adaptées aux particuliers et professionnels</li>
-                <li>✔ Accompagnement de la panne jusqu'à la résolution</li>
-            </ul>
-
+        <div>
+            <h2>Une entreprise locale</h2>
+            <p>
+                Basée à Caudebec-lès-Elbeuf, nous proposons un service humain,
+                rapide et adapté à chaque situation.
+            </p>
         </div>
 
     </section>
 
 
-    <section id="contact" class="reveal">
+    <!-- MAP -->
+    <section id="contact" class="reveal map-section">
 
-        <h1>Contact</h1>
+        <h2>Nous trouver</h2>
 
-        <div class="product">
+        <p>Caudebec-lès-Elbeuf, Normandie</p>
 
-            <h2>Yeya Informatique</h2>
+        <div class="map-container">
 
-            <p>📍 Caudebec-lès-Elbeuf, Normandie</p>
+            <iframe
+                    src="https://www.google.com/maps?q=49.284583,1.0358688&z=15&output=embed"
+                    loading="lazy"
+                    allowfullscreen>
+            </iframe>
 
-            <p>📞 Contactez-nous pour toute demande de réparation, conseil ou installation.</p>
+        </div>
 
-            <a class="map-button"
-               href="https://maps.apple.com/?q=Caudebec-lès-Elbeuf"
+        <div class="contact-box">
+
+            <p>📞 Contactez-nous pour un devis ou une intervention</p>
+
+            <a class="primary-btn"
+               href="https://maps.google.com/?q=Caudebec-lès-Elbeuf"
                target="_blank">
-                Voir sur Apple Plans
+                Ouvrir dans Google Maps
             </a>
 
-            <br><br>
-
-            <button>Nous contacter</button>
-
         </div>
 
     </section>
-
 
 </main>
 
@@ -162,11 +164,11 @@
 
     const observer = new IntersectionObserver(entries => {
         entries.forEach(entry => {
-            if (entry.isIntersecting) {
+            if(entry.isIntersecting){
                 entry.target.classList.add('visible');
             }
         });
-    }, {threshold: 0.15});
+    }, { threshold: 0.15 });
 
     elements.forEach(el => observer.observe(el));
 </script>
