@@ -29,11 +29,11 @@ async function loadProducts() {
 }
 
 /* =========================
-   LOADING SKELETON
+   SKELETON
 ========================= */
 
 function renderSkeletons(count) {
-    return Array.from({length: count})
+    return Array.from({ length: count })
         .map(() => `
             <div class="product skeleton">
                 <div class="skeleton-block img"></div>
@@ -46,13 +46,51 @@ function renderSkeletons(count) {
 }
 
 /* =========================
+   DOMINANT COLOR (SAFE VERSION)
+========================= */
+
+function getDominantColor(img) {
+
+    const canvas = document.createElement("canvas");
+    const ctx = canvas.getContext("2d");
+
+    try {
+        canvas.width = img.naturalWidth || 100;
+        canvas.height = img.naturalHeight || 100;
+
+        ctx.drawImage(img, 0, 0);
+
+        const data = ctx.getImageData(0, 0, canvas.width, canvas.height).data;
+
+        let r = 0, g = 0, b = 0;
+        let count = 0;
+
+        for (let i = 0; i < data.length; i += 200) {
+            r += data[i];
+            g += data[i + 1];
+            b += data[i + 2];
+            count++;
+        }
+
+        r = Math.floor(r / count);
+        g = Math.floor(g / count);
+        b = Math.floor(b / count);
+
+        return `rgb(${r},${g},${b})`;
+
+    } catch (e) {
+        console.error("Canvas blocked → CORS image problem", e);
+        return null;
+    }
+}
+
+/* =========================
    RENDER PRODUCTS
 ========================= */
 
 function renderProducts(products) {
 
     const container = document.getElementById("products");
-
     container.innerHTML = "";
 
     updateResultsCount(products.length);
@@ -72,20 +110,17 @@ function renderProducts(products) {
         const div = document.createElement("div");
         div.className = "product";
 
-        div.innerHTML = `
+        const imgUrl = p.image ?? "https://via.placeholder.com/300";
 
+        div.innerHTML = `
             <img
-                onclick="openProduct(${p.id})"
-                src="${p.image ?? 'https://via.placeholder.com/300'}"
+                src="${imgUrl}"
+                crossorigin="anonymous"
             >
 
-            ${p.category?.name
-            ? `<span class="category-tag">${p.category.name}</span>`
-            : ""
-        }
+            ${p.category?.name ? `<span class="category-tag">${p.category.name}</span>` : ""}
 
             <h3>${p.name}</h3>
-
             <p>${p.description ?? ""}</p>
 
             ${p.vendor?.username
@@ -95,33 +130,67 @@ function renderProducts(products) {
             : ""
         }
 
-            <div class="price">
-                ${p.price ?? 0} €
-            </div>
+            <div class="price">${p.price ?? 0} €</div>
 
-            <button onclick='addToCart(${safeJson(p)})'>
-                Ajouter au panier
-            </button>
-
+            <button onclick='addToCart(${safeJson(p)})'>Ajouter au panier</button>
         `;
 
         container.appendChild(div);
+
+        /* =========================
+           CLICK FIX (IMPORTANT)
+        ========================= */
+        div.addEventListener("click", (e) => {
+            // éviter clic bouton panier
+            if (e.target.tagName === "BUTTON") return;
+            openProduct(p.id);
+        });
+
+        /* =========================
+           COLOR EFFECT (SAFE + DEBUG)
+        ========================= */
+
+        const img = div.querySelector("img");
+
+        img.onload = () => {
+
+            const color = getDominantColor(img);
+
+            if (!color) {
+                console.log("❌ couleur impossible (CORS ou canvas)");
+                return;
+            }
+
+            div.style.boxShadow =
+                `0 20px 50px rgba(0,0,0,.15), 0 0 80px ${color}55`;
+
+            div.style.border = `1px solid ${color}33`;
+
+            div.style.background =
+                `linear-gradient(145deg, ${color}15, white 70%)`;
+        };
+
+        // si déjà chargé
+        if (img.complete) img.onload();
     });
 }
+
+/* =========================
+   RESULTS COUNT
+========================= */
 
 function updateResultsCount(n) {
     const el = document.getElementById("resultsCount");
     if (!el) return;
 
-    el.textContent = n === 0
-        ? "Aucun résultat"
-        : n === 1
-            ? "1 produit"
-            : `${n} produits`;
+    el.textContent =
+        n === 0 ? "Aucun résultat"
+            : n === 1 ? "1 produit"
+                : `${n} produits`;
 }
 
 /* =========================
-   SAFE JSON (IMPORTANT)
+   SAFE JSON
 ========================= */
 
 function safeJson(obj) {
@@ -129,7 +198,7 @@ function safeJson(obj) {
 }
 
 /* =========================
-   CATEGORIES (REST API)
+   CATEGORIES
 ========================= */
 
 async function loadCategories() {
@@ -151,7 +220,6 @@ async function loadCategories() {
     }
 
     if (list) {
-        // on garde le "Toutes" déjà présent dans le HTML, on ajoute le reste
         categories.forEach(c => {
             const li = document.createElement("li");
             li.textContent = c.name;
@@ -164,36 +232,29 @@ async function loadCategories() {
 }
 
 /* =========================
-   CATEGORY FILTER
+   FILTERS
 ========================= */
 
 function filterCategory(category) {
-
     selectedCategory = category;
 
     const select = document.getElementById("categoryFilter");
     if (select) select.value = category;
 
     updateSidebarActive();
-
     applyFilters();
 }
 
-/* dropdown change */
 function onDropdownCategoryChange() {
-
     selectedCategory = document.getElementById("categoryFilter").value;
 
     updateSidebarActive();
-
     applyFilters();
 }
 
-/* sidebar active UI */
 function updateSidebarActive() {
 
     document.querySelectorAll("#categoryList li").forEach(li => {
-
         li.classList.remove("active");
 
         if (
@@ -206,15 +267,13 @@ function updateSidebarActive() {
 }
 
 /* =========================
-   FILTERS (CATEGORY + SORT + PRICE)
+   FILTER ENGINE
 ========================= */
 
 function wireFilterControls() {
 
-    const sortSelect = document.getElementById("sortFilter");
-    if (sortSelect) {
-        sortSelect.addEventListener("change", applyFilters);
-    }
+    document.getElementById("sortFilter")
+        ?.addEventListener("change", applyFilters);
 
     const priceRange = document.getElementById("priceRange");
     const priceMaxLabel = document.getElementById("priceMax");
@@ -234,29 +293,26 @@ function applyFilters() {
 
     let result = [...allProducts];
 
-    /* CATEGORY */
     if (selectedCategory !== "all") {
         result = result.filter(p =>
             p.category?.name === selectedCategory
         );
     }
 
-    /* PRICE (client-side, slider) */
     const priceRange = document.getElementById("priceRange");
     if (priceRange) {
         const max = Number(priceRange.value);
         result = result.filter(p => Number(p.price ?? 0) <= max);
     }
 
-    /* SORT */
     const sort = document.getElementById("sortFilter")?.value;
 
     if (sort === "price-asc") {
-        result.sort((a, b) => Number(a.price ?? 0) - Number(b.price ?? 0));
+        result.sort((a, b) => a.price - b.price);
     }
 
     if (sort === "price-desc") {
-        result.sort((a, b) => Number(b.price ?? 0) - Number(a.price ?? 0));
+        result.sort((a, b) => b.price - a.price);
     }
 
     if (sort === "name-asc") {
@@ -266,18 +322,20 @@ function applyFilters() {
     renderProducts(result);
 }
 
+/* =========================
+   RESET
+========================= */
+
 function resetFilters() {
 
     selectedCategory = "all";
 
-    const select = document.getElementById("categoryFilter");
-    if (select) select.value = "all";
-
-    const sortSelect = document.getElementById("sortFilter");
-    if (sortSelect) sortSelect.value = "default";
+    document.getElementById("categoryFilter").value = "all";
+    document.getElementById("sortFilter").value = "default";
 
     const priceRange = document.getElementById("priceRange");
     const priceMaxLabel = document.getElementById("priceMax");
+
     if (priceRange) {
         priceRange.value = priceRange.max;
         if (priceMaxLabel) priceMaxLabel.textContent = `${priceRange.value}€`;
@@ -288,7 +346,7 @@ function resetFilters() {
 }
 
 /* =========================
-   OPEN PRODUCT PAGE
+   NAV
 ========================= */
 
 function openProduct(id) {

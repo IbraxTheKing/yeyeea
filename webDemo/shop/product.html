@@ -1,35 +1,65 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body>
 
-
 <header>
     <h2>Yeya Informatique</h2>
-    <div>
-        <a href="index.html">Accueil</a>
+
+    <div class="nav-center">
+        <div class="search-box" id="searchBox">
+            <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Rechercher un produit..."
+                    autocomplete="off"
+            >
+
+            <!-- dropdown complet caché par défaut -->
+            <div id="searchPanel" class="search-panel">
+
+                <div class="search-filters">
+                    <select id="filterCategory">
+                        <option value="all">Toutes catégories</option>
+                    </select>
+
+                    <select id="filterPrice">
+                        <option value="all">Prix</option>
+                        <option value="0-50">0 - 50 &#8364;</option>
+                        <option value="50-200">50 - 200 &#8364;</option>
+                        <option value="200-500">200 - 500 &#8364;</option>
+                        <option value="500+">500 &#8364; +</option>
+                    </select>
+                </div>
+
+                <div id="searchResults" class="search-results"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-right">
+        <a href="../index.html">Accueil</a>
+        <a href="index.html">Boutique</a>
         <a href="cart.html">Panier</a>
-        <a href="../login.html">Login</a>
+        <a href="../about.html">À propos</a>
     </div>
 </header>
 
+<!-- 🔙 Bouton retour -->
+<button class="back-btn" onclick="goBack()">← Retour</button>
 
-<div class="container" id="productDetails">
-
-
-</div>
-
+<div class="container" id="productDetails"></div>
 
 <script src="../js/api.js"></script>
 <script src="../js/cart.js"></script>
 <script src="../js/product.js"></script>
-
+<script src="../js/search.js"></script>
 
 </body>
-
 </html>

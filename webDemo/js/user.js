@@ -46,9 +46,9 @@ async function loadUserPage() {
             <h1>${user.username}</h1>
 
             ${user.description
-        ? `<p class="vendor-description">${user.description}</p>`
-        : `<p class="vendor-description muted">Ce vendeur n'a pas encore ajouté de description.</p>`
-    }
+                ? `<p class="vendor-description">${user.description}</p>`
+                : `<p class="vendor-description muted">Ce vendeur n'a pas encore ajouté de description.</p>`
+            }
 
             <div class="vendor-meta">
                 ${user.email ? `<span>📧 ${user.email}</span>` : ""}

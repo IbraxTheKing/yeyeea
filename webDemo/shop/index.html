@@ -8,20 +8,56 @@
     <title>Boutique - Yeya Informatique</title>
 
     <link rel="stylesheet" href="../css/style.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Asset&family=BBH+Bartle&display=swap');
+    </style>
 </head>
 
 <body>
 
-<header class="shop-header">
+<header>
     <h2>Yeya Informatique</h2>
 
-    <nav>
+    <div class="nav-center">
+        <div class="search-box" id="searchBox">
+            <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Rechercher un produit..."
+                    autocomplete="off"
+            >
+
+            <!-- dropdown complet caché par défaut -->
+            <div id="searchPanel" class="search-panel">
+
+                <div class="search-filters">
+                    <select id="filterCategory">
+                        <option value="all">Toutes catégories</option>
+                    </select>
+
+                    <select id="filterPrice">
+                        <option value="all">Prix</option>
+                        <option value="0-50">0 - 50 <span>&#8364;</span></option>
+                        <option value="50-200">50 - 200 <span>&#8364;</span></option>
+                        <option value="200-500">200 - 500 <span>&#8364;</span></option>
+                        <option value="500+">500 <span>&#8364;</span> +</option>
+                    </select>
+                </div>
+
+                <div id="searchResults" class="search-results"></div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="nav-right">
         <a href="../index.html">Accueil</a>
         <a href="index.html">Boutique</a>
         <a href="cart.html">Panier</a>
-        <a href="../login.html">Login</a>
-    </nav>
+        <a href="../about.html">À propos</a>
+    </div>
 </header>
+
 
 <main class="container">
 
@@ -41,10 +77,10 @@
             <h3>Prix maximum</h3>
 
             <div class="price-slider">
-                <input type="range" id="priceRange" min="0" max="2000" value="2000">
+                <input type="range" id="priceRange" min="0" max="5000" value="2000">
                 <div class="price-values">
-                    <span>0€</span>
-                    <span id="priceMax">2000€</span>
+                    <span>0<span>&#8364;</span></span>
+                    <span id="priceMax">5000<span>&#8364;</span></span>
                 </div>
             </div>
 
@@ -58,7 +94,7 @@
         <div class="shop-content">
 
             <section class="shop-hero">
-                <h1>Notre boutique</h1>
+                <h1 class="title-font">Notre boutique</h1>
                 <p>Matériel informatique sélectionné, testé et adapté à vos besoins.</p>
             </section>
 
@@ -90,6 +126,7 @@
 
 <!-- JS -->
 <script src="../js/api.js"></script>
+<script src="../js/search.js"></script>
 <script src="../js/cart.js"></script>
 <script src="../js/products.js"></script>
 
