@@ -1,51 +1,176 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
+
 <head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yeya Informatique - Elbeuf</title>
+
     <link rel="stylesheet" href="css/style.css">
+
 </head>
+
 <body>
 
 <header>
-    <div>Yeya</div>
-    <div>
-        <a href="cart.html">Panier</a>
-        <a href="login.html">Login</a>
-    </div>
+
+    <h2>Yeya Informatique</h2>
+
+    <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="shop/index.html">Boutique</a>
+    </nav>
+
 </header>
 
-<div class="container">
 
-    <div class="filter">
-
-        <select id="categoryFilter" onchange="applyFilters()">
-            <option value="all">
-                Toutes catégories
-            </option>
-        </select>
+<main class="container">
 
 
-        <select id="priceFilter" onchange="applyFilters()">
+    <section id="accueil" class="product big reveal">
 
-            <option value="default">
-                Trier par prix
-            </option>
+        <div>
 
-            <option value="asc">
-                Prix : croissant
-            </option>
+            <h1>Yeya Informatique</h1>
 
-            <option value="desc">
-                Prix : décroissant
-            </option>
+            <p>
+                Yeya Informatique accompagne les particuliers et les professionnels
+                dans leurs besoins informatiques : réparation, maintenance,
+                vente de matériel et assistance numérique.
+            </p>
 
-        </select>
+            <button>Découvrir nos services</button>
 
-    </div>
+        </div>
 
-    <div id="products"></div>
+        <img
+                src="https://images.unsplash.com/photo-1518770660439-4636190af475"
+                alt="Informatique"
+        >
 
-</div>
+    </section>
 
-<script src="js/api.js"></script>
-<script src="js/cart.js"></script>
-<script src="js/products.js"></script>
+
+    <section id="entreprise" class="reveal">
+
+        <h1>Notre entreprise</h1>
+
+        <div class="product">
+
+            <h2>Une entreprise locale proche de ses clients</h2>
+
+            <p>
+                Située à Caudebec-lès-Elbeuf, Yeya Informatique propose des solutions
+                adaptées aux particuliers, étudiants, associations et entreprises.
+                Notre objectif est de rendre l'informatique plus simple,
+                accessible et fiable.
+            </p>
+
+            <p>
+                Nous intervenons aussi bien pour un ordinateur qui ne fonctionne plus
+                que pour la mise en place d'équipements complets.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section id="services" class="reveal">
+
+        <h1>Nos services</h1>
+
+        <div id="products">
+
+            <div class="product">
+                <h2>🔧 Réparation informatique</h2>
+                <p>Diagnostic et réparation d'ordinateurs fixes, portables, problèmes logiciels ou matériels.</p>
+            </div>
+
+            <div class="product">
+                <h2>💻 Vente de matériel</h2>
+                <p>Ordinateurs, accessoires, périphériques, équipements adaptés à vos besoins.</p>
+            </div>
+
+            <div class="product">
+                <h2>🛠 Maintenance</h2>
+                <p>Entretien, optimisation et sécurisation de votre matériel informatique.</p>
+            </div>
+
+            <div class="product">
+                <h2>🌐 Assistance numérique</h2>
+                <p>Aide pour l'installation, la configuration et l'utilisation de vos appareils.</p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="reveal">
+
+        <h1>Pourquoi choisir Yeya Informatique ?</h1>
+
+        <div class="product">
+
+            <ul>
+                <li>✔ Service de proximité à Elbeuf</li>
+                <li>✔ Conseils personnalisés</li>
+                <li>✔ Solutions adaptées aux particuliers et professionnels</li>
+                <li>✔ Accompagnement de la panne jusqu'à la résolution</li>
+            </ul>
+
+        </div>
+
+    </section>
+
+
+    <section id="contact" class="reveal">
+
+        <h1>Contact</h1>
+
+        <div class="product">
+
+            <h2>Yeya Informatique</h2>
+
+            <p>📍 Caudebec-lès-Elbeuf, Normandie</p>
+
+            <p>📞 Contactez-nous pour toute demande de réparation, conseil ou installation.</p>
+
+            <a class="map-button"
+               href="https://maps.apple.com/?q=Caudebec-lès-Elbeuf"
+               target="_blank">
+                Voir sur Apple Plans
+            </a>
+
+            <br><br>
+
+            <button>Nous contacter</button>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script>
+    const elements = document.querySelectorAll('.reveal');
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {threshold: 0.15});
+
+    elements.forEach(el => observer.observe(el));
+</script>
+
+
+</body>
+</html>
